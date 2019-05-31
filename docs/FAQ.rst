@@ -1,10 +1,58 @@
----
-layout: default
-title: FAQ
----
-
-
-FAQ
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Maker: FAQ</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+      content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>
+          <a href="/">
+            <span class="first">Window</span><span class="second">Maker</span>
+          </a>
+        </h1>
+      </header>
+      <aside>
+        <nav class="menu">
+          <ul>
+            <li id="dock">
+            <a href="#"></a>
+            </li>
+            <li id="home" title="Home">
+              <a href="/">Home</a>
+            </li>
+            <li id="news" title="News">
+              <a href="/news">News</a>
+            </li>
+            <li id="docs" title="Documentation">
+              <a href="/docs">Documentation</a>
+            </li>
+            <li id="mail" title="Mailing lists">
+              <a href="/lists">Mailing</a>
+            </li>
+            <li id="devel" title="Development">
+              <a href="/dev">Development</a>
+            </li>
+            <li id="screenshots" title="Screenshots">
+              <a href="/screenshots">Screenshots</a>
+            </li>
+            <li id="themes" title="Themes">
+              <a href="/themes">Themes</a>
+            </li>
+            <li id="links" title="Links">
+              <a href="/links">Links</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        FAQ
 ===
 
 Have questions about Window Maker? If so, look no further. Below is our
@@ -1884,7 +1932,7 @@ Themes are a great aspect of Window Maker allowing a user to simply save the
 entire 'look' of their desktop in an archive to distribute freely among
 friends, fellow users and/or the whole net in general. :)
 
-See the `theme-HOWTO <{{ site.baseurl }}/themes/themepacks.html>`_ for an
+See the `theme-HOWTO </themes/themepacks.html>`_ for an
 in-depth walk-through on making a Theme archive.
 
 How do I install a theme?
@@ -1925,7 +1973,7 @@ from ftp.windowmaker.org
 How do I make a Theme?
 ......................
 
-Please see the `theme-HOWTO <{{ site.baseurl }}/themes/themepacks.html>`_ for
+Please see the `theme-HOWTO </themes/themepacks.html>`_ for
 details on making both new and old style themes (and the differences between
 the two), here is a short summary on making old style themes. Also, read the
 README.themes file included with the Window Maker distribution in the
@@ -2166,7 +2214,7 @@ To quit the script session type "exit" again:
 
 Send the resulting "~/typescript" together with a concise explanation about how
 to reproduce the bug (please use the included BUGFORM for instruction) to the
-`developers <{{ site.baseurl }}/lists>`_.
+`developers </lists>`_.
 
 ----
 
@@ -2247,3 +2295,19 @@ bug reports etc. for the WINGs widget set library.
 To subscribe to this list, send a message with the word ``subscribe`` in the
 **BODY** of the message to: `wings-request@postilion.org
 <mailto:wings-request@postilion.org>`_.
+
+      </article>
+      <div id="titlebar">
+        <div id="minimize"></div>
+        <div id="titlebar-inner">Window Maker: FAQ</div>
+        <div id="close"></div>
+      </div>
+      <div id="resizebar">
+        <div id="resizel"></div>
+        <div id="resizebar-inner">
+        </div>
+        <div id="resizer"></div>
+      </div>
+    </div>
+  </body>
+</html>

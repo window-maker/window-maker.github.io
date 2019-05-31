@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Maker: Development</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+      content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>
+          <a href="/">
+            <span class="first">Window</span><span class="second">Maker</span>
+          </a>
+        </h1>
+      </header>
+      <aside>
+        <nav class="menu">
+          <ul>
+            <li id="dock">
+            <a href="#"></a>
+            </li>
+            <li id="home" title="Home">
+              <a href="/">Home</a>
+            </li>
+            <li id="news" title="News">
+              <a href="/news">News</a>
+            </li>
+            <li id="docs" title="Documentation">
+              <a href="/docs">Documentation</a>
+            </li>
+            <li id="mail" title="Mailing lists">
+              <a href="/lists">Mailing</a>
+            </li>
+            <li id="devel" title="Development">
+              <a href="/dev">Development</a>
+            </li>
+            <li id="screenshots" title="Screenshots">
+              <a href="/screenshots">Screenshots</a>
+            </li>
+            <li id="themes" title="Themes">
+              <a href="/themes">Themes</a>
+            </li>
+            <li id="links" title="Links">
+              <a href="/links">Links</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        <h1 id="development">Development</h1>
+
+<p>Here are some pieces of information regarding development in Window Maker.</p>
+
+<h2 id="source-code-versioning-system">Source code versioning system</h2>
+
+<p>The source code for Window Maker is contained in a <a href="http://git-scm.com/">git</a>
+repository located <a href="http://repo.or.cz/w/wmaker-crm.git">here</a>.  To obtain a
+full-fledged copy of the repository do this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git://repo.or.cz/wmaker-crm.git
+</code></pre></div></div>
+
+<p>There are two main branches in the repository, called ‘master’ and ‘next’. The
+purpose of the ‘next’ branch is to add and extra layer of testing before the
+patches hit the ‘master’ branch. It is rebased when needed. The ‘master’ branch
+should ideally never be rebased – if it is, run to the nearest
+anti-nuclear bunker.</p>
+
+<h2 id="submitting-patches">Submitting patches</h2>
+
+<p>The Window Maker source code follows the
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/coding-style.rst">coding style of the linux kernel</a>.
+Respect it when submitting patches.</p>
+
+<p>If you are not familiar with git, take a look at the
+<a href="http://git-scm.com/">git homepage</a> – it contains the kind of documentation you
+need to get started. You should also read the file contained in the Window Maker
+repository <a href="http://repo.or.cz/w/wmaker-crm.git/blob/HEAD:/The-perfect-Window-Maker-patch.txt">The perfect Window Maker
+patch</a>
+which gives you further details about patches to Window Maker.</p>
+
+<p>Patches not submitted according to the above guidelines will not be accepted.</p>
+
+<p>Last but not least, patches doing code cleanups are <strong>STRONGLY</strong> encouraged.</p>
+
+<h2 id="git-repository-for-dockapps">Git repository for dockapps</h2>
+
+<p>There is also a <a href="http://repo.or.cz/w/dockapps.git">git repository</a> containing a
+few dockapps which apparently have no maintainers anymore. Patches for those
+dockapps (or to include more apps) can also be sent to
+<a href="mailto:wmaker-dev@googlegroups.com">wmaker-dev@googlegroups.com</a>.</p>
+
+<h2 id="some-sources-of-information">Some sources of information</h2>
+
+<ul>
+  <li><a href="/docs/wings.html">The Window Maker WINGs library</a>.</li>
+  <li><a href="http://tronche.com/gui/x/xlib/">The Xlib Manual</a></li>
+</ul>
+
+      </article>
+      <div id="titlebar">
+        <div id="minimize"></div>
+        <div id="titlebar-inner">Window Maker: Development</div>
+        <div id="close"></div>
+      </div>
+      <div id="resizebar">
+        <div id="resizel"></div>
+        <div id="resizebar-inner">
+        </div>
+        <div id="resizer"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,8 +1,58 @@
----
-layout: default
-title: Guided Tour - Backgrounds and Themes
----
-.. TODO: check for the dead links
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Maker: Guided Tour - Backgrounds and Themes</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+      content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>
+          <a href="/">
+            <span class="first">Window</span><span class="second">Maker</span>
+          </a>
+        </h1>
+      </header>
+      <aside>
+        <nav class="menu">
+          <ul>
+            <li id="dock">
+            <a href="#"></a>
+            </li>
+            <li id="home" title="Home">
+              <a href="/">Home</a>
+            </li>
+            <li id="news" title="News">
+              <a href="/news">News</a>
+            </li>
+            <li id="docs" title="Documentation">
+              <a href="/docs">Documentation</a>
+            </li>
+            <li id="mail" title="Mailing lists">
+              <a href="/lists">Mailing</a>
+            </li>
+            <li id="devel" title="Development">
+              <a href="/dev">Development</a>
+            </li>
+            <li id="screenshots" title="Screenshots">
+              <a href="/screenshots">Screenshots</a>
+            </li>
+            <li id="themes" title="Themes">
+              <a href="/themes">Themes</a>
+            </li>
+            <li id="links" title="Links">
+              <a href="/links">Links</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        .. TODO: check for the dead links
 
 Backgrounds and Themes
 ======================
@@ -91,7 +141,7 @@ text may also be configured here.
    Appearance preferences tool
 
 More information on creating a style "from scratch" may be found `in the Window
-Maker User's Guide <{{ site.baseurl }}/docs/chap4.html>`_. (Scroll down to the
+Maker User's Guide </docs/chap4.html>`_. (Scroll down to the
 section on "Appearance Options.")
 
 A step-by-step guide to crafting a custom style is available `HERE
@@ -126,3 +176,19 @@ file named "style." The style file in a theme directory will specify all of the
 GUI elements including any image files used for those elements in lieu of rgb
 color specifications. A theme directory must use the suffix ".themed" after the
 theme name.
+
+      </article>
+      <div id="titlebar">
+        <div id="minimize"></div>
+        <div id="titlebar-inner">Window Maker: Guided Tour - Backgrounds and Themes</div>
+        <div id="close"></div>
+      </div>
+      <div id="resizebar">
+        <div id="resizel"></div>
+        <div id="resizebar-inner">
+        </div>
+        <div id="resizer"></div>
+      </div>
+    </div>
+  </body>
+</html>
