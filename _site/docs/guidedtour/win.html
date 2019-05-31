@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Maker: Guided Tour - Windows</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+      content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>
+          <a href="/">
+            <span class="first">Window</span><span class="second">Maker</span>
+          </a>
+        </h1>
+      </header>
+      <aside>
+        <nav class="menu">
+          <ul>
+            <li id="dock">
+            <a href="#"></a>
+            </li>
+            <li id="home" title="Home">
+              <a href="/">Home</a>
+            </li>
+            <li id="news" title="News">
+              <a href="/news">News</a>
+            </li>
+            <li id="docs" title="Documentation">
+              <a href="/docs">Documentation</a>
+            </li>
+            <li id="mail" title="Mailing lists">
+              <a href="/lists">Mailing</a>
+            </li>
+            <li id="devel" title="Development">
+              <a href="/dev">Development</a>
+            </li>
+            <li id="screenshots" title="Screenshots">
+              <a href="/screenshots">Screenshots</a>
+            </li>
+            <li id="themes" title="Themes">
+              <a href="/themes">Themes</a>
+            </li>
+            <li id="links" title="Links">
+              <a href="/links">Links</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        
+<div class="document" id="windows">
+<h1 class="title">Windows</h1>
+
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#focusing" id="id2">Focusing</a></p></li>
+<li><p><a class="reference internal" href="#reordering" id="id3">Reordering</a></p></li>
+<li><p><a class="reference internal" href="#moving" id="id4">Moving</a></p></li>
+<li><p><a class="reference internal" href="#maximizing" id="id5">Maximizing</a></p></li>
+<li><p><a class="reference internal" href="#miniaturizing" id="id6">Miniaturizing</a></p></li>
+<li><p><a class="reference internal" href="#resizing" id="id7">Resizing</a></p></li>
+<li><p><a class="reference internal" href="#shading" id="id8">Shading</a></p></li>
+<li><p><a class="reference internal" href="#hiding" id="id9">Hiding</a></p></li>
+<li><p><a class="reference internal" href="#closing" id="id10">Closing</a></p></li>
+<li><p><a class="reference internal" href="#commands-menu" id="id11">Commands menu</a></p></li>
+</ul>
+</div>
+<div class="section" id="description">
+<h1>Description</h1>
+<p>General layout of a window:</p>
+<ul class="simple">
+<li><p><em>Titlebar</em>: Gives the name of the application, document or window. It's color
+(usually) indicates the focus state (active or inactive window). I say
+(usually) because some styles and themes do not provide different colors for
+focused or unfocused windows - although this is rare (and, I might add,
+cruel!).</p></li>
+<li><p><em>Miniaturize button</em>: Clicking on the left button of the titlebar iconifies
+the window.</p></li>
+<li><p><em>Close button</em>: Clicking on the right button of the titlebar closes the
+window or kills the application.</p></li>
+<li><p><em>Resizebar</em>: The bottom part of the window. Dragging the resizebar with the
+mouse resizes the window.</p></li>
+<li><p><em>Client area</em>: The window content. It can be an application, some text, a
+picture...</p></li>
+</ul>
+</div>
+<div class="section" id="focusing">
+<h1>Focusing</h1>
+<p>A window can be in two states: focused or unfocused. The focused window is the
+active window, the one receiving keystrokes. It's titlebar has a differentiated
+color (usually!). Dialog windows or panels opened from a main window,
+automatically get the focus. As soon as they are closed, the main window gets
+the focus back.</p>
+<p>Two modes are available to focus a window:</p>
+<ul class="simple">
+<li><p><em>Click to focus mode</em>: clicking on any part of the window activates it.</p></li>
+<li><p><em>Focus follows mouse mode</em>: moving the mouse pointer over the window
+activates it.</p></li>
+</ul>
+</div>
+<div class="section" id="reordering">
+<h1>Reordering</h1>
+<p>Windows can overlap other windows, in which case some will hide all or part of
+others. Clicking on the titlebar or resizebar with the left mouse button brings
+a window to the "front" (gives that window focus). Selecting a window from the
+window list menu does the same.</p>
+<p>Some key bindings are provided and are very useful when a window is hidden
+behind others.</p>
+<ul>
+<li>
+<p><em>Meta key + click on the titlebar with left mouse button</em>-</p>
+<p>sends the window to the back and gives focus to the topmost window.</p>
+</li>
+<li>
+<p><em>Meta key + click on the client area with left mouse button</em>-</p>
+<p>brings the window to the front and focuses it.</p>
+</li>
+<li>
+<p><em>Meta key + Up Arrow key</em>-</p>
+<p>brings the current focused window to the front.</p>
+</li>
+<li>
+<p><em>Meta key + Down Arrow key</em>-</p>
+<p>sends the current focused window to the back.</p>
+</li>
+</ul>
+<p>Many window attributes can be modified from the attributes panel in the window
+commands menu (clicking the right mouse button on the titlebar). From version
+0.62.0, window cycling was changed to Windows style (Alt-Tab).</p>
+</div>
+<div class="section" id="moving">
+<h1>Moving</h1>
+<p>Clicking on the titlebar of a window and dragging it with the left mouse button
+pressed moves the window. The little box in the middle indicates the current
+position in pixels relative to the top left corner of the screen (+0 +0). Extra
+key bindings give more flexibility.</p>
+<ul class="simple">
+<li><p>Dragging the titlebar with middle mouse button: moves the window
+without changing it's stacking order.</p></li>
+<li><p>Dragging the titlebar + Ctrl key: moves the window without focusing it.</p></li>
+<li><p>Dragging the client area or the resizebar + Meta key: moves the window.</p></li>
+</ul>
+</div>
+<div class="section" id="maximizing">
+<h1>Maximizing</h1>
+<p>Double-clicking the titlebar while holding the Ctrl key resizes the window's
+height to full screen.</p>
+<p>Double-clicking the titlebar while holding the Shift key resizes the window's
+width to full screen.</p>
+<p>Double-clicking the titlebar while holding both Ctrl and Shift keys resizes the
+window's height and width to full screen. Double-clicking the titlebar while
+holding Ctrl or Shift key restores the initial size of the window.</p>
+<p>To prevent a maximized window from covering the dock, the "Keep on top" option
+must be selected from the dock menu.</p>
+</div>
+<div class="section" id="miniaturizing">
+<h1>Miniaturizing</h1>
+<p>Clicking the miniaturize button (the left one on the titlebar) shrinks the
+window into a miniwindow with an icon and a title and places it at the bottom
+of the screen. Hitting the assigned shortcut does the same. (Default is Meta +
+m.)</p>
+<p>The miniwindow is different from the application icon in that the miniwindow
+cannot be docked.</p>
+<p>Double-clicking in the miniwindow restores a miniaturized window.
+Double-clicking in an application icon with the middle mouse button restores
+all miniaturized and hidden windows of this application.</p>
+</div>
+<div class="section" id="resizing">
+<h1>Resizing</h1>
+<p>The resizebar, at the bottom of the window, is divided into three regions: left
+end region, middle region and right end region.</p>
+<p>Depending upon the region you click, the resize operation is constrained to one
+direction.</p>
+<p>Clicking in the middle region of the resizebar and dragging it vertically
+changes the window's height.</p>
+<p>Clicking in either the left or right region of the resizebar and dragging it
+horizontally changes the window's width.</p>
+<p>Dragging with Shift key pressed gives the same result. Clicking in either end
+region of the resizebar and dragging it diagonally changes both height and
+width.</p>
+<p>Key bindings give more options.</p>
+<ul class="simple">
+<li><p>Dragging the window in the client area with the right mouse button + Meta key
+resizes the window.</p></li>
+<li><p>Dragging the resizebar with the middle mouse button resizes the window
+without bringing it to the front.</p></li>
+<li><p>Dragging the resizebar + Ctrl key resizes the window without focusing it.</p></li>
+</ul>
+</div>
+<div class="section" id="shading">
+<h1>Shading</h1>
+<p>Double-clicking on the titlebar of a window shades it. This means the window
+rolls up to it's titlebar. A shaded window has almost the same properties as a
+normal window. It can be miniaturized or closed.</p>
+<p>From version 0.80.0, you can shade/unshade a window using a mouse wheel on its
+titlebar. This of course, assumes your system is able to manage a mouse wheel.
+The WMGLOBAL file in you $HOME/GNUstep/Defaults should contain two new
+directives : MouseWheelUp and MouseWheelDown.</p>
+</div>
+<div class="section" id="hiding">
+<h1>Hiding</h1>
+<p>Clicking the the miniaturize button (the left one on the titlebar) with the
+right mouse button hides the application. Using the middle mouse button unhides
+the application, simultaneously opening the windows list menu and selecting the
+hidden application. (Pressing both buttons at once with a two buttons mouse
+does the same on some OSes.) If this doesn't work, use the F11 key binding (the
+default) to open the windows list menu.</p>
+</div>
+<div class="section" id="closing">
+<h1>Closing</h1>
+<p>Clicking the close button (the right one on the titlebar) closes the window.
+When the close button has a different form (not an X), it means an application
+is running in that window. Double-clicking in this close button kills the
+application. This can be done too with <em>Ctrl key + clicking the close button</em>.</p>
+<p>Usually, it's much better to exit an application from inside (through it's
+menu, for instance).</p>
+</div>
+<div class="section" id="commands-menu">
+<h1>Commands menu</h1>
+<p>Clicking on the titlebar of a window with the right mouse button opens a menu
+containing commands applying to this window. The keyboard shortcut Ctrl + Esc
+can replace the click on the titlebar. Esc closes this menu.</p>
+<div class="section" id="list-of-commands-menu-commands">
+<h2>List of Commands Menu commands:</h2>
+<p><em>Maximize/Unmaximize</em>:</p>
+<p>Either maximizes or returns the window to it's initial state.</p>
+<p><em>Miniaturize</em>:</p>
+<p>Miniaturizes the window (miniwindow). The keyboard shortcut is Meta + m.</p>
+<p><em>Shade/Unshade</em>: Shades (or unshades) the window.</p>
+<p><em>Hide</em>:</p>
+<p>Hides all windows of the application. Clicking on the application icon unhides
+the windows.</p>
+<p><em>Hide Others</em>:</p>
+<p>From version 0.80.1 it is possible to hide all others windows. The window list
+menu allows to unhide selecting the window to redisplay.</p>
+<p><em>Resize/Move</em>:</p>
+<p>When this menu option is selected, the window is ready to be moved or resized
+(the little box with coordinates is displayed inside the window). Clicking on
+the titlebar deselects the option.</p>
+<p><em>Select</em>:</p>
+<p>Obviously selects the window which then can be moved or resized... Reselecting
+this option deselects the window.</p>
+<p><em>Move to</em>:</p>
+<p>Allows to move the window to another workspace (if existing!).</p>
+<p><em>Attributes</em>:</p>
+<p>Opens the attributes panel to edit attributes and options for the window.</p>
+<p>Five options are available in this panel: Window specification, Window
+attributes, Advanced options, Icon and initial workspace and application
+specific.</p>
+<ul class="simple">
+<li><p>Window specification: Defines that the configuration will apply to windows
+having their WM_CLASS property set to the selected name. This is because
+windows can have different names. From version 0.65.0, you can select the
+window to get the right specification.</p></li>
+<li>
+<p>Window attributes: selecting the corresponding checkbox allows to:</p>
+<ul>
+<li><p>disable titlebar</p></li>
+<li><p>disable resizebar</p></li>
+<li><p>disable close button</p></li>
+<li><p>disable miniaturize button</p></li>
+<li><p>disable border</p></li>
+<li><p>keep on top</p></li>
+<li><p>keep at bottom</p></li>
+<li><p>omnipresent</p></li>
+<li><p>start miniaturized</p></li>
+<li><p>start maximized</p></li>
+<li><p>full screen maximization</p></li>
+</ul>
+</li>
+<li>
+<p>Advanced options: selecting the corresponding checkbox allows to:</p>
+<ul>
+<li><p>don't bind keyboard shortcuts</p></li>
+<li><p>don't bind mouse clicks</p></li>
+<li><p>don't show in the window list</p></li>
+<li><p>don't let the window take focus</p></li>
+<li><p>keep inside screen</p></li>
+<li><p>ignore "Hide others"</p></li>
+<li><p>ignore "Save session"</p></li>
+<li><p>emulate application icon</p></li>
+</ul>
+</li>
+<li>
+<p>Icon and initial workspace: allow to</p>
+<ul>
+<li><p>choose an icon browsing directories</p></li>
+<li><p>ignore client supplied icon when selecting the checkbox</p></li>
+<li><p>define initial workspace</p></li>
+</ul>
+</li>
+<li>
+<p>Application specific: selecting checkboxes allows to:</p>
+<ul>
+<li><p>start hidden or with no application icon</p></li>
+<li><p>collapse application icons (from version 0.65.0)</p></li>
+</ul>
+</li>
+<li><p>From version 0.80.0 a new checkbox is available : "Shared application icon".
+It replaces the "Collapse application icon" checkbox. That is, you can have
+many open windows from the same application with only one appicon. This
+feature is on by default except for some incompatible applications. This
+behavior can be defined for all windows in the Window Specification inspector
+selecting the Defaults for all windows checkbox.</p></li>
+</ul>
+<p>You can revert to the old behavior changing SharedAppIcon to "No" in the
+WMWindowAttributes file, either in the global domain or in the local domain :
+$HOME/GNUstep/Defaults.</p>
+<p><em>Options</em>:</p>
+<p>Submenu options allow to:</p>
+<ul class="simple">
+<li><p>to keep the window on top</p></li>
+<li><p>to keep the window at bottom</p></li>
+<li><p>to keep the window omnipresent</p></li>
+<li><p>to set shortcuts for the window</p></li>
+</ul>
+<p>Ten shortcuts are available as soon as they have been set in the keyboard
+shortcut dialog. The shortcuts to define are those named "Shortcut for window +
+figure". Then, using the defined shortcut gives the focus to the window.</p>
+<p><em>Close</em>:</p>
+<p>Closes the window</p>
+<p><em>Kill</em>:</p>
+<p>Kills the application. Usually, an application must be closed from inside (menu
+or other means). This option is especially reserved for "emergency" cases.</p>
+</div>
+</div>
+</div>
+
+      </article>
+      <div id="titlebar">
+        <div id="minimize"></div>
+        <div id="titlebar-inner">Window Maker: Guided Tour - Windows</div>
+        <div id="close"></div>
+      </div>
+      <div id="resizebar">
+        <div id="resizel"></div>
+        <div id="resizebar-inner">
+        </div>
+        <div id="resizer"></div>
+      </div>
+    </div>
+  </body>
+</html>

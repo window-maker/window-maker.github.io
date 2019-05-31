@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Maker: ThemePacks HOWTO</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+      content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>
+          <a href="/">
+            <span class="first">Window</span><span class="second">Maker</span>
+          </a>
+        </h1>
+      </header>
+      <aside>
+        <nav class="menu">
+          <ul>
+            <li id="dock">
+            <a href="#"></a>
+            </li>
+            <li id="home" title="Home">
+              <a href="/">Home</a>
+            </li>
+            <li id="news" title="News">
+              <a href="/news">News</a>
+            </li>
+            <li id="docs" title="Documentation">
+              <a href="/docs">Documentation</a>
+            </li>
+            <li id="mail" title="Mailing lists">
+              <a href="/lists">Mailing</a>
+            </li>
+            <li id="devel" title="Development">
+              <a href="/dev">Development</a>
+            </li>
+            <li id="screenshots" title="Screenshots">
+              <a href="/screenshots">Screenshots</a>
+            </li>
+            <li id="themes" title="Themes">
+              <a href="/themes">Themes</a>
+            </li>
+            <li id="links" title="Links">
+              <a href="/links">Links</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        <h1 id="themepacks-howto">ThemePacks HOWTO</h1>
+
+<h2 id="themes-theme-packs-for-window-maker">Themes (Theme Packs) For Window Maker</h2>
+<p><strong>Note:</strong> the information contained in this file is only valid for themes in the
+.themed (for theme directory) format, supported in Window Maker 0.50.0 or newer.
+See <a href="theme-HOWTO.html">here</a> for information on themes for WindowMaker-0.20.3
+and earlier.</p>
+
+<h2 id="how-to-install-a-theme-pack">How To Install a Theme Pack</h2>
+<p>To install a theme, unpack your theme into your WindowMaker directory (the same
+as old-style themes), usually <code class="highlighter-rouge">~/GNUstep/Library/WindowMaker</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~/GNUstep/Library/WindowMaker
+gzip -dc "xyztheme.tar.gz" | tar xvf -
+</code></pre></div></div>
+
+<p>You can also do this in your system-wide WindowMaker directory (usually
+<code class="highlighter-rouge">/usr/local/share/WindowMaker</code>) to have the themes be available to all your
+users. This will probably need to be done with root access.</p>
+
+<h2 id="how-to-load-a-theme">How To Load a Theme</h2>
+<p>After installing a theme, it will automatically show up in your menu under
+<strong>Appearance -&gt; Themes -&gt; ThemeName</strong>. (unless of course you have manually
+changed your menu to remove this) If you have your Themes menu already opened
+and pinned to your desktop, you may need to close it and reopen it to have it
+show the new theme.</p>
+
+<p>To manually load the new theme from the command line, use the <code class="highlighter-rouge">setstyle</code>
+command. Example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setstyle xyztheme.themed
+</code></pre></div></div>
+
+<p>Note that if you move the directory of the theme (for example, from
+<code class="highlighter-rouge">~/GNUstep/Library/WindowMaker/Themes</code> to <code class="highlighter-rouge">/usr/local/share/WindowMaker/Themes</code>)
+you will have to reload that theme so that path information is updated.</p>
+
+<h2 id="how-to-make-a-theme-pack">How To Make a Theme Pack</h2>
+<p>To create a theme pack from your current configuration, use the <code class="highlighter-rouge">getstyle</code>
+utility with the <code class="highlighter-rouge">-p</code> flag. Example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getstyle -p ~/GNUstep/Library/WindowMaker/Themes/MyTheme
+</code></pre></div></div>
+
+<p>This will create a theme pack (a new directory in either the current directory
+or a directory you specify) named <code class="highlighter-rouge">MyTheme.themed</code>, containing everything it
+requires, including all pixmap files. In this example, the new theme pack would
+be made in your themes directory and be immediately available in your “Themes”
+menu.</p>
+
+<p>Additionally, you can put a text file named <code class="highlighter-rouge">MyTheme.lsm</code> in the MyTheme.themed
+directory. This file can contain info like copyrights, credits or whatever.</p>
+
+<p>To distribute your theme, just make a .tar.gz of the <code class="highlighter-rouge">.themed</code> directory. This
+is preferably done from the same directory that you unpack the themes from to
+maintain consistancy with the old theme format.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~/GNUstep/Library/WindowMaker
+tar cvf MyTheme.tar Themes/MyTheme.themed
+gzip MyTheme.tar
+</code></pre></div></div>
+
+<h2 id="how-to-delete-a-theme-pack">How To Delete a Theme Pack</h2>
+<p>Just remove the .themed directory. Example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~/GNUstep/Library/WindowMaker/Themes
+rm -fr themename.themed
+</code></pre></div></div>
+
+<h2 id="how-to-save-disk-space">How To Save Disk Space</h2>
+<p>If you have more than 1 theme that use the same huge background image, you can
+delete all the duplicated files and then create hard links in place of them. For
+example, if you have:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>theme1.themed/back.jpg
+theme2.themed/backimage.jpg
+theme3.themed/back.jpg
+</code></pre></div></div>
+
+<p>and all three files contain the same image, you can do:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm theme2.themed/backimage.jpg
+rm theme3.themed/back.jpg
+ln theme1.themed/back.jpg theme2.themed/backimage.jpg
+ln theme1.themed/back.jpg theme3.themed/back.jpg
+</code></pre></div></div>
+
+      </article>
+      <div id="titlebar">
+        <div id="minimize"></div>
+        <div id="titlebar-inner">Window Maker: ThemePacks HOWTO</div>
+        <div id="close"></div>
+      </div>
+      <div id="resizebar">
+        <div id="resizel"></div>
+        <div id="resizebar-inner">
+        </div>
+        <div id="resizer"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Maker: Guided Tour - Menus</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+      content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>
+          <a href="/">
+            <span class="first">Window</span><span class="second">Maker</span>
+          </a>
+        </h1>
+      </header>
+      <aside>
+        <nav class="menu">
+          <ul>
+            <li id="dock">
+            <a href="#"></a>
+            </li>
+            <li id="home" title="Home">
+              <a href="/">Home</a>
+            </li>
+            <li id="news" title="News">
+              <a href="/news">News</a>
+            </li>
+            <li id="docs" title="Documentation">
+              <a href="/docs">Documentation</a>
+            </li>
+            <li id="mail" title="Mailing lists">
+              <a href="/lists">Mailing</a>
+            </li>
+            <li id="devel" title="Development">
+              <a href="/dev">Development</a>
+            </li>
+            <li id="screenshots" title="Screenshots">
+              <a href="/screenshots">Screenshots</a>
+            </li>
+            <li id="themes" title="Themes">
+              <a href="/themes">Themes</a>
+            </li>
+            <li id="links" title="Links">
+              <a href="/links">Links</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        
+<div class="document" id="menus">
+<h1 class="title">Menus</h1>
+
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#menu-list" id="id1">Menu list</a></p></li>
+<li><p><a class="reference internal" href="#root-window-menu" id="id2">Root window menu</a></p></li>
+<li><p><a class="reference internal" href="#window-list-menu" id="id3">Window list menu</a></p></li>
+<li><p><a class="reference internal" href="#workspaces-menu" id="id4">Workspaces menu</a></p></li>
+<li><p><a class="reference internal" href="#application-icon-menu" id="id5">Application icon menu</a></p></li>
+</ul>
+</div>
+<div class="section" id="menu-list">
+<h1>Menu list</h1>
+<p>Different menus are available within Window Maker:</p>
+<ul class="simple">
+<li><p>The root window menu or applications menu</p></li>
+<li><p>The window list menu</p></li>
+<li><p>The workspace menu</p></li>
+<li><p>The application icon menu</p></li>
+</ul>
+<p>Menus provide a list of applications or commands for execution. They can be
+used to launch applications, to get information, to configure the workspace...</p>
+<p>Menus are opened by right-clicking either in the "blank" area of the workspace
+or in a window's titlebar or in docked icons. The <em>window list menu</em> is the
+only one opened with the middle mouse button.  With a two-button mouse,
+pressing both buttons at once usually does the trick. A number of keyboard
+shortcuts are provided. These shortcuts are indicated by the modifier key +
+letter shown to the right of a menu item.</p>
+<p>The keyboard can be used to open and move through some of the menus.  For
+instance, the root menu can be opened using F12 (default setting).  The Up and
+Down arrow keys can then be used to navigate through the menu or the Left and
+Right arrow keys to jump between parent menus and submenus. Hitting the <em>Enter</em>
+key executes the selected item. The <em>Escape</em> key closes the menu or stops menu
+traversal.</p>
+<p>Menus can be forced to remain open on the workspace by left-clicking the
+titlebar. This creates a <em>close</em> button on the titlebar.</p>
+</div>
+<div class="section" id="root-window-menu">
+<h1>Root window menu</h1>
+<div class="borderless figure">
+<img alt="Root window menu (applications menu)" src="images/menu_applications.png">
+<p class="caption">Root window menu (applications menu)</p>
+</div>
+<p>The root window menu or applications menu is opened by right-clicking on an
+empty area of the workspace or by hitting the pre-defined keyboard shortcut
+(default is F12). This menu launches applications, allows for the customization
+of the workspace (backgrounds, themes...), and the management of other
+workspace characteristics using standard X utilities (xprop, xfontsel,
+xcmap...).</p>
+<p>The menu content is totally configurable, either using WPrefs.app or by editing
+the plain text menu file. Instructions on how to configure one or the other can
+be found in the WindowMaker directory of the distribution. To use WPrefs.app,
+menus must be in property list format (plmenu). A script is available to
+convert plain text menus to property list menus and it's called wm-oldmenu2new.</p>
+</div>
+<div class="section" id="window-list-menu">
+<h1>Window list menu</h1>
+<div class="borderless figure">
+<img alt="Window list menu" src="images/menu_window_list.png">
+<p class="caption">Window list menu</p>
+</div>
+<p>Middle-clicking an empty area of the workspace opens the window list menu. With
+a two-button mouse, clicking both buttons at once usually gives the same
+result. F11 is the default keyboard shortcut to open the window list menu.</p>
+<p>This menu lists all windows - whether active or inactive - in every workspace.
+The workspace containing each window is indicated at the right of the window
+name. The current focused window is marked by a diamond sign to the left of the
+window's name. Clicking any window in the list focuses and raises the
+corresponding window and moves you to the workspace where it's located.</p>
+</div>
+<div class="section" id="workspaces-menu">
+<h1>Workspaces menu</h1>
+<div class="borderless figure">
+<img alt="Workspaces menu" src="images/menu_workspaces.png">
+<p class="caption">Workspaces menu</p>
+</div>
+<p>The workspaces menu is part of the root menu (applications menu). This item
+has three options: <em>new</em>, <em>destroy last</em> and <em>last used</em>.</p>
+<p>The first option creates a new workspace and automatically switches you to it.</p>
+<p>The second option destroys the last workspace as soon as there are no windows
+opened in it.</p>
+<p>The third option switches to last visited workspace.</p>
+<p>Each workspace has a corresponding item in this menu. The active workspace is
+indicated by a diamond to the left of the workspace name or number.</p>
+<p>Clicking a workspace entry switches from the current workspace to the selected
+workspace.</p>
+<p>To change the name of a workspace, first "stick" the menu by left-clicking the
+menu titlebar. Then <em>Ctrl + click</em> the menu item to make it editable and type
+in the new name. Hitting <em>Return</em> saves the new name, hitting <em>Escape</em> cancels
+the operation.</p>
+<p>Key bindings allow movement from one workspace to another. Usually <em>Meta +
+(number)</em>. The <em>Meta</em> key is normally the "<em>Alt</em>" key, while <em>(number)</em>
+represents a number key that corresponds to the workspace number. For instance
+1 can be the default workspace (workspace 1), 2 the second workspace and so on.
+Thus, <em>Meta + 2</em> switches to workspace 2.</p>
+<p>These key bindings can be set (or changed) from the keyboard shortcut dialog in
+WPrefs.app.</p>
+</div>
+<div class="section" id="application-icon-menu">
+<h1>Application icon menu</h1>
+<div class="borderless figure">
+<img alt="Icon application menu" src="images/menu_application_icon.png">
+<p class="caption">Icon application menu</p>
+</div>
+<p>Clicking an icon in the dock with the right mouse button brings a menu for
+modifying that icon's application. There are several options available in the
+application icon menu for docked applications. Docked, but not running
+applications will not have all options available - they will appear "greyed
+out" in the menu.</p>
+<ol class="arabic simple">
+<li>
+<p>First option is a global Dock submenu, which have three items:</p>
+<ol class="arabic simple">
+<li><p><em>Normal</em> will not change dock behaviour - it can be covered by windows,
+while clicking on any docked items will bring it up.</p></li>
+<li><p><em>Auto raise &amp; lower</em> is similar for the first options, although you don't
+have to click on dock - it's enough to hover mouse pointer on visible
+part of dock or it's items.</p></li>
+<li><p><em>Keep on top</em> means that the dock will always be on "top" of opened
+windows.</p></li>
+</ol>
+</li>
+<li><p><em>Add a drawer</em> will add special dockapp which can be used for aggregating
+applications. See <a class="reference external" href="dock.html">Dock</a> for more details about drawers.</p></li>
+<li><p>"Launch" opens the application without double-clicking the icon.</p></li>
+<li><p>"Bring here" unhides the application in the current workspace.</p></li>
+<li><p>"Hide" hides the application or unhides it if already hidden. Unhiding opens
+the application in the workspace where it is located. (This option may not
+work if the application has it's own hiding menu option.)</p></li>
+<li><p>"Settings" allows the modification of application path and arguments, the
+command line, and the icon used.</p></li>
+<li><p>"Kill" closes the application immediately and should only be used if
+absolutely necessary.</p></li>
+</ol>
+</div>
+</div>
+
+      </article>
+      <div id="titlebar">
+        <div id="minimize"></div>
+        <div id="titlebar-inner">Window Maker: Guided Tour - Menus</div>
+        <div id="close"></div>
+      </div>
+      <div id="resizebar">
+        <div id="resizel"></div>
+        <div id="resizebar-inner">
+        </div>
+        <div id="resizer"></div>
+      </div>
+    </div>
+  </body>
+</html>
