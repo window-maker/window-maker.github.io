@@ -10,3 +10,12 @@ before_script:
 install:
   - bundle install
 script: bundle exec jekyll build
+deploy:
+  provider: pages
+  github_token: $GITHUB_TOKEN
+  skip_cleanup: true
+  local_dir: _site
+  target_branch: gh-pages
+  on:
+    branch: master
+
