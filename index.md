@@ -47,3 +47,5 @@ listed below:
   04.04.2020. See the [NEWS](news) section for more information.
 - Source code is also available through the
   [git repository](http://repo.or.cz/w/wmaker-crm.git)
+- Report bugs at [https://github.com/window-maker/wmaker/issues](
+  https://github.com/window-maker/wmaker/issues).
