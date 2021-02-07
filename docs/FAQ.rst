@@ -1023,17 +1023,17 @@ to your ~/GNUstep/Defaults/Windowmaker file.
 How do I get the classic NeXT(tm)-like style back?
 ..................................................
 
-Open WPrefs and go under the ``Other Configurations`` tab. Under ``Title Bar
-Style``, select the classic look.
+Open WPrefs and navigate to the ``Other Configurations`` tab with the scroll bar. Within the ``Titlebar
+Style`` frame, select the last button on the right.
 
 Or you can add
 
 .. code::
    :class: highlight
 
-   NewStyle=NO;
+   NewStyle=next;
 
-to your ~/GNUstep/Defaults/Windowmaker file.
+to your ~/GNUstep/Defaults/WindowMaker file.
 
 How do I get the window menu with only a two button mouse?
 ..........................................................
