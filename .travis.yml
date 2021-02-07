@@ -6,7 +6,7 @@ before_install:
   - sudo apt-get install python-pip -y
   - sudo pip install docutils pygments
 before_script:
-   - git clone https://github.com/gryf/jekyll-rst _plugins/jekyll-rst
+   - git submodule update --init
 install:
   - bundle install
 script: bundle exec jekyll build
@@ -18,5 +18,3 @@ deploy:
   target_branch: master
   on:
     branch: source
-
-
