@@ -13,16 +13,23 @@ to achieve it, is to install it from system repositories.
 
 If your distribution doesn't contain it (even in external ones, like PPA for
 Ubuntu, AUR for Arch or some portage overlay from Gentoo), that it might be
-installed locally using [Bundler](https://github.com/bundler/bundler), which
-typical usage would be as follows:
+installed locally using [Bundler](https://github.com/bundler/bundler).
+
+Manual installation would be as follows:
 
 ```
-$ cd window-maker.github.io && bundler init
-$ bundler add jekyll
-$ mkdir _plugins
-$ git clone https://github.com/gryf/jekyll-rst _plugins/jekyll-rst
+$ git clone --recurse-submodules https://github.com/window-maker/window-maker.github.io
+$ cd window-maker.github.io
+$ bundler install
+$ # install docutils and pygments from your distribution repository, or use
+$ # following command to install them from PyPI for the current user:
 $ pip install docutils pygments
-$ gem install RbST nokogiri
+```
+
+To build and serve webpage in development mode, you just issue the following
+command:
+
+```
 $ bundler exec jekyll serve
 ```
 
