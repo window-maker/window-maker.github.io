@@ -18,7 +18,7 @@ Links
 * [Box-Look.org Window Maker Themes](https://www.box-look.org/browse/cat/144/ord/latest/)
 * [DeviantArt Themes](https://www.deviantart.com/customization/skins/themes/windowmaker/)
 * [Gozer.org Window Maker Themes](http://www.gozer.org/window_maker/themes/)
-* [Jess Anderson's Themes for Window Maker](http://www.jessanderson.org/wmthemes/)
+* [Jess Anderson's Themes for Window Maker](https://web.archive.org/web/20190212175455/http://www.jessanderson.org:80/wmthemes/)
 * [LonelyMachines Window Maker Themes](http://lonelymachines.org/windowmaker-themes/)
 * [Tower's Window Maker Themes](http://www.cs.mun.ca/~gstarkes/wmaker/themes/)
 
