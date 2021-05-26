@@ -61,10 +61,11 @@ lists:
 IRC
 ---
 
-There is a [#windowmaker](irc://irc.freenode.net/windowmaker) channel on
-[freenode](https://freenode.net), which can be reached using appropriate
-[client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients)
-or, simply by using [freenode web interface](https://webchat.freenode.net).
+There is a [#windowmaker](irc://irc.libera.chat/windowmaker) channel on
+[libera.chat](https://libera.chat), which can be reached using appropriate
+[client](https://libera.chat/guides/clients).
+<!-- or, simply by using [web interface](https://webchat.freenode.net). -->
+<!-- NOTE(gryf) will be re-added while libera establish webchat, which they plan to do. -->
 Please be aware, that answers for questions asked there could take even couple
 of hours, since there are people from different time zones.
 

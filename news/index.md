@@ -6,6 +6,16 @@ title: News
 News
 ====
 
+Moving IRC official channel to Libera.chat
+------------------------------------------
+
+At May 26 2021, by taking into account pros and cons, Window Maker team has
+decided to move our IRC channel from Freenode to Libera.chat network. Reasons
+for such move was recent major changes how
+[Freenode IRC network is being operated](https://gist.github.com/joepie91/df80d8d36cd9d1bde46ba018af497409).
+See [Community](/lists/) section for details.
+
+
 Version 0.95.9 released
 -----------------------
 
