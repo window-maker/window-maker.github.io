@@ -117,10 +117,8 @@ http://windowmaker.org/development-cvs.html
 Where can I find the Window Maker IRC channel?
 ..............................................
 
-.. TODO change irc server to freenode
-
 The official Window Maker IRC channel can be accessed by connecting to
-irc.windowmaker.org on port 6667, and joining #WindowMaker
+irc.libera.chat on port 6667, and joining #windowmaker channel.
 
 What is the difference between appicons, mini-windows, and minimized applications?
 ..................................................................................
