@@ -34,7 +34,7 @@ typedef struct W_EditMenuItem {
 For convenience, add this function to editmenu.c, too:
 <pre><code>void WSetEditMenuItemAction(WEditMenuItem *item, WMAction *callback)
 {
-    item-&gt;callback= callback;
+    item-&gt;callback = callback;
 }</code></pre>
 
 <p><a name="overrideMenu"><img src="./WINGMenu_files/menu.jpeg" align="right"></a>We shall make a window with one button which will make the menu pop up. The code to create the menu is as follows. Have editmenu.c and editmenu.h in the same directory as the window application code, insert <code>#include "editmenu.h"</code> somewhere at the top.
@@ -42,29 +42,31 @@ For convenience, add this function to editmenu.c, too:
 WEditMenu *submenu, *menu;
 WEditMenuItem * menuitem;
 
-submenu=WCreateEditMenu(screen,"Submenu");
-menuitem =WAddMenuItemWithTitle(submenu,"Submenu item"); 
-menu=WCreateEditMenu(screen,"Main menu");
-menuitem = WAddMenuItemWithTitle(menu,"To submenu"); 
-WSetEditMenuSubmenu(menu, menuitem , submenu);
-menuitem = WAddMenuItemWithTitle(menu,"Main item"); 
+submenu = WCreateEditMenu(screen, "Submenu");
+menuitem = WAddMenuItemWithTitle(submenu, "Submenu item");
+menu=WCreateEditMenu(screen, "Main menu");
+menuitem = WAddMenuItemWithTitle(menu, "To submenu");
+WSetEditMenuSubmenu(menu, menuitem, submenu);
+menuitem = WAddMenuItemWithTitle(menu, "Main item");
 WMRealizeWidget(submenu);
 WMRealizeWidget(menu);</code></pre>
 The function to map the window w's menu at point (x,y) is <code>WEditMenuShowAt(menu,x,y,w)</code>. However, it will not show anything unless it is used after the intial window has been mapped. To do this, we use <code>WMSetButtonAction</code> on a button, and make the WMAction map the menu. We pass it pointers to both the menu and the window, so that we can map the menu in the window's neighbourhood. The WMAction will look like :
 <pre><code>void getMenu(WMWidget *self, void *data){
   WMPoint position;
-  struct datacouple *tmp=(struct datacouple *)data;
-  if(WMGetButtonSelected(self)){
-  position=WMGetViewScreenPosition(WMWidgetView(tmp-&gt;window)); 
-  WEditMenuShowAt(tmp-&gt;menu,(position.x&gt;MENUWIDTH)?position.x-MENUWIDTH:0,\
-               position.y+MENITEMHT,tmp-&gt;window);
-  }else
+  struct datacouple *tmp = (struct datacouple *) data;
+
+  if (WMGetButtonSelected(self)) {
+    position = WMGetViewScreenPosition(WMWidgetView(tmp-&gt;window));
+    WEditMenuShowAt(tmp-&gt;menu, (position.x &gt; MENUWIDTH)?position.x-MENUWIDTH:0,
+                    position.y + MENITEMHT, tmp-&gt;window);
+  } else
     WEditMenuHide(tmp-&gt;menu);
 }</code></pre> The used structure is <code>struct datacouple{WMWindow *window;  WEditMenu *menu;} datacouple;
 </code>. Realize the window before the others. The code with details is <a href="EighthWindow.c">here</a>. To compile it, you now type <kbd>cc -x c EighthWindow.c editmenu.c  -lXft -L/usr/X11/lib -L/usr/lib -lWINGs -lwraster -o EighthWindow</kbd>. editmenu.c is, of course, the modified source file.
 <p>To use the callback functions, we need to execute them somewhere. To do this, search the <code>static void selectItem</code> function in the editmenu.c source. After its last line, <a name="talkInsertCallback">insert</a> the line: <code>if (menu-&gt;selectedItem-&gt;callback) menu-&gt;selectedItem-&gt;callback(menu-&gt;selectedItem,NULL);</code>. Define the callback before main as, eg.:
-</p><pre><code>void menuItemAction(void *self, void *data){
-fprintf(stderr, "Selected\n");}</code></pre>
+</p><pre><code>void menuItemAction(void *self, void *data) {
+  fprintf(stderr, "Selected\n");
+}</code></pre>
 and add it to the menu items in the <code>main</code> code with the <code> WSetEditMenuItemAction( menuitem, menuItemAction);</code>. There is also a little addition to the getMenu function, to reset the menu when we hide it.
 
 <p>The function <code>WCreateEditMenuItem</code> in editmenu.c associates to ButtonPress events on the menu item widget, the function <code>handleItemClick</code>. This event handler function calls the function <code>selectItem</code> when it gets this event, and does a few other things we shall not need any more. The selectItem function goes through a few things. If the clicked menu item is a submenu entry, it checks its location and maps the submenu. At the end of this function we have <a href="WINGMenu.html#talkInsertCallback">inserted</a> the line which calls our callback function in case the pointer to it is not <code>NULL</code>. If the menu has to appear, legacy-style, below a fixed bar in the window's top, we would just need to calculate this position, and also need to hide the menu whenever we drag the window itself. For a free floating menu, the latter is not very important. 

@@ -24,15 +24,17 @@ void closeAll(WMWidget *self,void *data){
 A second window should be opened with the existing screen as an argument. After success in opening, you increase <code>windowcounter</code> by one.
 <h5><a name="talkIcons">Icons and images</a></h5>
 <p>Defining an icon which will be used for your application, and drawing an image in a widget, are quite straightforward. Suppose, there is an XPM-image available, and it is the file /usr/include/<wbr>pixmaps/<wbr>picture.xpm. The following code sets an application icon and draws an icon in a label.
-</p><pre><code>RContext *ctxt;
-RImage *img;
-WMPixmap *wimg;
-      /* code to open screen, window*/
- ctxt=WMScreenRContext(screen);
- img=RLoadXPM(ctxt, "/usr/include/pixmaps/picture.xpm", 0);
+</p><pre><code> RContext *ctxt;
+ RImage *img;
+ WMPixmap *wimg;
+
+ /* code to open screen, window*/
+ ctxt = WMScreenRContext(screen);
+ img = RLoadXPM(ctxt, "/usr/include/pixmaps/picture.xpm", 0);
  WMSetApplicationIconImage(screen, img);
- wimg=  WMCreatePixmapFromRImage(screen, img,0);
-     /* code to create a label */
+ wimg = WMCreatePixmapFromRImage(screen, img,0);
+
+ /* code to create a label */
  WMSetLabelImagePosition(label, WIPImageOnly);
  WMSetLabelImage(label, wimg);</code></pre>
 <code>RContext</code> refers to the X-server's so-called <a name="talkGraphicsContext">graphics context</a>. This specifies which line width, fill patterns, etc. will be used. That information is not contained in the XPM-file. With <code>WMScreenRContext</code>, we use the existing context. <code>RLoadXPM</code> loads the xpm from a file, and stores it as an RImage. 
@@ -57,18 +59,18 @@ Display *display;
 WMScreen *screen;
 
 int *WMGetModeViewSSize(){
-int *result;
-XF86VidModeModeLine modeline;
-int dotclock_return;
+ int *result;
+ XF86VidModeModeLine modeline;
+ int dotclock_return;
 
-result=(int *)calloc(8,sizeof(int));
+ result = (int *)calloc(8,sizeof(int));
 
- XF86VidModeGetModeLine(display,DefaultScreen(display), &amp;dotclock_return,&amp;modeline);
- *result= modeline.hdisplay;
- result[1]= modeline.vdisplay;
- XF86VidModeGetViewPort(display,DefaultScreen(display), result+2,result+3);
- result[4]=WMScreenWidth(screen);
- result[5]=WMScreenHeight(screen);
+ XF86VidModeGetModeLine(display, DefaultScreen(display), &amp;dotclock_return, &amp;modeline);
+ *result = modeline.hdisplay;
+ result[1] = modeline.vdisplay;
+ XF86VidModeGetViewPort(display, DefaultScreen(display), result+2, result+3);
+ result[4] = WMScreenWidth(screen);
+ result[5] = WMScreenHeight(screen);
 
  return result;
 }</code></pre>
@@ -90,76 +92,73 @@ meaning that the monitor is running at 1024x768, its upper left corner is at (12
 #define FIFOERROR (-1)
 #define FIFOLOWESTPOSS 0
 
-int fifonr=NOLOGWINDOW;   /* the fifo nr, or an error value */
+int fifonr = NOLOGWINDOW; /* the fifo nr, or an error value */
 int sibpid;               /* the child's process ID  */
 
 
- /*    clean up when closing: */
-
-void closeAll(WMWidget *self,void *data){
-
+/* clean up when closing: */
+void closeAll(WMWidget *self,void *data) {
   WMDestroyWidget(self);
-   if(--windowCounter&lt;1){
-    if (fifonr&gt;=FIFOLOWESTPOSS) 
-     kill(sibpid,SIGTERM);
-    if (!access(ERRMSGFIFO,F_OK|W_OK))
+  if(--windowCounter &lt; 1) {
+    if (fifonr &gt;= FIFOLOWESTPOSS)
+      kill(sibpid,SIGTERM);
+    if (!access(ERRMSGFIFO, F_OK | W_OK))
      unlink(ERRMSGFIFO);
-   exit(0);
-   }
+    exit(0);
+  }
 }
 
-  /*     handle the case the child terminates. Set fifonr and clean up:     */
 
-void redirectmsg(int sig){  
+/* Handle the case the child terminates. Set fifonr and clean up:     */
+void redirectmsg(int sig) {
 
-  fifonr=NOLOGWINDOW;
-  if (!access(ERRMSGFIFO,F_OK|W_OK))
+  fifonr = NOLOGWINDOW;
+  if (!access(ERRMSGFIFO, F_OK | W_OK))
     unlink(ERRMSGFIFO);
   return;
 }
 
 
-   /*   have the log window pop up:    */
+/* Have the log window pop up:    */
+int showMessageWindow() {
 
-int showMessageWindow(){
+  (void) signal(SIGCHLD, redirectmsg); /* use redirectmsg whenever the child process stops  */
 
-(void) signal(SIGCHLD,redirectmsg); /* use redirectmsg whenever the child process stops  */
+  if (access(ERRMSGFIFO, F_OK) == -1)
+    fifonr = mknod(ERRMSGFIFO, 0640|O_EXCL|S_IFIFO, (dev_t)0);
+  else
+    fifonr = FIFOERROR;
+    /* fifonr == FIFOERROR if mkfifo or access failed, for mknod returns -1 on failure   */
 
-if(access(ERRMSGFIFO,F_OK)==-1)
-  fifonr=mknod(ERRMSGFIFO,0640|O_EXCL|S_IFIFO,(dev_t)0);
-else 
-  fifonr=FIFOERROR;
-     /* fifonr == FIFOERROR if mkfifo or access failed, for mknod returns -1 on failure   */
+  if (fifonr != FIFOERROR) {
+    sibpid = fork();
 
-if(fifonr!=FIFOERROR){
-
- sibpid=fork();
-
- if(sibpid==0){
-   execlp("xconsole" , "xconsole", "-file",ERRMSGFIFO,"-geometry","250x400", \
-        "-title","Application Messages",(char *)0);
-   exit(1);
-}
- else
-   fifonr=open(ERRMSGFIFO,O_WRONLY);
-}
+    if (sibpid == 0) {
+      execlp("xconsole", "xconsole", "-file", ERRMSGFIFO, "-geometry", "250x400",
+             "-title", "Application Messages", (char *)0);
+      exit(1);
+    } else {
+      fifonr = open(ERRMSGFIFO, O_WRONLY);
+    }
+  }
   return fifonr;
 }
 
 
-    /*    usage:       */
+/* Usage:       */
+void someActionWithMessage(void *self, void *data) {
 
-void someActionWithMessage(void *self, void *data){
+  if (fifonr &lt; FIFOLOWESTPOSS)
+    fifonr = showMessageWindow();   /* (re)start xconsole, or try again in case of FIFOERROR  */
 
-  if (fifonr&lt;FIFOLOWESTPOSS)
-    fifonr=showMessageWindow();   /* (re)start xconsole, or try again in case of FIFOERROR  */
-
-  if (fifonr==FIFOERROR)                                  /* if still error, use stderr   */
-    fprintf(stderr,"%s selected\n",  WMgetSomeInformationFrom(self));
-  else{
+  if (fifonr == FIFOERROR)          /* if still error, use stderr   */
+    fprintf(stderr, "%s selected\n", WMgetSomeInformationFrom(self));
+  else {
     char textbuffer[100];
-    snprintf(textbuffer,99, "%s is the information\n",  WMGetSomeInformationFrom(self));
-    write(fifonr, textbuffer,strlen(textbuffer));
+
+    snprintf(textbuffer, sizeof(textbuffer), "%s is the information\n",
+             WMGetSomeInformationFrom(self));
+    write(fifonr, textbuffer, strlen(textbuffer));
   }
 }
 </code></pre>

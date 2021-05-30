@@ -1,11 +1,12 @@
-void closeAll(WMWidget *self,void *data){
-  fprintf(stderr,"I've been used!\n");
+void closeAll(WMWidget *self,void *data)
+{
+  fprintf(stderr, "I've been used!\n");
   WMDestroyWidget(self);
   exit(0);
 }
 
-int main (int argc, char **argv){
-
+int main (int argc, char **argv)
+{
  Display *display;
  WMScreen *screen;
 
@@ -14,7 +15,7 @@ int main (int argc, char **argv){
 
  WMInitializeApplication("SecondWin", &argc, argv);
 
- if (!(display = XOpenDisplay(""))){
+ if (!(display = XOpenDisplay(""))) {
    fprintf(stderr, "cannot open display\n");
    exit(1);
  }
@@ -22,7 +23,7 @@ int main (int argc, char **argv){
 
  win = WMCreateWindow(screen, "");
  WMSetWindowCloseAction(win, closeAll, NULL);
- color = WMCreateRGBColor(screen,124<<9,206<<8,162<<8, False);
+ color = WMCreateRGBColor(screen, 124<<9, 206<<8, 162<<8, False);
  WMSetWidgetBackgroundColor((WMWidget *)win, color);
 
  WMMapWidget(win);
@@ -30,5 +31,5 @@ int main (int argc, char **argv){
 
  WMScreenMainLoop(screen);
 
-return 0;
+ return 0;
 }

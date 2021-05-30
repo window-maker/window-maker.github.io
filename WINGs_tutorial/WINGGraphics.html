@@ -17,13 +17,15 @@
 <p>The WINGs library has functions to directly  draw an image in a label, button or slider. To write to other widgets, there is a function <code>WMDrawPixmap (WMPixmap *pixmap, Drawable d, int x, int y)</code>. The pixmap can be written to any XLib variable of type <code>Drawable</code>, at position (x,y). This section shows how it is done to a window. The drawable is retrieved from the widget's view structure by the macro <code>W_VIEW_DRAWABLE(WMView)</code>. You <em>only</em> call this macro <em>after</em> the widget has been <code>WMRealizeWidget</code>ed, or there simply will not be a drawable in it. To use it,<code>#include &lt;WINGs/WINGsP.h&gt;</code>.
 </p><p>Images can be created from within the code itself. The WINGs/wraster library creates a structure for it, by the call <code>RCreateImage</code>, and there <a href="WINGLib.html#DrawFunctions">are</a> a few functions to draw a line or segments in it. You would only use this if you like to store the image in memory for some reason. These functions use a colour structure <code>RColor</code>. There is a conversion function from a <code>WMColor</code>, but the RColor is a simple structure with four unsigned long members which are the RGB and alpha values. This <a href="SixthWindow.c">example</a> shows how a picture is drawn directly into a window, by the defined function <code>drawProcedure</code>. This function is called by associating <code>Expose</code> events to it, by using <code>WMCreateEventHandler</code> on the window's view:
 </p><pre><code>
-void drawProcedure(XEvent *event, void *data){
- WMDrawPixmap(pixmap, W_VIEW_DRAWABLE(WMWidgetView(data)),30,30);XFlush(display);
+void drawProcedure(XEvent *event, void *data) {
+  WMDrawPixmap(pixmap, W_VIEW_DRAWABLE(WMWidgetView(data)), 30, 30);
 }
-int main (){
-   /*  code   */
-WMCreateEventHandler(WMWidgetView(win), ExposureMask,drawProcedure,win);
-  /*  */ }</code></pre>
+
+int main() {
+  /*  code   */
+  WMCreateEventHandler(WMWidgetView(win), ExposureMask, drawProcedure, win);
+  /*  */
+}</code></pre>
 <p>
  Try to comment out the line with the event handler function, and to call <code>WMDrawPixmap(pixmap, W_VIEW_DRAWABLE<wbr>(WMWidgetView(win)),30,30)</code> directly from main. It won't work. When the <code>WMScreenMainLoop</code> starts up, there will be an Expose event. The window will react to the event by drawing itself, as specified in the WINGslib routines, but there won't be another call to WMDrawPixmap, unless you programme it yourself.
 

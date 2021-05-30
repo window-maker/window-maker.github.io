@@ -1,8 +1,8 @@
-int main (int argc, char **argv){
-
- Display *display;
- WMScreen *screen;
- WMWindow *win;
+int main (int argc, char **argv)
+{
+   Display *display;
+   WMScreen *screen;
+   WMWindow *win;
   
    WMInitializeApplication("FirstWindow", &argc, argv);
 

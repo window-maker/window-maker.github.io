@@ -17,11 +17,11 @@ The WINGs library allows you to get a window on the screen with a few lines of C
 </p><h5>Application <a name="FirstWindow">FirstWindow</a></h5>
 <pre><code>#include &lt;WINGs/WINGs.h&gt;
 
-int main (int argc, char **argv){
-
- Display *display;
- WMScreen *screen;
- WMWindow *win;
+int main (int argc, char **argv)
+{
+   Display *display;
+   WMScreen *screen;
+   WMWindow *win;
 
    WMInitializeApplication("put-your-app-name-here", &argc, argv);
    display = XOpenDisplay("");
