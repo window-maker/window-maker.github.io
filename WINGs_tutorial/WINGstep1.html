@@ -23,6 +23,7 @@ int main (int argc, char **argv){
  WMScreen *screen;
  WMWindow *win;
 
+   WMInitializeApplication("put-your-app-name-here", &argc, argv);
    display = XOpenDisplay("");
    screen = WMCreateScreen(display, DefaultScreen(display));
    win = WMCreateWindow(screen, "");
