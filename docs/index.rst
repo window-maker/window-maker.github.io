@@ -30,6 +30,7 @@ should make the experience of learning Window Maker a more pleasant one.
 - `Window Maker Internationalisation <wmaker_i18n.html>`_
 - `Guided Tour <guidedtour/index.html>`_
 - `User Guide <guide_toc.html>`_
+- `Manual Pages <manpages/>`_ for the command-line programs
 - `FAQ <FAQ.html>`_
 - `WINGs <wings.html>`_
 

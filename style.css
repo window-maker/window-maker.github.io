@@ -311,6 +311,60 @@ header h1 a span.first {color: black}
     word-wrap: normal;
 }
 
+/* To display a "Command Line" to be typed by user */
+code.command {
+    display: inline-block;
+    font-family: monospace;
+    border: 1px solid #606085;
+    width: 95%;
+    padding: 2mm 1em;
+}
+/* To highlight arguments that user should adapt */
+code.command > i {
+    font-style: italic;
+    color: #40505A;
+}
+
+/* ********** Table for a list of man pages ********** */
+table.manlist {
+    border: 1px solid black;
+    background-color: #AEAAAE;
+    margin-top:    0mm;
+    margin-bottom: 5mm;
+    margin-left:  10mm;
+    margin-right: 10mm;
+    padding: 1mm;
+}
+table.manlist th {
+    background-color: #545854;
+    color: #E8E8E8;
+    padding: 0.5mm 2mm;
+    border: 1px inset;
+}
+table.manlist tr:hover {
+    /* When the mouse is over a line, we highlight the whole line
+       because it is very convenient for reading */
+    background-color: #AECAAE;
+}
+table.manlist td {
+    color: #000000;
+}
+table.manlist td.name {
+    font-family: monospace;
+    width: 1px;     /* This prevents the column from stretching */
+}
+table.manlist td.name a {
+    display: inline-block;
+    width: 100%;
+}
+table.manlist td.section {
+    text-align: center;
+    width: 1px;     /* This prevents the column from stretching */
+}
+table.manlist a {
+    color: #000040;
+}
+
 /* main content */
 article {padding: 1em}
 

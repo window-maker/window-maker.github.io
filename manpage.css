@@ -1,0 +1,130 @@
+/*
+ * Window Maker window manager - Style Sheet for Man Pages
+ *
+ *  Copyright (c) 2021 Christophe CURIS
+ *  Copyright (c) 2021 Window Maker Team
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License along
+ *  with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* H2 is used by Groff for the sections of the page */
+h2 {
+    color: #386200;
+    font-size: 16pt;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+h2::first-letter {
+    text-transform: uppercase;
+}
+
+/* Groff is already adding too much margin, reduce it */
+p, pre, table {
+    margin-top:    1mm;
+    margin-bottom: 2mm;
+}
+
+/* Table of Content, placed on the right */
+/* It is displayed to look like a Window Maker window */
+div.toc {
+    border: 1px solid black;
+    background-color: #A8A4B2;
+    color: #404040;
+    font-size: 75%;
+    padding: 0;
+    position: fixed;
+    display: inline;
+    top:   1cm;
+    right: 1cm;
+    box-shadow: 0.7mm 0.7mm #404055;
+}
+@media screen and (min-width: 940px) {
+    div.toc {
+        top:   2cm;
+        right: 6cm;
+    }
+}
+@media screen and (max-width: 939px) {
+    nav.menu {
+        padding-top: 12mm;
+    }
+}
+.toc a {
+    display: inline-block;
+    width: 100%;
+    padding: 1mm 2mm;
+    padding-right: 5mm;
+    text-decoration: none;
+    color: #406080;
+    box-sizing: border-box;
+}
+.toc a:hover, .toc a:focus {
+    background-color: #C0C8C0;
+}
+.toc label {
+    /* The header in the ToC serves as the pseudo window's title */
+    display: block;
+    top: 0px;
+    margin: 0;
+    margin-bottom: 1mm;
+    padding: 1.2mm 1.5em;
+    padding-left: 2.5em;
+    background: black;
+    background-image: url(/img/minimize.png);
+    background-repeat: no-repeat;
+    background-position: 0.4em center;
+    border-left:   1px solid #b6b6b6;
+    border-top:    1px solid #b6b6b6;
+    border-right:  1px solid #616161;
+    border-bottom: 1px solid #616161;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-align: center;
+    cursor: row-resize;
+}
+.toc hr {
+    margin: 1px 0px 2px 0px;
+}
+#toc-checkbutton {
+    display: none;
+}
+#toc-list {
+    display: none;
+}
+#toc-checkbutton:checked ~ #toc-list {
+    display: block;
+}
+.toc .return {
+    font-style: italic;
+}
+
+/* Line at the end of the page with Window Maker's information */
+.footer {
+    width: 100%;
+    background-color: #AEAAAE;
+    border-top: 1px solid #405060;
+    padding: 1mm 3mm;
+    padding-bottom: 12px;
+    color: black;
+    text-align: right;
+    font-size:  75%;
+    font-style: italic;
+    box-sizing: border-box;
+}
+#pkgname {
+    display: inline;
+    font-variant: small-caps;
+}
