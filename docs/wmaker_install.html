@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Maker: Compilation and Installation</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+      content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>
+          <a href="/">
+            <span class="first">Window</span><span class="second">Maker</span>
+          </a>
+        </h1>
+      </header>
+      <aside>
+        <nav class="menu">
+          <ul>
+            <li id="dock">
+            <a href="#"></a>
+            </li>
+            <li id="home" title="Home">
+              <a href="/">Home</a>
+            </li>
+            <li id="news" title="News">
+              <a href="/news">News</a>
+            </li>
+            <li id="docs" title="Documentation">
+              <a href="/docs">Documentation</a>
+            </li>
+            <li id="mail" title="Mailing lists">
+              <a href="/lists">Mailing</a>
+            </li>
+            <li id="devel" title="Development">
+              <a href="/dev">Development</a>
+            </li>
+            <li id="screenshots" title="Screenshots">
+              <a href="/screenshots">Screenshots</a>
+            </li>
+            <li id="dockapps" title="Dockapps">
+              <a href="https://www.dockapps.net">Dockapps</a>
+            </li>
+            <li id="themes" title="Themes">
+              <a href="/themes">Themes</a>
+            </li>
+            <li id="links" title="Links">
+              <a href="/links">Links</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        
+<main id="window-maker-compilation-and-installation">
+<h1 class="title">Window Maker Compilation and Installation</h1>
+
+<p>A guide to configure, compile and install WINDOW MAKER from sources.</p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="auto-toc simple">
+<li>
+<p><a class="reference internal" href="#prerequisites" id="id1"><span class="sectnum">1</span> Prerequisites</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#supported-platforms" id="id2"><span class="sectnum">1.1</span> Supported Platforms</a></p></li>
+<li><p><a class="reference internal" href="#software-dependencies" id="id3"><span class="sectnum">1.2</span> Software Dependencies</a></p></li>
+<li><p><a class="reference internal" href="#special-dependencies" id="id4"><span class="sectnum">1.3</span> Special Dependencies</a></p></li>
+<li><p><a class="reference internal" href="#optional-dependencies" id="id5"><span class="sectnum">1.4</span> Optional Dependencies</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#building-window-maker" id="id6"><span class="sectnum">2</span> Building WINDOW MAKER</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#getting-the-sources" id="id7"><span class="sectnum">2.1</span> Getting the Sources</a></p></li>
+<li><p><a class="reference internal" href="#user-specific-configuration" id="id8"><span class="sectnum">2.2</span> User specific configuration</a></p></li>
+<li><p><a class="reference internal" href="#locales-internationalisation" id="id9"><span class="sectnum">2.3</span> Locales/Internationalisation</a></p></li>
+<li>
+<p><a class="reference internal" href="#configure-options" id="id10"><span class="sectnum">2.4</span> Configure Options</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#installation-directory" id="id11"><span class="sectnum">2.4.1</span> Installation Directory</a></p></li>
+<li><p><a class="reference internal" href="#external-libraries" id="id12"><span class="sectnum">2.4.2</span> External Libraries</a></p></li>
+<li><p><a class="reference internal" href="#x11-and-extensions" id="id13"><span class="sectnum">2.4.3</span> X11 and Extensions</a></p></li>
+<li><p><a class="reference internal" href="#feature-selection" id="id14"><span class="sectnum">2.4.4</span> Feature Selection</a></p></li>
+<li><p><a class="reference internal" href="#developer-stuff" id="id15"><span class="sectnum">2.4.5</span> Developer Stuff</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#miscellaneous" id="id16"><span class="sectnum">3</span> Miscellaneous</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#platform-specific-notes" id="id17"><span class="sectnum">3.1</span> Platform Specific Notes</a></p></li>
+<li><p><a class="reference internal" href="#i-don-t-have-the-root-password" id="id18"><span class="sectnum">3.2</span> I don't have the <em>root</em> password :(</a></p></li>
+<li><p><a class="reference internal" href="#upgrading" id="id19"><span class="sectnum">3.3</span> Upgrading</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#troubleshooting" id="id20"><span class="sectnum">4</span> Troubleshooting</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#error-with-loading-fonts-even-if-they-exist" id="id21"><span class="sectnum">4.1</span> Error with loading fonts, even if they exist</a></p></li>
+<li><p><a class="reference internal" href="#configure-doesn-t-detect-libtiff-or-other-graphic-libraries" id="id22"><span class="sectnum">4.2</span> configure doesn't detect <em>libtiff</em>, or other graphic libraries</a></p></li>
+<li><p><a class="reference internal" href="#configure-doesn-t-detect-libxpm" id="id23"><span class="sectnum">4.3</span> configure doesn't detect <em>libXpm</em></a></p></li>
+<li><p><a class="reference internal" href="#your-machine-is-misconfigured-gethostname-returned-none" id="id24"><span class="sectnum">4.4</span> "...: your machine is misconfigured. gethostname() returned (none)"</a></p></li>
+<li><p><a class="reference internal" href="#the-root-menu-contains-only-2-entries-xterm-and-exit" id="id25"><span class="sectnum">4.5</span> The root menu contains only 2 entries. ("XTerm" and "Exit...")</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This manual is for Window Maker, version git#next.</p>
+<hr class="docutils">
+<section id="prerequisites">
+<h1>
+<span class="sectnum">1</span> Prerequisites</h1>
+<section id="supported-platforms">
+<h2>
+<span class="sectnum">1.1</span> Supported Platforms</h2>
+<ul class="simple">
+<li><p>Intel GNU/Linux Systems in general, <cite>ix86</cite> and <cite>x86_64</cite> but other
+architectures should work</p></li>
+<li><p>BSD systems</p></li>
+<li><p>Solaris, at least on release 10 and 11</p></li>
+</ul>
+<p>Patches to make it work on other platforms are welcome.</p>
+</section>
+<section id="software-dependencies">
+<h2>
+<span class="sectnum">1.2</span> Software Dependencies</h2>
+<p>The following software is required to use WINDOW MAKER:</p>
+<ul>
+<li>
+<p>X11R6.x</p>
+<p>Window Maker can be compiled in older versions of <em>X</em>, like
+<em>X11R5</em> (<em>Solaris</em>) or <em>X11R4</em> (<em>OpenWindows</em>) but
+it will not work 100% correctly.  In such servers there will not be
+application icons and you'll have trouble using the dock.  Upgrading the
+client libraries (<em>Xlib</em>, <em>Xt</em>, etc.) will help if you
+can't upgrade the server.</p>
+</li>
+</ul>
+<p>The following is required to build WINDOW MAKER:</p>
+<ul>
+<li><p>Basic obvious stuff
+- <em>gcc</em> (or some other ANSI C compiler, supporting some C99 extensions)
+- <em>glibc</em> development files (usually <span class="docutils literal"><span class="pre">glibc-devel</span></span> in Linux distributions)
+- <em>X</em> development files (<span class="docutils literal"><span class="pre">XFree86-devel</span></span> or something similar)</p></li>
+<li>
+<p><em>Xft2</em> and its dependencies</p>
+<p>Dependencies include <em>freetype2</em> and <em>fontconfig</em>.  You will also need the
+development files for them (<span class="docutils literal"><span class="pre">xft2-devel</span></span>).  Sources are available at:
+<a class="reference external" href="http://www.freedesktop.org/wiki/Software/Xft">http://www.freedesktop.org/wiki/Software/Xft</a></p>
+</li>
+</ul>
+<p><strong>Note</strong>: WINDOW MAKER is known to compile with <em>gcc</em> and <em>clang</em>; the code
+source is mostly ANSI C (also known as C89 and C90) but is uses very few of the
+C99 novelties; it also uses a few attributes introduced in the C11 standard but
+those are detected automatically, so most compilers should work.</p>
+</section>
+<section id="special-dependencies">
+<h2>
+<span class="sectnum">1.3</span> Special Dependencies</h2>
+<p>If you want to compile using the sources from the git repository instead of the
+distribution package, you will also need:</p>
+<ul class="simple">
+<li><p><em>git</em></p></li>
+<li><p><em>autoconf</em> 2.69</p></li>
+<li><p><em>automake</em> 1.12</p></li>
+<li><p><em>libtool</em> 1.4.2</p></li>
+</ul>
+</section>
+<section id="optional-dependencies">
+<h2>
+<span class="sectnum">1.4</span> Optional Dependencies</h2>
+<p>These libraries are not required to make &lt;small&gt;WINDOW MAKER&lt;/small&gt; work, but
+they are supported in case you want to use them. Version numbers are indicative,
+but other versions might work too.</p>
+<ul>
+<li>
+<p><em>libXPM</em> 4.7 or newer</p>
+<p>Older versions may not work!</p>
+<p>Available from <a class="reference external" href="http://xlibs.freedesktop.org/release">http://xlibs.freedesktop.org/release</a></p>
+<p>There is built-in support for &lt;em&gt;XPM&lt;/em&gt; files, but it will not load images
+in some uncommon encodings.</p>
+</li>
+<li>
+<p><em>libpng</em> 0.96 or newer and <em>zlib</em></p>
+<p>For <em>PNG</em> image support, <a class="reference external" href="http://www.libpng.org/pub/png/libpng.html">http://www.libpng.org/pub/png/libpng.html</a></p>
+</li>
+<li>
+<p><em>libtiff</em> 3.4 or newer</p>
+<p>For <em>TIFF</em> image support, <a class="reference external" href="http://www.libtiff.org/">http://www.libtiff.org/</a></p>
+</li>
+<li>
+<p><em>libjpeg</em> 6.0.1 or newer</p>
+<p>For <em>JPEG</em> image support, <a class="reference external" href="http://www.ijg.org/">http://www.ijg.org/</a></p>
+<p>Note that if you don't have it, <span class="docutils literal">configure</span> will issue a big warning in the
+end, this is because JPEG images are often used in themes and for background
+images so you probably want this format supported.</p>
+</li>
+<li>
+<p><em>libgif</em> 2.2 or <em>libungif</em></p>
+<p>For <em>GIF</em> image support, <a class="reference external" href="http://giflib.sourceforge.net/">http://giflib.sourceforge.net/</a></p>
+</li>
+<li>
+<p><em>WebP</em> 0.4.1 or newer</p>
+<p>The reference library from <em>Google</em> for their image format,
+<a class="reference external" href="https://developers.google.com/speed/webp/download">https://developers.google.com/speed/webp/download</a></p>
+</li>
+<li>
+<p><em>GNU xgettext</em></p>
+<p>If you want to use translated messages, you will need <em>GNU gettext</em>.
+Other versions of <em>gettext</em> are not compatible and will not work. Get
+the <em>GNU</em> version from <a class="reference external" href="http://www.gnu.org/software/gettext/">http://www.gnu.org/software/gettext/</a></p>
+</li>
+<li>
+<p><em>Pango</em> 1.36.8 or newer</p>
+<p>This library can be used by the <em>WINGs</em> toolkit to improve support for
+<em>UTF-8</em> and for languages written in right-to-left direction, in some
+widgets. You have to explicitly ask for its support through (see <a class="reference external" href="#configure-options">Configure
+Options</a>). You can get it from
+<a class="reference external" href="http://www.pango.org/Download">http://www.pango.org/Download</a></p>
+</li>
+<li>
+<p><em>libbsd</em></p>
+<p>This library can be used by the <em>WINGs</em> utility library to make use of
+<span class="docutils literal">strlcat</span> and <span class="docutils literal">strlcpy</span> instead of using built-in functions if your system
+does not provide them in its core <em>libc</em>. You should let WINDOW MAKER's
+<span class="docutils literal">configure</span> detect this for you. You can get it from
+<a class="reference external" href="http://libbsd.freedesktop.org/wiki/">http://libbsd.freedesktop.org/wiki/</a></p>
+</li>
+<li>
+<p><em>Inotify</em></p>
+<p>If you have Linux's <em>inotify</em> support, WINDOW MAKER will use it to check for
+configuration updates instead of polling regularly the file. The needed header
+comes with the kernel, typical packages names include:</p>
+<ul class="simple">
+<li><p><span class="docutils literal"><span class="pre">kernel-headers</span></span> for <em>Slackware</em> and <em>Fedora</em></p></li>
+<li><p><span class="docutils literal"><span class="pre">linux-userspace-headers</span></span> for <em>Mageia</em></p></li>
+<li><p><span class="docutils literal"><span class="pre">linux-libc-dev</span></span> for <em>Debian</em> and <em>Ubuntu</em></p></li>
+<li><p><span class="docutils literal"><span class="pre">linux-glibc-devel</span></span> for <em>OpenSuSE</em></p></li>
+</ul>
+</li>
+<li>
+<p><em>MagickWand</em> 6.8.9-9 or newer</p>
+<p>If found, then the library <em>WRaster</em> can use the <em>ImageMagick</em> library to let
+WINDOW MAKER support more image formats, like <em>SVG</em>, <em>BMP</em>, <em>TGA</em>, ... You
+can get it from <a class="reference external" href="http://www.imagemagick.org/">http://www.imagemagick.org/</a></p>
+</li>
+<li>
+<p><em>Boehm GC</em></p>
+<p>This library can be used by the <em>WINGs</em> utility toolkit to use a
+<em>Boehm-Demers-Weiser Garbage Collector</em> instead of the traditional
+<span class="docutils literal">malloc</span>/<span class="docutils literal">free</span> functions from the <em>libc</em>. You have to explicitly ask for
+its support though (see <a class="reference external" href="#configure-options">Configure Options</a>). You can
+get it from <a class="reference external" href="http://www.hboehm.info/gc/">http://www.hboehm.info/gc/</a></p>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils">
+<section id="building-window-maker">
+<h1>
+<span class="sectnum">2</span> Building WINDOW MAKER</h1>
+<section id="getting-the-sources">
+<h2>
+<span class="sectnum">2.1</span> Getting the Sources</h2>
+<p>The latest version of WINDOW MAKER (<span class="docutils literal"><span class="pre">-crm</span></span>) can be downloaded from
+<a class="reference external" href="http://www.windowmaker.org/">http://www.windowmaker.org/</a></p>
+<p>Alternatively, the development branch, called <span class="docutils literal">#next</span> is in the <em>git</em>
+repository at <a class="reference external" href="http://repo.or.cz/w/wmaker-crm.git">http://repo.or.cz/w/wmaker-crm.git</a></p>
+<p>If you want to use the <em>git</em> versions, you can get it with:</p>
+<pre class="code console highlight literal-block"><code><span class="go">git clone -b next git://repo.or.cz/wmaker-crm.git</span></code></pre>
+<p>then, assuming you have the dependencies listed in <a class="reference external" href="#special-dependencies">Special Dependencies</a>, you have to type:</p>
+<pre class="code console highlight literal-block"><code><span class="go">./autogen.sh</span></code></pre>
+<p>to generate the configuration script.</p>
+<p>Build and Install</p>
+<p>For a quick start, type the following in your shell prompt:</p>
+<pre class="code console highlight literal-block"><code><span class="go">./configure
+make</span></code></pre>
+<p>then, login as <em>root</em> and type:</p>
+<pre class="code console highlight literal-block"><code><span class="go">make install
+ldconfig</span></code></pre>
+<p>or if you want to strip the debugging symbols from the binaries to make them
+smaller, you can type instead:</p>
+<pre class="code console highlight literal-block"><code><span class="go">make install-strip
+ldconfig</span></code></pre>
+<p>This will build and install WINDOW MAKER with default parameters.</p>
+<p>If you want to customise some compile-time options, you can do the following:</p>
+<ol class="arabic">
+<li>
+<p>(optional) Look at the <a class="reference external" href="#configure-options">Configure Options</a>, for the
+options available. Also run:</p>
+<pre class="code console highlight literal-block"><code><span class="go">./configure --help</span></code></pre>
+<p>to get a complete list of options that are available.</p>
+</li>
+</ol>
+<ol class="arabic">
+<li>
+<p>Run configure with the options you want. For example, if you want to use the
+<span class="docutils literal"><span class="pre">--enable-modelock</span></span> option, type:</p>
+<pre class="code console highlight literal-block"><code><span class="go">./configure --enable-modelock</span></code></pre>
+</li>
+</ol>
+<ol class="arabic simple">
+<li><p>(optional) Edit <span class="docutils literal">src/wconfig.h</span> with your favourite text editor and browse
+through it for some options you might want to change.</p></li>
+</ol>
+<ol class="arabic">
+<li>
+<p>Compile. Just type:</p>
+<pre class="code console highlight literal-block"><code><span class="go">make</span></code></pre>
+</li>
+</ol>
+<ol class="arabic">
+<li>
+<p>Login as root (if you can't do that, read the [I don't have the
+<em>root</em>](#No-Root-Password)) and install WINDOW MAKER in your system:</p>
+<pre class="code console highlight literal-block"><code><span class="go">su root
+make install</span></code></pre>
+</li>
+</ol>
+</section>
+<section id="user-specific-configuration">
+<h2>
+<span class="sectnum">2.2</span> User specific configuration</h2>
+<p>These instructions do not need to be followed when upgrading WINDOW MAKER
+from an older version, unless stated differently in the <em>NEWS</em> file.</p>
+<p>Every user on your system that wishes to run WINDOW MAKER must do the
+following:</p>
+<ol class="arabic">
+<li>
+<p>Install Window Maker configuration files in your home directory. Type:</p>
+<pre class="code console literal-block"><code><span class="go">wmaker.inst</span></code></pre>
+<p><span class="docutils literal">wmaker.inst</span> will install WINDOW MAKER configuration files and will setup
+X to automatically launch WINDOW MAKER at startup.</p>
+</li>
+</ol>
+<p>That's it!</p>
+<p>You can type <span class="docutils literal">man wmaker</span> to get some general help for configuration and
+other stuff.</p>
+<p>Read the <em>User Guide</em> for a more in-depth explanation of WINDOW MAKER.</p>
+<p>You might want to take a look at the <em>FAQ</em> too.</p>
+</section>
+<section id="locales-internationalisation">
+<h2>
+<span class="sectnum">2.3</span> Locales/Internationalisation</h2>
+<p>WINDOW MAKER has national language support. The procedure to enable national
+language support is described in the dedicated
+<a class="reference external" href="wmaker_i18n.html#enabling-languages-support">Enabling Languages support</a>
+in <span class="docutils literal">README.i18n</span>.</p>
+</section>
+<section id="configure-options">
+<h2>
+<span class="sectnum">2.4</span> Configure Options</h2>
+<p>These options can be passed to the configure script to enable/disable some
+WINDOW MAKER features. Example:</p>
+<pre class="code console highlight literal-block"><code><span class="go">./configure --enable-modelock --disable-gif</span></code></pre>
+<p>will configure WINDOW MAKER with <em>modelock</em> supported and disable <em>gif</em> support.
+Normally, you won't need any of them.</p>
+<p>To get the list of all options, run <span class="docutils literal">./configure <span class="pre">--help</span></span></p>
+<section id="installation-directory">
+<h3>
+<span class="sectnum">2.4.1</span> Installation Directory</h3>
+<p>The default installation path will be in the <span class="docutils literal">/usr/local</span> hierarchy; a number of
+option can customise this:</p>
+<ul class="simple">
+<li><p><span class="docutils literal"><span class="pre">--prefix=PREFIX</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--exec-prefix=EPREFIX</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--bindir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--sysconfdir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--libdir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--includedir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--datarootdir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--datadir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--localedir=DIR</span></span></p></li>
+<li>
+<dl class="simple">
+<dt><span class="docutils literal"><span class="pre">--mandir=DIR</span></span></dt>
+<dd>
+<p>Standard options from <em>autoconf</em> to define target paths, you probably want to
+read Installation Names in <em>`INSTALL`</em>.</p>
+</dd>
+</dl>
+</li>
+<li><p><span class="docutils literal"><span class="pre">--sbindir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--libexecdir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--sharedstatedir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--localstatedir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--oldincludedir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--infodir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--docdir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--htmldir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--dvidir=DIR</span></span></p></li>
+<li><p><span class="docutils literal"><span class="pre">--pdfdir=DIR</span></span></p></li>
+<li>
+<dl class="simple">
+<dt><span class="docutils literal"><span class="pre">--psdir=DIR</span></span></dt>
+<dd>
+<p>More standard options from <em>autoconf</em>, today these are not used by WINDOW
+MAKER; they are provided automatically by <em>autoconf</em> for consistency.</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl class="simple">
+<dt><span class="docutils literal"><span class="pre">--with-gnustepdir=PATH</span></span></dt>
+<dd>
+<p>Specific to WINDOW MAKER, defines the directory where WPrefs.app will be
+installed, if you want to install it like a <em>GNUstep</em> applications. If not
+specified, it will be installed like usual programs.</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl class="simple">
+<dt><span class="docutils literal"><span class="pre">--with-pixmapdir=DIR</span></span></dt>
+<dd>
+<p>Specific to WINDOW MAKER, this option defines an additional path where
+<em>pixmaps</em> will be searched. Nothing will be installed there; the default
+path taken is <span class="docutils literal">DATADIR/pixmaps</span>, where <span class="docutils literal">ATADIR` is the path defined from <span class="pre">``--datadir</span></span>.</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl class="simple">
+<dt><span class="docutils literal"><span class="pre">--with-defsdatadir=DIR</span></span></dt>
+<dd>
+<p>Specific to WINDOW MAKER, defines the directory where system configuration
+files, e.g., <span class="docutils literal">WindowMaker</span>, <span class="docutils literal">WMRootMenu</span>, etc., are installed. The
+default value is <span class="docutils literal">SYSCONFDIR/WindowMaker</span>, where <span class="docutils literal">SYSCONFDIR</span> is the
+path defined from <span class="docutils literal"><span class="pre">--sysconfdir</span></span>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="external-libraries">
+<h3>
+<span class="sectnum">2.4.2</span> External Libraries</h3>
+<p>Unless specifically written, <span class="docutils literal">configure</span> will try to detect automatically for
+the libraries; if you explicitly provide <span class="docutils literal"><span class="pre">--enable-FEATURE</span></span> then it will
+break with an error message if the library cannot be linked; if you specify
+<span class="docutils literal"><span class="pre">--disable-FEATURE</span></span> then it will not try to search for the library. You can
+find more information about the libraries in the <a class="reference external" href="#Optional-Dependencies">Optional Dependencies</a></p>
+<p><span class="docutils literal"><span class="pre">--enable-boehm-gc</span></span></p>
+<blockquote>
+<p>Never enabled by default, use Boehm GC instead of the default <em>libc</em>
+<span class="docutils literal">malloc()</span></p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-gif</span></span></p>
+<blockquote>
+<p>Disable GIF support in <em>WRaster</em> library; when enabled use <span class="docutils literal">libgif</span> or
+<span class="docutils literal">libungif</span>.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-jpeg</span></span></p>
+<blockquote>
+<p>Disable JPEG support in <em>WRaster</em> library; when enabled use <span class="docutils literal">libjpeg</span>.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--without-libbsd</span></span></p>
+<blockquote>
+<p>Refuse use of the <span class="docutils literal">libbsd</span> compatibility library in <em>WINGs</em> utility
+library, even if your system provides it.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-magick</span></span></p>
+<blockquote>
+<p>Disable <em>ImageMagick's MagickWand</em> support in <em>WRaster</em>, used to support for
+image formats.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-pango</span></span></p>
+<blockquote>
+<p>Disabled by default, enable <em>Pango</em> text layout support in <em>WINGs</em>.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-png</span></span></p>
+<blockquote>
+<p>Disable PNG support in <em>WRaster</em>; when enabled use <span class="docutils literal">libpng</span>.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-tiff</span></span></p>
+<blockquote>
+<p>Disable TIFF support in <em>WRaster</em>. when enabled use <span class="docutils literal">libtiff</span>.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-webp</span></span></p>
+<blockquote>
+<p>Disable WEBP support in <em>WRaster</em>. when enabled use <span class="docutils literal">libwebp</span>.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-xpm</span></span></p>
+<blockquote>
+<p>Disable use of <span class="docutils literal">libXpm</span> for XPM support in <em>WRaster</em>, use internal code
+instead.</p>
+</blockquote>
+<p>The following options can be used to tell <span class="docutils literal">configure</span> about extra paths that
+needs to be used when compiling against libraries:</p>
+<p><span class="docutils literal"><span class="pre">--with-libs-from</span></span></p>
+<blockquote>
+<p>specify additional paths for libraries to be searched. The <span class="docutils literal"><span class="pre">-L</span></span> flag must
+precede each path, like:</p>
+<pre class="code highlight literal-block"><code>--with-libs-from="-L/opt/libs -L/usr/local/lib"</code></pre>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--with-incs-from</span></span></p>
+<blockquote>
+<p>specify additional paths for header files to be searched. The <span class="docutils literal"><span class="pre">-I</span></span> flag
+must precede each paths, like:</p>
+<pre class="code highlight literal-block"><code>--with-incs-from="-I/opt/headers -I/usr/local/include"</code></pre>
+</blockquote>
+</section>
+<section id="x11-and-extensions">
+<h3>
+<span class="sectnum">2.4.3</span> X11 and Extensions</h3>
+<p><span class="docutils literal">configure</span> will try to detect automatically the compilation paths for X11
+headers and libraries, and which X Extensions support can be enabled.  if you
+explicitly provide <span class="docutils literal"><span class="pre">--enable-FEATURE</span></span> then it will break with an error
+message if the extension cannot be used; if you specify <span class="docutils literal"><span class="pre">--disable-FEATURE</span></span>
+then it will not check for the extension.</p>
+<ul>
+<li><p><span class="docutils literal"><span class="pre">--x-includes=DIR</span></span></p></li>
+<li>
+<p><span class="docutils literal"><span class="pre">--x-libraries=DIR</span></span></p>
+<blockquote>
+<p><em>Autoconf</em>'s option to specify search paths for <em>X11</em>, for the case were it
+would not have been able to detect it automatically.</p>
+</blockquote>
+</li>
+</ul>
+<p><span class="docutils literal"><span class="pre">--disable-xlocale</span></span></p>
+<blockquote>
+<p>If you activated support for Native Languages, then <em>X11</em> may use a hack to
+also configure its locale support when the program configure the locale for
+itself.  The <span class="docutils literal">configure</span> script detects if the <em>Xlib</em> supports this or
+not; this options explicitly disable this initialisation mechanism.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-modelock</span></span></p>
+<blockquote>
+<p>XKB language status lock support. If you don't know what it is you probably
+don't need it. The default is to not enable it.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-shm</span></span></p>
+<blockquote>
+<p>Disable use of the <em>MIT shared memory</em> extension. This will slow down
+texture generation a little bit, but in some cases it seems to be necessary
+due to a bug that manifests as messed icons and textures.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-shape</span></span></p>
+<blockquote>
+<p>Disables support for <em>shaped</em> windows (for <span class="docutils literal">oclock</span>, <span class="docutils literal">xeyes</span>, etc.).</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-xinerama</span></span></p>
+<blockquote>
+<p>The <em>Xinerama</em> extension provides information about the different screens
+connected when running a multi-head setting (if you plug more than one
+monitor).</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-randr</span></span></p>
+<blockquote>
+<p>The <em>RandR</em> extension provides feedback when changing the multiple-monitor
+configuration in X11 and allows to re-configure how screens are organised.</p>
+<p>At current time, it is not enabled by default because it is NOT recommended
+(buggy); WINDOW MAKER only restart itself when the configuration change, to
+take into account the new screen size.</p>
+</blockquote>
+</section>
+<section id="feature-selection">
+<h3>
+<span class="sectnum">2.4.4</span> Feature Selection</h3>
+<p><span class="docutils literal"><span class="pre">--disable-animations</span></span></p>
+<blockquote>
+<p>Disable animations permanently, by not compiling the corresponding code into
+WINDOW MAKER. When enabled (the default), you still have a run-time
+configuration option in <em>WPrefs</em>.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-mwm-hints</span></span></p>
+<blockquote>
+<p>Disable support for Motif's MWM Window Manager hints. These attributes were
+introduced by the Motif toolkit to ask for special window appearance
+requests.  Nowadays this is covered by the NetWM/EWMH specification, but
+there are still applications that rely on MWM Hints.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-wmreplace</span></span></p>
+<blockquote>
+<p>Add support for the <em>ICCCM</em> protocol for cooperative window manager
+replacement. This feature is disabled by default because you probably don't
+need to switch seamlessly the window manager; if you are making a package
+for a distribution you'd probably want to enable this because it allows
+users to give a try to different window managers without restarting
+everything for an extra cost that is not really big.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--disable-xdnd</span></span></p>
+<blockquote>
+<p>Disable support for dragging and dropping files on the dock, which launches
+a user-specified command with that file. Starting from version 0.65.6 this
+feature is enabled by default.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-ld-version-script</span></span></p>
+<blockquote>
+<p>This feature is auto-detected, and you should not use this option. When
+compiling a library (<span class="docutils literal">wrlib</span>, ...), <em>gcc</em> has the possibility to filter
+the list of functions that will be visible, to keep only the public API,
+because it helps running programs faster.</p>
+<p>The <span class="docutils literal">configure</span> script checks if this feature is available; if you specify
+this option it will not check anymore and blindly trust you that it is
+supposed to work, which is not a good idea as you may encounter problems
+later when compiling.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-usermenu</span></span></p>
+<blockquote>
+<p>This feature, disabled by default, allows to add a user-defined custom menu
+to applications; when choosing an entry of the menu it will send the key
+combination defined by the user to that application. See &lt;a
+href="<a class="reference external" href="http://repo.or.cz/wmaker-crm.git/blob/HEAD:/NEWS">http://repo.or.cz/wmaker-crm.git/blob/HEAD:/NEWS</a>"&gt;Application User
+Menu&lt;/a&gt; in <em>NEWS</em> for more information.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--with-menu-textdomain=DOMAIN</span></span></p>
+<blockquote>
+<p>Selection of the domain used for translation of the menus; see <a class="reference external" href="wmaker_i18n.html#Translations-for-Menus">Translations
+for Menus</a> in <em>README.i18n</em>.</p>
+</blockquote>
+</section>
+<section id="developer-stuff">
+<h3>
+<span class="sectnum">2.4.5</span> Developer Stuff</h3>
+<p>These options are disabled by default:</p>
+<p><span class="docutils literal"><span class="pre">--config-cache</span></span></p>
+<blockquote>
+<p>If you intend to re-run the <span class="docutils literal">configure</span> script often, you probably want to
+include this option, so it will save and re-use the status of what have been
+detected in the file <span class="docutils literal">config.cache</span>.</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-debug</span></span></p>
+<blockquote>
+<p>Enable debugging features (debug symbol, some extra verbosity and checks)
+and add a number of check flags (warnings) for the compiler (in <em>gcc</em>
+fashion).</p>
+</blockquote>
+<p><span class="docutils literal"><span class="pre">--enable-lcov=DIRECTORY</span></span></p>
+<blockquote>
+<p>Enable generation of code coverage and profiling data; if the <span class="docutils literal">DIRECTORY</span>
+is not specified, use <span class="docutils literal"><span class="pre">coverage-report</span></span>.</p>
+<p>This option was meant to be use with <em>gcc</em>; it was not used recently so it
+is probable that is does not work anymore; the <span class="docutils literal">configure</span> script will not
+even check that your compiling environment has the appropriate requirements
+and works with this.  Despite all this, if you think there's a use for it
+and feel in the mood to help, do not hesitate to discuss on the mailing list
+<a class="reference external" href="mailto:wmaker-dev@lists.windowmaker.org">wmaker-dev@lists.windowmaker.org</a> to get it working.</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="miscellaneous">
+<h1>
+<span class="sectnum">3</span> Miscellaneous</h1>
+<section id="platform-specific-notes">
+<h2>
+<span class="sectnum">3.1</span> Platform Specific Notes</h2>
+<ul>
+<li>
+<p><em>GNU/Linux</em> in general</p>
+<p>Make sure you have <span class="docutils literal">/usr/local/lib</span> in <span class="docutils literal">/etc/ld.so.conf</span> and that you run
+<span class="docutils literal">ldconfig</span> after installing. Uninstall any packaged version of WINDOW MAKER
+before installing a new version.</p>
+</li>
+<li>
+<p><em>RedHat GNU/Linux</em></p>
+<p><em>RedHat</em> systems have several annoying problems. If you use it, be sure to
+follow the steps below or WINDOW MAKER will not work:</p>
+<ul class="simple">
+<li><p>if you installed the WINDOW MAKER that comes with <em>RedHat</em>, uninstall it
+before upgrading;</p></li>
+<li><p>make sure you have <span class="docutils literal">/usr/local/bin</span> in your <span class="docutils literal">PATH</span> environment variable;</p></li>
+<li><p>make sure you have <span class="docutils literal">/usr/local/lib</span> in <span class="docutils literal">/etc/ld.so.conf</span> before running <span class="docutils literal">ldconfig</span>;</p></li>
+</ul>
+</li>
+<li>
+<p><em>PowerPC MkLinux</em></p>
+<p>You will need to have the latest version of <em>Xpmac</em>. Older versions seem to
+have bugs that cause the system to hang.</p>
+</li>
+<li>
+<p><em>Debian GNU/Linux</em></p>
+<p>If you want <em>JPEG</em> and <em>TIFF</em> support, make sure you have <span class="docutils literal"><span class="pre">libtiff-dev</span></span>
+and <span class="docutils literal"><span class="pre">libjpeg-dev</span></span> installed.</p>
+</li>
+<li>
+<p><em>SuSE GNU/Linux</em></p>
+<p>If you installed the WINDOW MAKER package from <em>SuSE</em>, uninstall it before
+trying to compile <em>Window Maker</em> or you might have problems.</p>
+</li>
+<li>
+<p><em>MetroX</em> (unknown version)</p>
+<p><em>MetroX</em> has a bug that corrupts pixmaps that are set as window backgrounds.
+If you use <em>MetroX</em> and have weird problems with textures, do not use
+textures in title bars. Or use a different X server.</p>
+</li>
+</ul>
+</section>
+<section id="i-don-t-have-the-root-password">
+<h2>
+<span class="sectnum">3.2</span> I don't have the <em>root</em> password :(</h2>
+<p>If you can't get superuser privileges (can't be <em>root</em>) you can install <em>Window
+Maker</em> in your own home directory. For that, supply the <span class="docutils literal"><span class="pre">--prefix</span></span> option
+when running configure in step 2 of building WINDOW MAKER.  You will also need
+to supply the <span class="docutils literal"><span class="pre">--with-gnustepdir</span></span> option, to specify the path for
+<span class="docutils literal">WPrefs.app</span>.</p>
+<p>Example:</p>
+<pre class="code console highlight literal-block"><code><span class="go">./configure --prefix=/home/jshmoe --with-gnustepdir=/home/jshmoe/GNUstep/Applications</span></code></pre>
+<p>Then make <span class="docutils literal">/home/jshmoe/bin</span> be included in your search <span class="docutils literal">PATH</span>, add
+<span class="docutils literal">/home/jshmoe/lib</span> to your <span class="docutils literal">LD_LIBRARY_PATH</span> environment variable and run
+<span class="docutils literal">bin/wmaker.inst</span></p>
+<p>Of course, <span class="docutils literal">/home/jshmoe</span> is supposed to be replaced by your actual home
+directory path.</p>
+</section>
+<section id="upgrading">
+<h2>
+<span class="sectnum">3.3</span> Upgrading</h2>
+<p>If you are upgrading from an older version of WINDOW MAKER:</p>
+<ol class="arabic simple">
+<li><p>Configure and build WINDOW MAKER as always</p></li>
+<li><p>Install WINDOW MAKER (but do not run <span class="docutils literal">wmaker.inst</span>)</p></li>
+<li><p>Read the <em>NEWS</em> file and update your configuration files if necessary.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils">
+<section id="troubleshooting">
+<h1>
+<span class="sectnum">4</span> Troubleshooting</h1>
+<p>When you have some trouble during configuration (while running configure), like
+not being able to use a graphic format library you think you have installed,
+look at the <span class="docutils literal">config.log</span> file for clues of the problem.</p>
+<section id="error-with-loading-fonts-even-if-they-exist">
+<h2>
+<span class="sectnum">4.1</span> Error with loading fonts, even if they exist</h2>
+<p>This is probably a problem with NLS (Native Language Support), you probably
+want to look at the <a class="reference external" href="wmaker_i18n.html#Troubleshooting">Troubleshooting</a> in
+<em>README.i18n</em> or try rebuilding without NLS support, which is done with:</p>
+<pre class="code console highlight literal-block"><code><span class="go">./configure LINGUAS=""</span></code></pre>
+</section>
+<section id="configure-doesn-t-detect-libtiff-or-other-graphic-libraries">
+<h2>
+<span class="sectnum">4.2</span> configure doesn't detect <em>libtiff</em>, or other graphic libraries</h2>
+<p>Delete <span class="docutils literal">config.cache</span>, then rerun configure adding the following options to
+<span class="docutils literal">configure</span> (among the other options you use):</p>
+<pre class="code console highlight literal-block"><code><span class="go">--with-libs-from="-L/usr/local/lib"
+--with-incs-from="-I/usr/local/include -I/usr/local/include/tiff"</span></code></pre>
+<p>Put the paths where your graphic libs and their corresponding header files are
+located. You can put multiple paths in any of these options, as the example of
+<span class="docutils literal"><span class="pre">--with-incs-from</span></span> shows. Just put a space between them.</p>
+</section>
+<section id="configure-doesn-t-detect-libxpm">
+<h2>
+<span class="sectnum">4.3</span> configure doesn't detect <em>libXpm</em>
+</h2>
+<p>Check if you have a symbolic link from <span class="docutils literal">libXpm.so.4.9</span> to <span class="docutils literal">libXpm.so</span></p>
+<p>Segmentation fault on startup</p>
+<ul class="simple">
+<li><p>Check if the version of <em>libXPM</em> you have is at least 4.7</p></li>
+<li><p>Check if you have an updated version of <span class="docutils literal">~/GNUstep/Defaults/WindowMaker</span></p></li>
+</ul>
+<p>If you're not sure, try renaming <span class="docutils literal">~/GNUstep</span> to <span class="docutils literal">~/GNUtmp</span> and then run
+<span class="docutils literal">wmaker.inst</span></p>
+</section>
+<section id="your-machine-is-misconfigured-gethostname-returned-none">
+<h2>
+<span class="sectnum">4.4</span> "...: your machine is misconfigured. gethostname() returned (none)"</h2>
+<p>the host name of your machine is set to something invalid, that starts with a parenthesis.
+Do a <span class="docutils literal">man hostname</span> for info about how to set it.</p>
+</section>
+<section id="the-root-menu-contains-only-2-entries-xterm-and-exit">
+<h2>
+<span class="sectnum">4.5</span> The root menu contains only 2 entries. ("XTerm" and "Exit...")</h2>
+<p>WINDOW MAKER could not read your menu definition file. You should check the
+output of <span class="docutils literal">wmaker</span> for an error, it may be visible in the console or in the
+<span class="docutils literal"><span class="pre">.xsession-errors</span></span> file.</p>
+</section>
+</section>
+</main>
+
+      </article>
+      <div id="titlebar">
+        <div id="minimize"></div>
+        <div id="titlebar-inner">Window Maker: Compilation and Installation</div>
+        <div id="close"></div>
+      </div>
+      <div id="resizebar">
+        <div id="resizel"></div>
+        <div id="resizebar-inner">
+        </div>
+        <div id="resizer"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!-- Creator     : groff version 1.22.4 -->
+<!-- CreationDate: Mon Jun  7 02:23:33 2021 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This file is generated automatically by a script, do not edit -->
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<link rel="stylesheet" type="text/css" href="/style.css">
+<link rel="stylesheet" type="text/css" href="/manpage.css">
+<title>wmsetbg</title>
+
+</head>
+<body>
+<div id="wrapper">
+  <aside>
+    <nav class="menu">
+      <ul>
+        <li id="dock">
+        <a href="#"></a>
+        </li>
+        <li id="home" title="Home">
+          <a href="/">Home</a>
+        </li>
+        <li id="news" title="News">
+          <a href="/news">News</a>
+        </li>
+        <li id="docs" title="Documentation">
+          <a href="/docs">Documentation</a>
+        </li>
+        <li id="mail" title="Mailing lists">
+          <a href="/lists">Mailing</a>
+        </li>
+        <li id="devel" title="Development">
+          <a href="/dev">Development</a>
+        </li>
+        <li id="screenshots" title="Screenshots">
+          <a href="/screenshots">Screenshots</a>
+        </li>
+        <li id="dockapps" title="Dockapps">
+          <a href="https://www.dockapps.net">Dockapps</a>
+        </li>
+        <li id="themes" title="Themes">
+          <a href="/themes">Themes</a>
+        </li>
+        <li id="links" title="Links">
+          <a href="/links">Links</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="toc">
+    <label for="toc-checkbutton">wmsetbg</label>
+    <input type="checkbox" id="toc-checkbutton" checked="true">
+    <div id="toc-list">
+      <a href="#NAME">NAME</a><br>
+      <a href="#SYNOPSIS">SYNOPSIS</a><br>
+      <a href="#DESCRIPTION">DESCRIPTION</a><br>
+      <a href="#OPTIONS">OPTIONS</a><br>
+      <a href="#INDEXED COLOR SCREENS">INDEXED COLOR SCREENS</a><br>
+      <a href="#SEE ALSO">SEE ALSO</a><br>
+      <a href="#AUTHOR">AUTHOR</a><br>
+      <hr>
+      <a href="." class="return">Return to list</a><br>
+    </div>
+  </div>
+
+<article>
+
+
+<h2>NAME
+<a name="NAME"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">wmsetbg - sets
+the background on the X11 display</p>
+
+<h2>SYNOPSIS
+<a name="SYNOPSIS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>wmsetbg</b>
+[<i>-display</i> display] [<i>--update-domain</i>
+domain|<i>--update-wmaker</i>] [<i>options</i>]
+[<i>image</i>]</p>
+
+<h2>DESCRIPTION
+<a name="DESCRIPTION"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>wmsetbg</b>
+reads the specified <i>image</i> (in any format supported by
+the <i>WRaster</i> library) and puts it on the root window.
+It can either scale the image or tile it to make it fit the
+root window. Window Maker uses this command internally to
+set the root window image on start up.</p>
+
+<h2>OPTIONS
+<a name="OPTIONS"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>--back-color</b>|<b>-b</b>
+<i>color</i></p>
+
+<p style="margin-left:22%;">the specified <i>color</i> is
+used as the background color for the <i>texture</i>. Window
+Maker temporary sets the background to this color while
+loading and processing the texture. You can specify colors
+using their X11 names or as an RGB triplet (either as
+&quot;rgb:RR/GG/BB&quot; or &quot;#RRGGBB&quot;) (reference
+to appropriate manpage should be here). In the later case
+<i>color</i> <b>is a quoted string.</b></p>
+
+<p style="margin-left:11%;"><b>--center</b>|<b>-e</b></p>
+
+<p style="margin-left:22%;">centers the <i>image</i> in the
+screen</p>
+
+<p style="margin-left:11%;"><b>--colors</b>|<b>-c</b>
+<i>count</i></p>
+
+<p style="margin-left:22%;">limit the number of colors per
+channel to use for the image</p>
+
+<p style="margin-left:11%;"><b>-display</b>
+<i>display</i></p>
+
+<p style="margin-left:22%;">connect to the X
+<i>display</i></p>
+
+<p style="margin-left:11%;"><b>--dither</b>|<b>-d</b></p>
+
+<p style="margin-left:22%;">enable color dithering on
+<i>image</i></p>
+
+
+<p style="margin-left:11%;"><b>--fillscale</b>|<b>-f</b></p>
+
+<p style="margin-left:22%;">scales the specified
+<i>image</i> to fill screen while preserving aspect
+ratio</p>
+
+<p style="margin-left:11%;"><b>--help</b>|<b>-h</b></p>
+
+<p style="margin-left:22%;">print a help message with the
+list of options</p>
+
+<p style="margin-left:11%;"><b>--match</b>|<b>-m</b></p>
+
+<p style="margin-left:22%;">use the best-matching-color
+algorithm when converting image to indexed color palette</p>
+
+
+<p style="margin-left:11%;"><b>--maxscale</b>|<b>-a</b></p>
+
+<p style="margin-left:22%;">scales the specified
+<i>image</i> to fit inside the screen preserving its aspect
+ratio</p>
+
+<p style="margin-left:11%;"><b>--parse</b>|<b>-p</b>
+<i>texture</i></p>
+
+<p style="margin-left:22%;">parses the specified
+<i>texture</i> as a <i>proplist style texture</i></p>
+
+<p style="margin-left:11%;"><b>--scale</b>|<b>-s</b></p>
+
+<p style="margin-left:22%;">scales the specified
+<i>image</i> to fill the screen (default)</p>
+
+<p style="margin-left:11%;"><b>--smooth</b>|<b>-S</b></p>
+
+<p style="margin-left:22%;">use a smooth scaling algorithm
+when resizing <i>image</i></p>
+
+<p style="margin-left:11%;"><b>--tile</b>|<b>-t</b></p>
+
+<p style="margin-left:22%;">tiles the specified
+<i>image</i></p>
+
+
+<p style="margin-left:11%;"><b>--update-domain</b>|<b>-D</b>
+<i>domain</i></p>
+
+<p style="margin-left:22%;">updates the specified
+<i>domain</i> database</p>
+
+
+<p style="margin-left:11%;"><b>--update-wmaker</b>|<b>-u</b></p>
+
+<p style="margin-left:22%;">updates the Window Maker
+defaults database</p>
+
+<p style="margin-left:11%;"><b>--version</b>|<b>-v</b></p>
+
+<p style="margin-left:22%;">print the version of Window
+Maker from which the program comes</p>
+
+<p style="margin-left:11%;"><b>--workspace</b>|<b>-w</b>
+<i>workspace</i></p>
+
+<p style="margin-left:22%;">update background only for the
+specified <i>workspace</i></p>
+
+
+<p style="margin-left:11%;"><b>--xinerama</b>|<b>-X</b></p>
+
+<p style="margin-left:22%;">stretch image across Xinerama
+heads</p>
+
+<h2>INDEXED COLOR SCREENS
+<a name="INDEXED COLOR SCREENS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">If your screen
+is not in a <b>True Color</b> configuration (generally sold
+as 16,777,216 colors) but in a indexed color mode (256
+colors, 16 colors, ... which are based on a <b>ColorMap</b>)
+then Window Maker may need to process the image to convert
+it to a limited number of colors before using it for a
+background image.</p>
+
+<p style="margin-left:11%; margin-top: 1em">There are two
+options to choose what algorithm you want to use: <b><br>
+--match</b> or <b>-m</b></p>
+
+<p style="margin-left:22%;">Search for the closest matching
+color from the current colormap; this is the fastest
+algorithm but may lead to less good-looking result.</p>
+
+<p style="margin-left:11%;"><b>--dither</b> or
+<b>-d</b></p>
+
+<p style="margin-left:22%;">Use a more complex algorithm
+which modify surrounding pixels to get a closer-looking
+color on average; this is slower but provides better looking
+images.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If none is
+specified, then it is Window Maker&rsquo;s configuration
+choice that will be used.</p>
+
+<p style="margin-left:11%; margin-top: 1em">You can also
+use the option <b>--colors</b> to reduce the total number of
+colors from the <i>image</i> before the algorithm is
+applied. The value specified with the option defines the
+number of possible values for each primary color (red, green
+and blue), for example <i>8</i> would reduce the image to
+use only 8*8*8=512 colors before applying the conversion
+algorithm.</p>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><a href="wmaker.html"><tt>wmaker</tt>(1)</a></p>
+
+<h2>AUTHOR
+<a name="AUTHOR"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">This man page
+was written by Marcelo Magallon
+&lt;<a href="mailto:mmagallo (at) debian (dot) org">mmagallo (at) debian (dot) org</a>&gt;.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Window Maker
+was written by Alfredo K. Kojima
+&lt;<a href="mailto:kojima (at) windowmaker (dot) info">kojima (at) windowmaker (dot) info</a>&gt;. wmsetbg was written by Dan
+Pascu &lt;<a href="mailto:dan (at) windowmaker (dot) info">dan (at) windowmaker (dot) info</a>&gt;</p>
+</article>
+<div class="footer">
+  This man page is part of <div id="pkgname">WindowMaker 0.95.9</div>
+</div>
+  <div id="titlebar">
+    <div id="minimize"></div>
+    <div id="titlebar-inner">Window Maker Manual: wmsetbg(1)</div>
+    <div id="close"></div>
+  </div>
+  <div id="resizebar">
+    <div id="resizel"></div>
+    <div id="resizebar-inner"></div>
+    <div id="resizer"></div>
+  </div>
+</div>
+</body>
+</html>

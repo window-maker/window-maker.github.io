@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Maker: User Guide - Windows</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+      content="width=device-width, minimumscale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>
+          <a href="/">
+            <span class="first">Window</span><span class="second">Maker</span>
+          </a>
+        </h1>
+      </header>
+      <aside>
+        <nav class="menu">
+          <ul>
+            <li id="dock">
+            <a href="#"></a>
+            </li>
+            <li id="home" title="Home">
+              <a href="/">Home</a>
+            </li>
+            <li id="news" title="News">
+              <a href="/news">News</a>
+            </li>
+            <li id="docs" title="Documentation">
+              <a href="/docs">Documentation</a>
+            </li>
+            <li id="mail" title="Mailing lists">
+              <a href="/lists">Mailing</a>
+            </li>
+            <li id="devel" title="Development">
+              <a href="/dev">Development</a>
+            </li>
+            <li id="screenshots" title="Screenshots">
+              <a href="/screenshots">Screenshots</a>
+            </li>
+            <li id="dockapps" title="Dockapps">
+              <a href="https://www.dockapps.net">Dockapps</a>
+            </li>
+            <li id="themes" title="Themes">
+              <a href="/themes">Themes</a>
+            </li>
+            <li id="links" title="Links">
+              <a href="/links">Links</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        
+<main id="windows">
+<h1 class="title">Windows</h1>
+
+<section id="anatomy-of-a-window">
+<h1>Anatomy of a Window</h1>
+<p>Generally an application will have the following layout:</p>
+<figure class="borderless">
+<img alt="Anatomy of a Window" src="guide/images/anatomy.gif">
+</figure>
+<dl class="simple">
+<dt>Titlebar</dt>
+<dd>
+<p>The titlebar presents the name of the application, document or window. It's
+color indicates the keyboard focus state and type of the window. You can use
+it to move, activate, raise, lower and access the window commands menu.</p>
+</dd>
+<dt>Miniaturize button</dt>
+<dd>
+<p>You can click on the miniaturize button to miniaturize/iconify a window or
+click it with the <strong>Meta</strong> key pressed to hide the application.</p>
+</dd>
+<dt>Close Button</dt>
+<dd>
+<p>The close button can be used to close a window or kill the application, if
+the application can't understand the close message.</p>
+</dd>
+<dt>Resizebar</dt>
+<dd>
+<p>You use the resizebar to (surprise!) resize a window.</p>
+</dd>
+<dt>Client Area</dt>
+<dd>
+<p>The client area is where the application show it's information. If the
+window if inactive, you can click on it to activate it.</p>
+</dd>
+</dl>
+</section>
+<section id="working-with-windows">
+<h1>Working With Windows</h1>
+<section id="focusing-a-window">
+<h2>Focusing a Window</h2>
+<p>Windows can be in two states: <em>focused</em>, or <em>unfocused.</em> The focused window
+(also called the key or active window) has a black titlebar and is the window
+that receives keyboard input, ie: where you can type text. Usually it's the
+window where you work on. Only one window may be focused at a time. Unfocused
+windows have a light gray titlebar. Some applications have a special type of
+window, called dialog windows transient windows or panels. When these windows
+are active, the window that owns them (the main window) get a dark gray
+titlebar. As soon as the dialog window is closed, the focus is returned to the
+owner window.</p>
+<p>The image below shows an active Open File panel and it's owner window.</p>
+<figure class="borderless">
+<img alt="Focused, Unfocused, and Parent Window" src="guide/images/focus.gif">
+</figure>
+<p>There are three styles of window focusing:</p>
+<p><strong>Click-to-Focus</strong>, or manual focus mode. In click-to-focus mode, you
+explicitly choose the window that should be focused. This is the default mode.</p>
+<p><strong>Focus-Follow-Mouse</strong>, or auto-focus mode. In this mode, the focused window is
+chosen based on the position of the mouse pointer. The window below the mouse
+pointer is always the focused window.</p>
+<p><strong>Sloppy-Focus</strong>, or semi-auto-focus mode. This is similar to the
+focus-follow-mouse mode, but if you move the pointer from a window to the root
+window, the window will not loose focus.</p>
+<p>You can choose between these modes with the <em>FocusMode</em> option.</p>
+<p>To focus a window in <strong>Click-To-Focus</strong> mode:</p>
+<ul class="simple">
+<li><p>Click on the titlebar, resizebar or in the client area of the window with the
+left or right mouse button.</p></li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li><p>Click on the titlebar with the middle mouse button. This will focus the
+window without bringing it to the front.</p></li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li><p>Open the window list menu and select the window to focus.</p></li>
+</ul>
+<p>When you click in the client area of an inactive window to set the focus, the
+click is normally processed by the application. If you find this behaviour a
+little confusing, you can make the application ignore this click by using the
+<em>IgnoreFocusClick</em> option.</p>
+<p>To focus a window in <strong>Focus-Follow-Mouse</strong> mode:</p>
+<ul class="simple">
+<li><p>Move the pointer over the window you want to focus.</p></li>
+</ul>
+</section>
+<section id="reordering-overlapping-windows">
+<h2>Reordering Overlapping Windows</h2>
+<p>Windows can overlap other windows, making some windows be over or in front of
+others.</p>
+<p>To bring a window to the front:</p>
+<ul class="simple">
+<li><p>Click on the titlebar or resizebar of the desired window with the left mouse
+button.</p></li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li><p>Select the desired window from the Window List menu.</p></li>
+</ul>
+<p>Dialog/transient windows are always placed over their owner windows, unless the
+<em>OnTopTransients</em> option is disabled. Some windows have a special attribute
+that allow them be permanently over normal windows. You can make specific
+windows have this attribute use the <em>AlwaysOnTop</em> window option or set it in
+the Window Inspector panel.</p>
+<p><strong>Extra Bindings</strong></p>
+<table>
+<colgroup>
+<col style="width: 49%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr>
+<th class="head"><p>Action</p></th>
+<th class="head"><p>Effect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Meta-Click on the window titlebar,
+with the left mouse button</p></td>
+<td><p>Sends the window to the
+back.</p></td>
+</tr>
+<tr>
+<td><p>Meta-Click on the Client Area of
+the window with the left mouse
+button.</p></td>
+<td><p>Brings the window to the front and
+focuses it.</p></td>
+</tr>
+<tr>
+<td><p>Hold the Meta key and press the Up
+Arrow key</p></td>
+<td><p>Brings the current focused window to
+the front.</p></td>
+</tr>
+<tr>
+<td><p>Hold the Meta key and press the
+Down Arrow key</p></td>
+<td><p>Sends the current focused window to
+the back.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="moving-a-window">
+<h2>Moving a Window</h2>
+<p>To move the window around the screen, drag the window through it's titlebar
+with the left mouse button pressed. This will also bring the window to the
+front and focus the window.</p>
+<p>To move a window:</p>
+<ul class="simple">
+<li><p>Click on the titlebar of the window you want to move with the left mouse
+button and drag it with the button pressed.</p></li>
+</ul>
+<p>While you move the window, a little box will appear in the screen, indicating
+the current window position in pixels, relative to the top left corner of the
+screen. You can change the location of this position box by hitting the Shift
+key during the move operation.</p>
+<p>In some rare occasions, it is possible for a window to be placed off screen.
+This can happen with some buggy applications. To bring a window back to the
+visible screen area, select the window in the Window List menu. You can prevent
+windows from doing that with the <em>DontMoveOff</em> window attribute.</p>
+<p><strong>Extra Bindings</strong></p>
+<table>
+<colgroup>
+<col style="width: 49%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr>
+<th class="head"><p>Action</p></th>
+<th class="head"><p>Effect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Drag the titlebar with the middle
+mouse button</p></td>
+<td><p>Move the window without changing it's
+stacking order.</p></td>
+</tr>
+<tr>
+<td><p>Drag the titlebar while holding the
+Control key</p></td>
+<td><p>Move the window without focusing it.</p></td>
+</tr>
+<tr>
+<td><p>Drag the client area or resizebar
+while holding the Meta key</p></td>
+<td><p>Move the window.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resizing-a-window">
+<h2>Resizing a Window</h2>
+<p>The size of a window can be adjusted by dragging the resizebar.</p>
+<figure class="borderless">
+<img alt="A Resizebar" src="guide/images/resizebar.gif">
+</figure>
+<p>Depending on the place you click to drag the resizebar, the resize operation is
+constrained to a direction.</p>
+<p>To resize a window:</p>
+<ul class="simple">
+<li><p>To change the window's height, click in the middle region of the resizebar
+and drag it vertically.</p></li>
+<li><p>To change the window's width, click in either end regions of the resizebar
+and drag it horizontally.</p></li>
+<li><p>To change both height and width at the same time, click in either end regions
+of the resizebar and drag it diagonally.</p></li>
+</ul>
+<p><strong>Extra Bindings</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr>
+<th class="head"><p>Action</p></th>
+<th class="head"><p>Effect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Drag the window in the client area
+with the Right mouse button, while
+holding the Meta key</p></td>
+<td><p>Resizes the window.</p></td>
+</tr>
+<tr>
+<td><p>Drag the resizebar with the middle
+mouse button</p></td>
+<td><p>Resize the window without bringing
+it to the front</p></td>
+</tr>
+<tr>
+<td><p>Drag the resizebar while holding
+the Control key</p></td>
+<td><p>Resize the window without focusing
+it.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="miniaturizing-a-window">
+<h2>Miniaturizing a Window</h2>
+<p>If you want to temporarily get rid of a window, you can miniaturize it.</p>
+<figure class="borderless">
+<img alt="A Titlebar" src="guide/images/title.gif">
+</figure>
+<p>When miniaturizing a window, it will shrink into a miniwindow with a icon and a
+title that is placed at the bottom of the screen.</p>
+<figure class="borderless">
+<img alt="A Mini-window" src="guide/images/mini.gif">
+<figcaption>
+<p>A mini-window</p>
+</figcaption>
+</figure>
+<p>You can move the miniwindow around the screen by dragging it. Unlike
+application icons, miniwindows cannot be docked.</p>
+<p>To restore a window from it's miniwindow, double click the miniwindow. The
+window will be restored in the current workspace, with the same position, size
+and contents as it had before miniaturization.</p>
+<p>To miniaturize a window:</p>
+<ul class="simple">
+<li><p>Click on the miniaturize button</p></li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li><p>Use the keyboard shortcut assigned to this action, Meta+m in the default
+configuration.</p></li>
+</ul>
+<p>You can also restore all miniaturized and hidden windows of a given application
+by double clicking in it's application icon with the middle mouse button.</p>
+</section>
+<section id="shading-a-window">
+<h2>Shading a Window</h2>
+<p>If you want to temporarily get rid of a window, an option for it's
+miniaturization is to <em>shade</em> it. When you shade a window, the window rolls up
+to it's titlebar. You can do almost everything you do with a normal window with
+shaded windows, like miniaturizing or closing it.</p>
+<p>To shade a window:</p>
+<ul class="simple">
+<li><p>Double Click on the titlebar of the window.</p></li>
+</ul>
+<figure class="borderless">
+<img alt="A Shaded window" src="guide/images/shade.gif">
+</figure>
+</section>
+<section id="closing-a-window">
+<h2>Closing a Window</h2>
+<p>After finishing work in a window, you can close it to completely get rid of it.
+When you close a window, it is removed from the screen and can no longer be
+restored. So, before closing a window, be sure you have saved any work you were
+doing on it.</p>
+<figure class="borderless">
+<img alt="A Titlebar with a close button" src="guide/images/imagtitle2.gif">
+</figure>
+<p>Some windows will have a close button with some dots around it. These windows
+can't be closed normally and the only way to get rid of them is by exiting the
+application. You should try exiting from inside the application (through it's
+menus or buttons) when possible. Otherwise you can force WindowMaker to
+<span class="docutils literal">kill</span> the application.</p>
+<p>To force the closure of a window (by killing the application):</p>
+<ul class="simple">
+<li><p>Hold the Control key and click on the close button.</p></li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li><p>Double click the close button.</p></li>
+</ul>
+<p>It is also possible to kill applications that can be normally closed by
+clicking the close button while holding the Control key.</p>
+</section>
+<section id="maximizing-a-window">
+<h2>Maximizing a Window</h2>
+<p>If you want to resize a window to occupy the whole screen, you can maximize the
+window. When you unmaximize it, the window will be restored to the same
+position and size it was before maximized.</p>
+<p>To maximize a window:</p>
+<ul class="simple">
+<li><p>Hold the Control key and double click on the window titlebar to resize the
+window's height to full screen.</p></li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li><p>Hold the Shift key and double click on the window titlebar to resize the
+window's width to full screen.</p></li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li><p>Hold both the Control and Shift keys and double click on the window titlebar
+to resize both window's height and width to full screen.</p></li>
+</ul>
+<p>To restore the size of a maximized window:</p>
+<ul class="simple">
+<li><p>Hold the Control OR Shift key and double click on the window titlebar.</p></li>
+</ul>
+<p>You can select whether the window should be maximized to the whole screen or if
+the position of the Dock should be accounted for by setting the <em>WinDock</em>
+option.</p>
+</section>
+<section id="the-window-commands-menu">
+<h2>The Window Commands Menu</h2>
+<p>Clicking on the titlebar of a window with the right mouse button will open a
+menu containing commands that will apply to that window. The menu can also be
+opened through the keyboard with the Control+Escape key, by default.</p>
+<dl class="simple">
+<dt>(Un)Maximize</dt>
+<dd>
+<p>Will either maximize the window horizontally and vertically, or, if the
+window is already maximized, restore the window to the size it was prior to
+being maximized.</p>
+</dd>
+<dt>Miniaturize</dt>
+<dd>
+<p>Will miniaturize the window.</p>
+</dd>
+<dt>(Un)Shade</dt>
+<dd>
+<p>Will shade the window, or unshade it if it is already shaded.</p>
+</dd>
+<dt>Hide</dt>
+<dd>
+<p>Will hide all the windows of the application</p>
+</dd>
+<dt>Hide Others</dt>
+<dd>
+<p>Will hide all current applications except the current one</p>
+</dd>
+<dt>Move To</dt>
+<dd>
+<p>Allows you to move the window to a different workspace</p>
+</dd>
+<dt>Attributes...</dt>
+<dd>
+<p>Opens the Window Attributes Inspector (see section <cite>2.3 &lt;#2.3&gt;</cite>)</p>
+</dd>
+<dt>Close</dt>
+<dd>
+<p>Will close the window</p>
+</dd>
+<dt>Kill</dt>
+<dd>
+<p>Will kill the application. Use this option only if the application does not
+provide means to close it normally, or in extreme cases.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="the-window-attributes-inspector">
+<h1>The Window Attributes Inspector</h1>
+<section id="window-specification">
+<h2>Window Specification</h2>
+<p>This panel Allows you to specify the WM_CLASS that WindowMaker should use to
+identify the window whose attributes you are setting.</p>
+<figure class="borderless">
+<img alt="Window Attributes Inspector: Window Specification" src="guide/images/wiaspec.gif">
+</figure>
+</section>
+<section id="window-attributes">
+<h2>Window Attributes</h2>
+<p>This panel lets you set the attributes for the selected window.</p>
+<figure class="borderless">
+<img alt="Window Attributes Inspector: Window Attributes" src="guide/images/wiaattrib.gif">
+</figure>
+<dl class="simple">
+<dt>Disable titlebar</dt>
+<dd>
+<p>Causes the titlebar for the selected window not to be displayed</p>
+</dd>
+<dt>Disable resizebar</dt>
+<dd>
+<p>Causes the resizebar for the selected window not to be displayed</p>
+</dd>
+<dt>Disable close button</dt>
+<dd>
+<p>Causes the close button for the selected window not to be displayed</p>
+</dd>
+<dt>Disable miniaturize button</dt>
+<dd>
+<p>Causes the miniaturize button for the selected window not to be displayed</p>
+</dd>
+<dt>Keep on Top</dt>
+<dd>
+<p>Causes the selected window to stay on top of all other windows</p>
+</dd>
+<dt>Omnipresent</dt>
+<dd>
+<p>Causes the selected window to be displayed in all workspaces</p>
+</dd>
+<dt>Start miniaturized</dt>
+<dd>
+<p>Causes the selected window to start miniaturized</p>
+</dd>
+<dt>Skip window list</dt>
+<dd>
+<p>Causes the select window to be skipped when cycling through the window list.</p>
+</dd>
+</dl>
+</section>
+<section id="advanced-options">
+<h2>Advanced Options</h2>
+<figure class="borderless">
+<img alt="Window Attributes Inspector: Advanced Options" src="guide/images/wiaadvanced.gif">
+</figure>
+<dl class="simple">
+<dt>Ignore HideOthers</dt>
+<dd>
+<p>Causes the selected window to remain visible when <strong>HideOthers</strong> is selected
+from the <a class="reference external" href="#2.2.9">Window Commands Menu</a></p>
+</dd>
+<dt>Don't bind keyboard shortcuts</dt>
+<dd>
+<p>Causes the selected window to receive ALL keyboard events</p>
+</dd>
+<dt>Don't bind mouse clicks</dt>
+<dd>
+<p>Causes the selected window to receive all mouse-click events</p>
+</dd>
+<dt>Keep Inside Screen</dt>
+<dd>
+<p>Causes the selected window not to be able to place itself off the screen</p>
+</dd>
+<dt>Don't let it take focus</dt>
+<dd>
+<p>Causes the selected window not to be able to take input focus</p>
+</dd>
+<dt>Don't Save Session</dt>
+<dd>
+<p>Causes the state of the selected window not to be saved when a session is
+saved. (either when quitting WindowMaker, or when done manually.)</p>
+</dd>
+<dt>Emulate Application Icon</dt>
+<dd>
+<p>Emulates an Application Icon for "broken" applications</p>
+</dd>
+</dl>
+</section>
+<section id="icon-and-initial-workspace">
+<h2>Icon and Initial Workspace</h2>
+<p>This panel allows you to <strong>browse</strong> for, and <strong>update</strong> the <strong>mini-window
+image</strong> for the selected window, as well as setting the <strong>initial workspace</strong>.</p>
+<figure class="borderless">
+<img alt="Window Attributes Inspector: Icon and Initia Workspace" src="guide/images/wiaiandiw.gif">
+</figure>
+</section>
+<section id="application-specific">
+<h2>Application Specific</h2>
+<p>Attributes specific to the selected application</p>
+<figure class="borderless">
+<img alt="Window Attributes Inspector: Icon and Initia Workspace" src="guide/images/wiaappspec.gif">
+</figure>
+<dl class="simple">
+<dt>Start hidden</dt>
+<dd>
+<p>Starts the selected application in a hidden state</p>
+</dd>
+<dt>No application icon</dt>
+<dd>
+<p>Disables the application icon for the selected application</p>
+</dd>
+</dl>
+</section>
+</section>
+</main>
+
+      </article>
+      <div id="titlebar">
+        <div id="minimize"></div>
+        <div id="titlebar-inner">Window Maker: User Guide - Windows</div>
+        <div id="close"></div>
+      </div>
+      <div id="resizebar">
+        <div id="resizel"></div>
+        <div id="resizebar-inner">
+        </div>
+        <div id="resizer"></div>
+      </div>
+    </div>
+  </body>
+</html>
