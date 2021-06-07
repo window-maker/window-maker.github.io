@@ -1,0 +1,233 @@
+<!-- Creator     : groff version 1.22.4 -->
+<!-- CreationDate: Mon Jun  7 02:23:33 2021 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This file is generated automatically by a script, do not edit -->
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<link rel="stylesheet" type="text/css" href="/style.css">
+<link rel="stylesheet" type="text/css" href="/manpage.css">
+<title>wmagnify</title>
+
+</head>
+<body>
+<div id="wrapper">
+  <aside>
+    <nav class="menu">
+      <ul>
+        <li id="dock">
+        <a href="#"></a>
+        </li>
+        <li id="home" title="Home">
+          <a href="/">Home</a>
+        </li>
+        <li id="news" title="News">
+          <a href="/news">News</a>
+        </li>
+        <li id="docs" title="Documentation">
+          <a href="/docs">Documentation</a>
+        </li>
+        <li id="mail" title="Mailing lists">
+          <a href="/lists">Mailing</a>
+        </li>
+        <li id="devel" title="Development">
+          <a href="/dev">Development</a>
+        </li>
+        <li id="screenshots" title="Screenshots">
+          <a href="/screenshots">Screenshots</a>
+        </li>
+        <li id="dockapps" title="Dockapps">
+          <a href="https://www.dockapps.net">Dockapps</a>
+        </li>
+        <li id="themes" title="Themes">
+          <a href="/themes">Themes</a>
+        </li>
+        <li id="links" title="Links">
+          <a href="/links">Links</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="toc">
+    <label for="toc-checkbutton">wmagnify</label>
+    <input type="checkbox" id="toc-checkbutton" checked="true">
+    <div id="toc-list">
+      <a href="#NAME">NAME</a><br>
+      <a href="#SYNOPSIS">SYNOPSIS</a><br>
+      <a href="#DESCRIPTION">DESCRIPTION</a><br>
+      <a href="#OPTIONS">OPTIONS</a><br>
+      <a href="#KEYS">KEYS</a><br>
+      <a href="#SEE ALSO">SEE ALSO</a><br>
+      <a href="#AUTHOR">AUTHOR</a><br>
+      <hr>
+      <a href="." class="return">Return to list</a><br>
+    </div>
+  </div>
+
+<article>
+
+
+<h2>NAME
+<a name="NAME"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">wmagnify -
+magnify parts of the screen</p>
+
+<h2>SYNOPSIS
+<a name="SYNOPSIS"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>wmagnify</b>
+[<i>options</i>]</p>
+
+<h2>DESCRIPTION
+<a name="DESCRIPTION"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>wmagnify</b>
+is a tool which allows you to magnify parts of the screen.
+The main difference from <b>xmag</b> is that the image is
+refreshed automatically, following the cursor on the
+screen.</p>
+
+<h2>OPTIONS
+<a name="OPTIONS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The following
+command line options are available: <b><br>
+-display</b> <i>display</i></p>
+
+<p style="margin-left:22%;">Show the magnified area on this
+<i>display</i>.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>--help</b></p></td>
+<td width="2%"></td>
+<td width="70%">
+
+
+<p>print a help message with the list of options.</p></td>
+<td width="8%">
+</td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-m</b> <i>factor</i></p>
+
+<p style="margin-left:22%;">Change the magnification
+factor, default is 2. You can change this also while running
+the program, using the keys described below.</p>
+
+<p style="margin-left:11%;"><b>-r</b> <i>delay</i></p>
+
+<p style="margin-left:22%;">Change the refresh delay, in
+milliseconds. Default is 200.</p>
+
+<p style="margin-left:11%;"><b>-vdisplay</b>
+<i>display</i></p>
+
+<p style="margin-left:22%;">Take the area to be magnified
+from this <i>display</i> instead of using the same display
+as for visualisation.</p>
+
+<h2>KEYS
+<a name="KEYS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The following
+keys can be pressed while <b>wmagnify</b> is running to
+change its behaviour. <b><br>
+
+1</b>,<b>2</b>,<b>3</b>,<b>4</b>,<b>5</b>,<b>6</b>,<b>7</b>,<b>8</b>,<b>9</b></p>
+
+<p style="margin-left:22%;">Change the magnification
+factor.</p>
+
+<p style="margin-left:11%;"><b>&lt;space&gt;</b>,
+<b>f</b></p>
+
+<p style="margin-left:22%;">Freeze the camera, making it
+magnify only the current position.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>n</b></p></td>
+<td width="10%"></td>
+<td width="55%">
+
+
+<p>Create a new window.</p></td>
+<td width="23%">
+</td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>m</b></p></td>
+<td width="10%"></td>
+<td width="55%">
+
+
+<p>Show/hide the pointer hot spot mark.</p></td>
+<td width="23%">
+</td></tr>
+</table>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><a href="http://linux.die.net/man/1/xmag"><tt>xmag</tt>(1)</a>,
+<a href="wmaker.html"><tt>wmaker</tt>(1)</a></p>
+
+<h2>AUTHOR
+<a name="AUTHOR"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">This manual
+page was written by Andrea Bolognani &lt;<a href="mailto:eof (at) kiyuko (dot) org">eof (at) kiyuko (dot) org</a>&gt;
+for the Debian project, but may be used by others.</p>
+</article>
+<div class="footer">
+  This man page is part of <div id="pkgname">WindowMaker 0.95.9</div>
+</div>
+  <div id="titlebar">
+    <div id="minimize"></div>
+    <div id="titlebar-inner">Window Maker Manual: wmagnify(1)</div>
+    <div id="close"></div>
+  </div>
+  <div id="resizebar">
+    <div id="resizel"></div>
+    <div id="resizebar-inner"></div>
+    <div id="resizer"></div>
+  </div>
+</div>
+</body>
+</html>

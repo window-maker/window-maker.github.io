@@ -1,0 +1,278 @@
+<!-- Creator     : groff version 1.22.4 -->
+<!-- CreationDate: Mon Jun  7 02:23:33 2021 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This file is generated automatically by a script, do not edit -->
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<link rel="stylesheet" type="text/css" href="/style.css">
+<link rel="stylesheet" type="text/css" href="/manpage.css">
+<title>wmmenugen</title>
+
+</head>
+<body>
+<div id="wrapper">
+  <aside>
+    <nav class="menu">
+      <ul>
+        <li id="dock">
+        <a href="#"></a>
+        </li>
+        <li id="home" title="Home">
+          <a href="/">Home</a>
+        </li>
+        <li id="news" title="News">
+          <a href="/news">News</a>
+        </li>
+        <li id="docs" title="Documentation">
+          <a href="/docs">Documentation</a>
+        </li>
+        <li id="mail" title="Mailing lists">
+          <a href="/lists">Mailing</a>
+        </li>
+        <li id="devel" title="Development">
+          <a href="/dev">Development</a>
+        </li>
+        <li id="screenshots" title="Screenshots">
+          <a href="/screenshots">Screenshots</a>
+        </li>
+        <li id="dockapps" title="Dockapps">
+          <a href="https://www.dockapps.net">Dockapps</a>
+        </li>
+        <li id="themes" title="Themes">
+          <a href="/themes">Themes</a>
+        </li>
+        <li id="links" title="Links">
+          <a href="/links">Links</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="toc">
+    <label for="toc-checkbutton">wmmenugen</label>
+    <input type="checkbox" id="toc-checkbutton" checked="true">
+    <div id="toc-list">
+      <a href="#NAME">NAME</a><br>
+      <a href="#SYNOPSIS">SYNOPSIS</a><br>
+      <a href="#DESCRIPTION">DESCRIPTION</a><br>
+      <a href="#OPTIONS">OPTIONS</a><br>
+      <a href="#PARSERS">PARSERS</a><br>
+      <a href="#RETURN VALUE">RETURN VALUE</a><br>
+      <a href="#BUGS">BUGS</a><br>
+      <a href="#SEE ALSO">SEE ALSO</a><br>
+      <a href="#AUTHOR">AUTHOR</a><br>
+      <hr>
+      <a href="." class="return">Return to list</a><br>
+    </div>
+  </div>
+
+<article>
+
+
+<h2>NAME
+<a name="NAME"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>wmmenugen</b>
+- Window Maker PropList menu generator</p>
+
+<h2>SYNOPSIS
+<a name="SYNOPSIS"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>wmmenugen</b>
+[<i>options</i>...] <b>-parser=</b><i>&lt;name&gt; fspec</i>
+[<i>fspec</i>...] [<b>-parser=</b><i>&lt;name&gt; fspec</i>
+[<i>fspec</i>...]...]</p>
+
+<h2>DESCRIPTION
+<a name="DESCRIPTION"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>wmmenugen</b>
+generates a menu in the <i>PropList</i> format for Window
+Maker from the input file <i>fspec</i>. In the case where
+<i>fspec</i> is a directory instead of a file, then
+<b>wmmenugen</b> will read all the files present in the
+hierarchy of this directory.</p>
+
+<h2>OPTIONS
+<a name="OPTIONS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>--help</b>,
+<b>-h</b></p>
+
+<p style="margin-left:22%;">print a help message with the
+list of options</p>
+
+<p style="margin-left:11%;"><b>-parser</b></p>
+
+<p style="margin-left:22%;">specify the format of the file
+to be parsed</p>
+
+<p style="margin-left:11%;"><b>--version</b></p>
+
+<p style="margin-left:22%;">print the version of Window
+Maker from which the program comes</p>
+
+<h2>PARSERS
+<a name="PARSERS"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>wmmenugen</b>
+supports these file formats for input files: <i><br>
+wmconfig</i></p>
+
+<p style="margin-left:22%;">the format of the menu
+generation tool for X of the same name</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="4%">
+
+
+<p><i>xdg</i></p></td>
+<td width="7%"></td>
+<td width="78%">
+
+
+<p>the format of the menu specification as defined by the
+<i>FreeDesktop</i> standard, currently at version 1.1</p></td></tr>
+</table>
+
+<h2>RETURN VALUE
+<a name="RETURN VALUE"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The exit status
+from the <b>wmmenugen</b> command provides information for
+the caller:</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p style="margin-top: 1em"><b>0</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em">when the <i>PropList</i> menu
+was successfully generated on <i>stdout</i>.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>1</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>when a <i>fspec</i> caused a problem (non readable file,
+...)</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>2</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>the arguments of the command line where not
+recognised</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>3</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>the program met an unexpected menu structure; you
+probably want to look at the section <b>BUGS</b> below.</p></td></tr>
+</table>
+
+<h2>BUGS
+<a name="BUGS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">If you get the
+exit status <b>3</b> with the unclear error message about
+<i>unprocessed levels on the stack</i>, you encountered a
+limitation of <b>wmmenugen</b>. It would be a good idea to
+prepare an archive with the files incriminated and submit
+them to the mailing list (wmaker-dev@googlegroups.com) with
+you command line, so the team can work on improving the
+behaviour of the program on this case.</p>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><a href="wmgenmenu.html"><tt>wmgenmenu</tt>(1)</a>,
+the tool to generate a default menu</p>
+
+<p style="margin-left:11%; margin-top: 1em">the
+<i>Wmconfig</i> program can be found at:
+&lt;<a href="http://www.arrishq.net/index.html">http://www.arrishq.net/index.html</a>&gt;</p>
+
+<p style="margin-left:11%; margin-top: 1em">the <i>xdg</i>
+specification can be found at:
+&lt;<a href="http://standards.freedesktop.org/menu-spec/menu-spec-1.1.html">http://standards.freedesktop.org/menu-spec/menu-spec-1.1.html</a>&gt;</p>
+
+<h2>AUTHOR
+<a name="AUTHOR"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">wmmenugen is a
+part of Window Maker. It was written by Tamas TEVESZ.</p>
+
+<p style="margin-left:11%; margin-top: 1em">This manpage
+was written by Rodolfo Garc&iacute;a Pe&ntilde;as (kix) for
+the Debian GNU/Linux system (but may be used by others).</p>
+</article>
+<div class="footer">
+  This man page is part of <div id="pkgname">WindowMaker 0.95.9</div>
+</div>
+  <div id="titlebar">
+    <div id="minimize"></div>
+    <div id="titlebar-inner">Window Maker Manual: wmmenugen(1)</div>
+    <div id="close"></div>
+  </div>
+  <div id="resizebar">
+    <div id="resizel"></div>
+    <div id="resizebar-inner"></div>
+    <div id="resizer"></div>
+  </div>
+</div>
+</body>
+</html>
