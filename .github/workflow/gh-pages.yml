@@ -1,0 +1,27 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      JEKYLL_ENV: production
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run:
+          - sudo apt install -y python3-pip
+          - sudo pip install docutils pygments
+          - git submodule update --init
+          - bundle install
+          - bundle exec jekyll build
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master
+          publish_dir: _site
