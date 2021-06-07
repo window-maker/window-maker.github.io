@@ -56,15 +56,15 @@
       </aside>
       <article>
         
-<main id="windows">
+<div class="document" id="windows">
 <h1 class="title">Windows</h1>
 
-<section id="anatomy-of-a-window">
+<div class="section" id="anatomy-of-a-window">
 <h1>Anatomy of a Window</h1>
 <p>Generally an application will have the following layout:</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="Anatomy of a Window" src="guide/images/anatomy.gif">
-</figure>
+</div>
 <dl class="simple">
 <dt>Titlebar</dt>
 <dd>
@@ -92,10 +92,10 @@ the application can't understand the close message.</p>
 window if inactive, you can click on it to activate it.</p>
 </dd>
 </dl>
-</section>
-<section id="working-with-windows">
+</div>
+<div class="section" id="working-with-windows">
 <h1>Working With Windows</h1>
-<section id="focusing-a-window">
+<div class="section" id="focusing-a-window">
 <h2>Focusing a Window</h2>
 <p>Windows can be in two states: <em>focused</em>, or <em>unfocused.</em> The focused window
 (also called the key or active window) has a black titlebar and is the window
@@ -107,9 +107,9 @@ are active, the window that owns them (the main window) get a dark gray
 titlebar. As soon as the dialog window is closed, the focus is returned to the
 owner window.</p>
 <p>The image below shows an active Open File panel and it's owner window.</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="Focused, Unfocused, and Parent Window" src="guide/images/focus.gif">
-</figure>
+</div>
 <p>There are three styles of window focusing:</p>
 <p><strong>Click-to-Focus</strong>, or manual focus mode. In click-to-focus mode, you
 explicitly choose the window that should be focused. This is the default mode.</p>
@@ -142,8 +142,8 @@ little confusing, you can make the application ignore this click by using the
 <ul class="simple">
 <li><p>Move the pointer over the window you want to focus.</p></li>
 </ul>
-</section>
-<section id="reordering-overlapping-windows">
+</div>
+<div class="section" id="reordering-overlapping-windows">
 <h2>Reordering Overlapping Windows</h2>
 <p>Windows can overlap other windows, making some windows be over or in front of
 others.</p>
@@ -201,8 +201,8 @@ the back.</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="moving-a-window">
+</div>
+<div class="section" id="moving-a-window">
 <h2>Moving a Window</h2>
 <p>To move the window around the screen, drag the window through it's titlebar
 with the left mouse button pressed. This will also bring the window to the
@@ -251,13 +251,13 @@ while holding the Meta key</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="resizing-a-window">
+</div>
+<div class="section" id="resizing-a-window">
 <h2>Resizing a Window</h2>
 <p>The size of a window can be adjusted by dragging the resizebar.</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="A Resizebar" src="guide/images/resizebar.gif">
-</figure>
+</div>
 <p>Depending on the place you click to drag the resizebar, the resize operation is
 constrained to a direction.</p>
 <p>To resize a window:</p>
@@ -302,21 +302,19 @@ it.</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="miniaturizing-a-window">
+</div>
+<div class="section" id="miniaturizing-a-window">
 <h2>Miniaturizing a Window</h2>
 <p>If you want to temporarily get rid of a window, you can miniaturize it.</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="A Titlebar" src="guide/images/title.gif">
-</figure>
+</div>
 <p>When miniaturizing a window, it will shrink into a miniwindow with a icon and a
 title that is placed at the bottom of the screen.</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="A Mini-window" src="guide/images/mini.gif">
-<figcaption>
-<p>A mini-window</p>
-</figcaption>
-</figure>
+<p class="caption">A mini-window</p>
+</div>
 <p>You can move the miniwindow around the screen by dragging it. Unlike
 application icons, miniwindows cannot be docked.</p>
 <p>To restore a window from it's miniwindow, double click the miniwindow. The
@@ -333,8 +331,8 @@ configuration.</p></li>
 </ul>
 <p>You can also restore all miniaturized and hidden windows of a given application
 by double clicking in it's application icon with the middle mouse button.</p>
-</section>
-<section id="shading-a-window">
+</div>
+<div class="section" id="shading-a-window">
 <h2>Shading a Window</h2>
 <p>If you want to temporarily get rid of a window, an option for it's
 miniaturization is to <em>shade</em> it. When you shade a window, the window rolls up
@@ -344,19 +342,19 @@ shaded windows, like miniaturizing or closing it.</p>
 <ul class="simple">
 <li><p>Double Click on the titlebar of the window.</p></li>
 </ul>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="A Shaded window" src="guide/images/shade.gif">
-</figure>
-</section>
-<section id="closing-a-window">
+</div>
+</div>
+<div class="section" id="closing-a-window">
 <h2>Closing a Window</h2>
 <p>After finishing work in a window, you can close it to completely get rid of it.
 When you close a window, it is removed from the screen and can no longer be
 restored. So, before closing a window, be sure you have saved any work you were
 doing on it.</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="A Titlebar with a close button" src="guide/images/imagtitle2.gif">
-</figure>
+</div>
 <p>Some windows will have a close button with some dots around it. These windows
 can't be closed normally and the only way to get rid of them is by exiting the
 application. You should try exiting from inside the application (through it's
@@ -372,8 +370,8 @@ menus or buttons) when possible. Otherwise you can force WindowMaker to
 </ul>
 <p>It is also possible to kill applications that can be normally closed by
 clicking the close button while holding the Control key.</p>
-</section>
-<section id="maximizing-a-window">
+</div>
+<div class="section" id="maximizing-a-window">
 <h2>Maximizing a Window</h2>
 <p>If you want to resize a window to occupy the whole screen, you can maximize the
 window. When you unmaximize it, the window will be restored to the same
@@ -400,8 +398,8 @@ to resize both window's height and width to full screen.</p></li>
 <p>You can select whether the window should be maximized to the whole screen or if
 the position of the Dock should be accounted for by setting the <em>WinDock</em>
 option.</p>
-</section>
-<section id="the-window-commands-menu">
+</div>
+<div class="section" id="the-window-commands-menu">
 <h2>The Window Commands Menu</h2>
 <p>Clicking on the titlebar of a window with the right mouse button will open a
 menu containing commands that will apply to that window. The menu can also be
@@ -447,24 +445,24 @@ being maximized.</p>
 provide means to close it normally, or in extreme cases.</p>
 </dd>
 </dl>
-</section>
-</section>
-<section id="the-window-attributes-inspector">
+</div>
+</div>
+<div class="section" id="the-window-attributes-inspector">
 <h1>The Window Attributes Inspector</h1>
-<section id="window-specification">
+<div class="section" id="window-specification">
 <h2>Window Specification</h2>
 <p>This panel Allows you to specify the WM_CLASS that WindowMaker should use to
 identify the window whose attributes you are setting.</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="Window Attributes Inspector: Window Specification" src="guide/images/wiaspec.gif">
-</figure>
-</section>
-<section id="window-attributes">
+</div>
+</div>
+<div class="section" id="window-attributes">
 <h2>Window Attributes</h2>
 <p>This panel lets you set the attributes for the selected window.</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="Window Attributes Inspector: Window Attributes" src="guide/images/wiaattrib.gif">
-</figure>
+</div>
 <dl class="simple">
 <dt>Disable titlebar</dt>
 <dd>
@@ -499,12 +497,12 @@ identify the window whose attributes you are setting.</p>
 <p>Causes the select window to be skipped when cycling through the window list.</p>
 </dd>
 </dl>
-</section>
-<section id="advanced-options">
+</div>
+<div class="section" id="advanced-options">
 <h2>Advanced Options</h2>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="Window Attributes Inspector: Advanced Options" src="guide/images/wiaadvanced.gif">
-</figure>
+</div>
 <dl class="simple">
 <dt>Ignore HideOthers</dt>
 <dd>
@@ -537,21 +535,21 @@ saved. (either when quitting WindowMaker, or when done manually.)</p>
 <p>Emulates an Application Icon for "broken" applications</p>
 </dd>
 </dl>
-</section>
-<section id="icon-and-initial-workspace">
+</div>
+<div class="section" id="icon-and-initial-workspace">
 <h2>Icon and Initial Workspace</h2>
 <p>This panel allows you to <strong>browse</strong> for, and <strong>update</strong> the <strong>mini-window
 image</strong> for the selected window, as well as setting the <strong>initial workspace</strong>.</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="Window Attributes Inspector: Icon and Initia Workspace" src="guide/images/wiaiandiw.gif">
-</figure>
-</section>
-<section id="application-specific">
+</div>
+</div>
+<div class="section" id="application-specific">
 <h2>Application Specific</h2>
 <p>Attributes specific to the selected application</p>
-<figure class="borderless">
+<div class="borderless figure">
 <img alt="Window Attributes Inspector: Icon and Initia Workspace" src="guide/images/wiaappspec.gif">
-</figure>
+</div>
 <dl class="simple">
 <dt>Start hidden</dt>
 <dd>
@@ -562,9 +560,9 @@ image</strong> for the selected window, as well as setting the <strong>initial w
 <p>Disables the application icon for the selected application</p>
 </dd>
 </dl>
-</section>
-</section>
-</main>
+</div>
+</div>
+</div>
 
       </article>
       <div id="titlebar">
