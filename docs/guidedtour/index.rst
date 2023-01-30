@@ -86,12 +86,10 @@ Two archives are available: HTML and pictures.
 Links of interest
 -----------------
 
-- `Window Maker on Debian 6 (YouTube)
-  <https://www.youtube.com/watch?v=dIkbxMbhBpc>`_ by fourandnine
 - `Arch Linux Window Maker Wiki Entry
   <https://wiki.archlinux.org/index.php/Window_Maker>`_
-- `Debian Stable (Squeeze) Package Listing
-  <http://packages.debian.org/squeeze/wmaker>`_
+- `Debian Stable Package Listing
+  <https://packages.debian.org/stable/x11/wmaker>`_
 - `Window Maker on Mageia Linux (YouTube)
   <http://www.youtube.com/watch?v=T7VFjW8p9NU>`_ by St. Louis Mageia Users' Group
 
