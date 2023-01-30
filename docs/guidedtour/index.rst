@@ -50,8 +50,7 @@ pages to be up-to-date, but I also want them to be (as much as possible) a
 continuation of Georges' work. *Thank you, Georges*.  (Having said that,
 anything you find in error is without question my fault - so don't blame
 Georges for any mistakes!) If you find an error, have a suggestion, or wish to
-make a comment, you may contact me by email at
-*bnance&lt;atsigngoeshere&gt;uu.edu*.
+make a comment, you may contact us by email at wmaker-dev@googlegroups.com.
 
 This tour will attempt to follow Window Maker development, but not
 every update can be taken into account.  In other words, this
