@@ -56,7 +56,7 @@
       </aside>
       <article>
         
-<div class="document" id="windows">
+<main id="windows">
 <h1 class="title">Windows</h1>
 
 <div class="contents local topic" id="contents">
@@ -74,7 +74,7 @@
 <li><p><a class="reference internal" href="#commands-menu" id="id11">Commands menu</a></p></li>
 </ul>
 </div>
-<div class="section" id="description">
+<section id="description">
 <h1>Description</h1>
 <p>General layout of a window:</p>
 <ul class="simple">
@@ -92,8 +92,8 @@ mouse resizes the window.</p></li>
 <li><p><em>Client area</em>: The window content. It can be an application, some text, a
 picture...</p></li>
 </ul>
-</div>
-<div class="section" id="focusing">
+</section>
+<section id="focusing">
 <h1>Focusing</h1>
 <p>A window can be in two states: focused or unfocused. The focused window is the
 active window, the one receiving keystrokes. It's titlebar has a differentiated
@@ -106,8 +106,8 @@ the focus back.</p>
 <li><p><em>Focus follows mouse mode</em>: moving the mouse pointer over the window
 activates it.</p></li>
 </ul>
-</div>
-<div class="section" id="reordering">
+</section>
+<section id="reordering">
 <h1>Reordering</h1>
 <p>Windows can overlap other windows, in which case some will hide all or part of
 others. Clicking on the titlebar or resizebar with the left mouse button brings
@@ -136,8 +136,8 @@ behind others.</p>
 <p>Many window attributes can be modified from the attributes panel in the window
 commands menu (clicking the right mouse button on the titlebar). From version
 0.62.0, window cycling was changed to Windows style (Alt-Tab).</p>
-</div>
-<div class="section" id="moving">
+</section>
+<section id="moving">
 <h1>Moving</h1>
 <p>Clicking on the titlebar of a window and dragging it with the left mouse button
 pressed moves the window. The little box in the middle indicates the current
@@ -149,8 +149,8 @@ without changing it's stacking order.</p></li>
 <li><p>Dragging the titlebar + Ctrl key: moves the window without focusing it.</p></li>
 <li><p>Dragging the client area or the resizebar + Meta key: moves the window.</p></li>
 </ul>
-</div>
-<div class="section" id="maximizing">
+</section>
+<section id="maximizing">
 <h1>Maximizing</h1>
 <p>Double-clicking the titlebar while holding the Ctrl key resizes the window's
 height to full screen.</p>
@@ -161,8 +161,8 @@ window's height and width to full screen. Double-clicking the titlebar while
 holding Ctrl or Shift key restores the initial size of the window.</p>
 <p>To prevent a maximized window from covering the dock, the "Keep on top" option
 must be selected from the dock menu.</p>
-</div>
-<div class="section" id="miniaturizing">
+</section>
+<section id="miniaturizing">
 <h1>Miniaturizing</h1>
 <p>Clicking the miniaturize button (the left one on the titlebar) shrinks the
 window into a miniwindow with an icon and a title and places it at the bottom
@@ -173,8 +173,8 @@ cannot be docked.</p>
 <p>Double-clicking in the miniwindow restores a miniaturized window.
 Double-clicking in an application icon with the middle mouse button restores
 all miniaturized and hidden windows of this application.</p>
-</div>
-<div class="section" id="resizing">
+</section>
+<section id="resizing">
 <h1>Resizing</h1>
 <p>The resizebar, at the bottom of the window, is divided into three regions: left
 end region, middle region and right end region.</p>
@@ -195,8 +195,8 @@ resizes the window.</p></li>
 without bringing it to the front.</p></li>
 <li><p>Dragging the resizebar + Ctrl key resizes the window without focusing it.</p></li>
 </ul>
-</div>
-<div class="section" id="shading">
+</section>
+<section id="shading">
 <h1>Shading</h1>
 <p>Double-clicking on the titlebar of a window shades it. This means the window
 rolls up to it's titlebar. A shaded window has almost the same properties as a
@@ -205,8 +205,8 @@ normal window. It can be miniaturized or closed.</p>
 titlebar. This of course, assumes your system is able to manage a mouse wheel.
 The WMGLOBAL file in you $HOME/GNUstep/Defaults should contain two new
 directives : MouseWheelUp and MouseWheelDown.</p>
-</div>
-<div class="section" id="hiding">
+</section>
+<section id="hiding">
 <h1>Hiding</h1>
 <p>Clicking the the miniaturize button (the left one on the titlebar) with the
 right mouse button hides the application. Using the middle mouse button unhides
@@ -214,8 +214,8 @@ the application, simultaneously opening the windows list menu and selecting the
 hidden application. (Pressing both buttons at once with a two buttons mouse
 does the same on some OSes.) If this doesn't work, use the F11 key binding (the
 default) to open the windows list menu.</p>
-</div>
-<div class="section" id="closing">
+</section>
+<section id="closing">
 <h1>Closing</h1>
 <p>Clicking the close button (the right one on the titlebar) closes the window.
 When the close button has a different form (not an X), it means an application
@@ -223,13 +223,13 @@ is running in that window. Double-clicking in this close button kills the
 application. This can be done too with <em>Ctrl key + clicking the close button</em>.</p>
 <p>Usually, it's much better to exit an application from inside (through it's
 menu, for instance).</p>
-</div>
-<div class="section" id="commands-menu">
+</section>
+<section id="commands-menu">
 <h1>Commands menu</h1>
 <p>Clicking on the titlebar of a window with the right mouse button opens a menu
 containing commands applying to this window. The keyboard shortcut Ctrl + Esc
 can replace the click on the titlebar. Esc closes this menu.</p>
-<div class="section" id="list-of-commands-menu-commands">
+<section id="list-of-commands-menu-commands">
 <h2>List of Commands Menu commands:</h2>
 <p><em>Maximize/Unmaximize</em>:</p>
 <p>Either maximizes or returns the window to it's initial state.</p>
@@ -331,9 +331,9 @@ figure". Then, using the defined shortcut gives the focus to the window.</p>
 <p><em>Kill</em>:</p>
 <p>Kills the application. Usually, an application must be closed from inside (menu
 or other means). This option is especially reserved for "emergency" cases.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</main>
 
       </article>
       <div id="titlebar">

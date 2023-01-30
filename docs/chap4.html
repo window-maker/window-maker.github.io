@@ -56,7 +56,7 @@
       </aside>
       <article>
         
-<div class="document" id="configuring-window-maker">
+<main id="configuring-window-maker">
 <h1 class="title">Configuring Window Maker</h1>
 
 <div class="contents local topic" id="contents">
@@ -75,7 +75,7 @@
 </li>
 </ul>
 </div>
-<div class="section" id="the-defaults-system">
+<section id="the-defaults-system">
 <h1>The Defaults System</h1>
 <p>WindowMaker uses a defaults database for storing various information, like
 configurations and other data that must be kept between sessions (like the list
@@ -85,7 +85,7 @@ $(HOME)/GNUstep/Defaults directory contains data that belongs to a specific
 <em>domain</em>.</p>
 <p>Any application can use the defaults database to store its information.
 Generally an application will have one or more <em>domains</em> that belong to it.</p>
-<div class="section" id="property-list-file-format">
+<section id="property-list-file-format">
 <h2>Property list File Format</h2>
 <p>The syntax of the property list is simple, but, if you need to change it
 manually you must take care not to leave any syntax errors.</p>
@@ -124,8 +124,8 @@ will not make any difference.</p>
 key named "FTitleBack".</p>
 <p>Except for cases like file names and paths, all value strings are case
 insensitive, i.e.: YES = Yes = yes = yEs.</p>
-</div>
-<div class="section" id="value-types">
+</section>
+<section id="value-types">
 <h2>Value Types</h2>
 <p>Here is a description of some of the types of values that an option might have:</p>
 <table>
@@ -165,8 +165,8 @@ Button3, Button4, or Button5</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="preferences">
+</section>
+<section id="preferences">
 <h2>Preferences</h2>
 <p>General preference options are stored in the <em>WindowMaker</em> domain; i.e. the
 $(HOME)/GNUstep/Defaults/WindowMaker file.</p>
@@ -584,8 +584,8 @@ applications menu in the workspace.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="appearance-options">
+</section>
+<section id="appearance-options">
 <h2>Appearance Options</h2>
 <p>Fonts are specified in the X Logical Font Description format. You can cut and
 paste these names from programs like <span class="docutils literal">xfontsel</span>.</p>
@@ -634,22 +634,30 @@ second (color2) is for the bottom edge.</p>
 </dd>
 </dl>
 <p><strong>Examples</strong>:</p>
-<div class="borderless figure">
+<figure class="borderless">
 <img alt="Solid Color" src="guide/images/texsolid.gif">
-<p class="caption">(solid, gray)</p>
-</div>
-<div class="borderless figure">
+<figcaption>
+<p>(solid, gray)</p>
+</figcaption>
+</figure>
+<figure class="borderless">
 <img alt="Diagoonal Gradient" src="guide/images/texdgrad.gif">
-<p class="caption">(dgradient, gray80, gray20)</p>
-</div>
-<div class="borderless figure">
+<figcaption>
+<p>(dgradient, gray80, gray20)</p>
+</figcaption>
+</figure>
+<figure class="borderless">
 <img alt="Horizontal Gradient" src="guide/images/texhgrad.gif">
-<p class="caption">(hgradient, gray80, gray20)</p>
-</div>
-<div class="borderless figure">
+<figcaption>
+<p>(hgradient, gray80, gray20)</p>
+</figcaption>
+</figure>
+<figure class="borderless">
 <img alt="Vertical Gradient" src="guide/images/texvgrad.gif">
-<p class="caption">(vgradient, gray80, gray20)</p>
-</div>
+<figcaption>
+<p>(vgradient, gray80, gray20)</p>
+</figcaption>
+</figure>
 <table>
 <colgroup>
 <col style="width: 24%">
@@ -857,8 +865,8 @@ titlebars.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="keyboard-bindings">
+</section>
+<section id="keyboard-bindings">
 <h2>Keyboard Bindings</h2>
 <p>Keyboard shortcut specifications are in the form:</p>
 <pre class="code highlight literal-block"><code>[&lt;modifier key names&gt; + ] &lt;key name&gt;</code></pre>
@@ -1075,8 +1083,8 @@ it is already raised.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="window-attributes">
+</section>
+<section id="window-attributes">
 <h2>Window Attributes</h2>
 <p>Window attributes are stored in the $(HOME)/GNUstep/Defaults/WMWindowAttributes
 file.</p>
@@ -1230,8 +1238,8 @@ shown in the indicated workspace.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="applications-menu">
+</section>
+<section id="applications-menu">
 <h2>Applications Menu</h2>
 <p>The applications menu (AKA: Root Menu) can be defined in one of two distinct
 ways:</p>
@@ -1253,9 +1261,9 @@ line, among other things:</p>
 the window class name.</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</main>
 
       </article>
       <div id="titlebar">

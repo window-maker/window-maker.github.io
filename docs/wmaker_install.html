@@ -56,7 +56,7 @@
       </aside>
       <article>
         
-<div class="document" id="window-maker-compilation-and-installation">
+<main id="window-maker-compilation-and-installation">
 <h1 class="title">Window Maker Compilation and Installation</h1>
 
 <p>A guide to configure, compile and install WINDOW MAKER from sources.</p>
@@ -112,10 +112,10 @@
 </div>
 <p>This manual is for Window Maker, version git#next.</p>
 <hr class="docutils">
-<div class="section" id="prerequisites">
+<section id="prerequisites">
 <h1>
 <span class="sectnum">1</span> Prerequisites</h1>
-<div class="section" id="supported-platforms">
+<section id="supported-platforms">
 <h2>
 <span class="sectnum">1.1</span> Supported Platforms</h2>
 <ul class="simple">
@@ -125,8 +125,8 @@ architectures should work</p></li>
 <li><p>Solaris, at least on release 10 and 11</p></li>
 </ul>
 <p>Patches to make it work on other platforms are welcome.</p>
-</div>
-<div class="section" id="software-dependencies">
+</section>
+<section id="software-dependencies">
 <h2>
 <span class="sectnum">1.2</span> Software Dependencies</h2>
 <p>The following software is required to use WINDOW MAKER:</p>
@@ -158,8 +158,8 @@ development files for them (<span class="docutils literal"><span class="pre">xft
 source is mostly ANSI C (also known as C89 and C90) but is uses very few of the
 C99 novelties; it also uses a few attributes introduced in the C11 standard but
 those are detected automatically, so most compilers should work.</p>
-</div>
-<div class="section" id="special-dependencies">
+</section>
+<section id="special-dependencies">
 <h2>
 <span class="sectnum">1.3</span> Special Dependencies</h2>
 <p>If you want to compile using the sources from the git repository instead of the
@@ -170,8 +170,8 @@ distribution package, you will also need:</p>
 <li><p><em>automake</em> 1.12</p></li>
 <li><p><em>libtool</em> 1.4.2</p></li>
 </ul>
-</div>
-<div class="section" id="optional-dependencies">
+</section>
+<section id="optional-dependencies">
 <h2>
 <span class="sectnum">1.4</span> Optional Dependencies</h2>
 <p>These libraries are not required to make &lt;small&gt;WINDOW MAKER&lt;/small&gt; work, but
@@ -258,13 +258,13 @@ its support though (see <a class="reference external" href="#configure-options">
 get it from <a class="reference external" href="http://www.hboehm.info/gc/">http://www.hboehm.info/gc/</a></p>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils">
-<div class="section" id="building-window-maker">
+<section id="building-window-maker">
 <h1>
 <span class="sectnum">2</span> Building WINDOW MAKER</h1>
-<div class="section" id="getting-the-sources">
+<section id="getting-the-sources">
 <h2>
 <span class="sectnum">2.1</span> Getting the Sources</h2>
 <p>The latest version of WINDOW MAKER (<span class="docutils literal"><span class="pre">-crm</span></span>) can be downloaded from
@@ -322,8 +322,8 @@ through it for some options you might want to change.</p></li>
 make install</span></code></pre>
 </li>
 </ol>
-</div>
-<div class="section" id="user-specific-configuration">
+</section>
+<section id="user-specific-configuration">
 <h2>
 <span class="sectnum">2.2</span> User specific configuration</h2>
 <p>These instructions do not need to be followed when upgrading WINDOW MAKER
@@ -343,16 +343,16 @@ X to automatically launch WINDOW MAKER at startup.</p>
 other stuff.</p>
 <p>Read the <em>User Guide</em> for a more in-depth explanation of WINDOW MAKER.</p>
 <p>You might want to take a look at the <em>FAQ</em> too.</p>
-</div>
-<div class="section" id="locales-internationalisation">
+</section>
+<section id="locales-internationalisation">
 <h2>
 <span class="sectnum">2.3</span> Locales/Internationalisation</h2>
 <p>WINDOW MAKER has national language support. The procedure to enable national
 language support is described in the dedicated
 <a class="reference external" href="wmaker_i18n.html#enabling-languages-support">Enabling Languages support</a>
 in <span class="docutils literal">README.i18n</span>.</p>
-</div>
-<div class="section" id="configure-options">
+</section>
+<section id="configure-options">
 <h2>
 <span class="sectnum">2.4</span> Configure Options</h2>
 <p>These options can be passed to the configure script to enable/disable some
@@ -361,7 +361,7 @@ WINDOW MAKER features. Example:</p>
 <p>will configure WINDOW MAKER with <em>modelock</em> supported and disable <em>gif</em> support.
 Normally, you won't need any of them.</p>
 <p>To get the list of all options, run <span class="docutils literal">./configure <span class="pre">--help</span></span></p>
-<div class="section" id="installation-directory">
+<section id="installation-directory">
 <h3>
 <span class="sectnum">2.4.1</span> Installation Directory</h3>
 <p>The default installation path will be in the <span class="docutils literal">/usr/local</span> hierarchy; a number of
@@ -436,8 +436,8 @@ path defined from <span class="docutils literal"><span class="pre">--sysconfdir<
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="external-libraries">
+</section>
+<section id="external-libraries">
 <h3>
 <span class="sectnum">2.4.2</span> External Libraries</h3>
 <p>Unless specifically written, <span class="docutils literal">configure</span> will try to detect automatically for
@@ -504,8 +504,8 @@ precede each path, like:</p>
 must precede each paths, like:</p>
 <pre class="code highlight literal-block"><code>--with-incs-from="-I/opt/headers -I/usr/local/include"</code></pre>
 </blockquote>
-</div>
-<div class="section" id="x11-and-extensions">
+</section>
+<section id="x11-and-extensions">
 <h3>
 <span class="sectnum">2.4.3</span> X11 and Extensions</h3>
 <p><span class="docutils literal">configure</span> will try to detect automatically the compilation paths for X11
@@ -559,8 +559,8 @@ configuration in X11 and allows to re-configure how screens are organised.</p>
 (buggy); WINDOW MAKER only restart itself when the configuration change, to
 take into account the new screen size.</p>
 </blockquote>
-</div>
-<div class="section" id="feature-selection">
+</section>
+<section id="feature-selection">
 <h3>
 <span class="sectnum">2.4.4</span> Feature Selection</h3>
 <p><span class="docutils literal"><span class="pre">--disable-animations</span></span></p>
@@ -615,8 +615,8 @@ Menu&lt;/a&gt; in <em>NEWS</em> for more information.</p>
 <p>Selection of the domain used for translation of the menus; see <a class="reference external" href="wmaker_i18n.html#Translations-for-Menus">Translations
 for Menus</a> in <em>README.i18n</em>.</p>
 </blockquote>
-</div>
-<div class="section" id="developer-stuff">
+</section>
+<section id="developer-stuff">
 <h3>
 <span class="sectnum">2.4.5</span> Developer Stuff</h3>
 <p>These options are disabled by default:</p>
@@ -643,13 +643,13 @@ and works with this.  Despite all this, if you think there's a use for it
 and feel in the mood to help, do not hesitate to discuss on the mailing list
 <a class="reference external" href="mailto:wmaker-dev@lists.windowmaker.org">wmaker-dev@lists.windowmaker.org</a> to get it working.</p>
 </blockquote>
-</div>
-</div>
-</div>
-<div class="section" id="miscellaneous">
+</section>
+</section>
+</section>
+<section id="miscellaneous">
 <h1>
 <span class="sectnum">3</span> Miscellaneous</h1>
-<div class="section" id="platform-specific-notes">
+<section id="platform-specific-notes">
 <h2>
 <span class="sectnum">3.1</span> Platform Specific Notes</h2>
 <ul>
@@ -692,8 +692,8 @@ If you use <em>MetroX</em> and have weird problems with textures, do not use
 textures in title bars. Or use a different X server.</p>
 </li>
 </ul>
-</div>
-<div class="section" id="i-don-t-have-the-root-password">
+</section>
+<section id="i-don-t-have-the-root-password">
 <h2>
 <span class="sectnum">3.2</span> I don't have the <em>root</em> password :(</h2>
 <p>If you can't get superuser privileges (can't be <em>root</em>) you can install <em>Window
@@ -708,8 +708,8 @@ to supply the <span class="docutils literal"><span class="pre">--with-gnustepdir
 <span class="docutils literal">bin/wmaker.inst</span></p>
 <p>Of course, <span class="docutils literal">/home/jshmoe</span> is supposed to be replaced by your actual home
 directory path.</p>
-</div>
-<div class="section" id="upgrading">
+</section>
+<section id="upgrading">
 <h2>
 <span class="sectnum">3.3</span> Upgrading</h2>
 <p>If you are upgrading from an older version of WINDOW MAKER:</p>
@@ -718,24 +718,24 @@ directory path.</p>
 <li><p>Install WINDOW MAKER (but do not run <span class="docutils literal">wmaker.inst</span>)</p></li>
 <li><p>Read the <em>NEWS</em> file and update your configuration files if necessary.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils">
-<div class="section" id="troubleshooting">
+<section id="troubleshooting">
 <h1>
 <span class="sectnum">4</span> Troubleshooting</h1>
 <p>When you have some trouble during configuration (while running configure), like
 not being able to use a graphic format library you think you have installed,
 look at the <span class="docutils literal">config.log</span> file for clues of the problem.</p>
-<div class="section" id="error-with-loading-fonts-even-if-they-exist">
+<section id="error-with-loading-fonts-even-if-they-exist">
 <h2>
 <span class="sectnum">4.1</span> Error with loading fonts, even if they exist</h2>
 <p>This is probably a problem with NLS (Native Language Support), you probably
 want to look at the <a class="reference external" href="wmaker_i18n.html#Troubleshooting">Troubleshooting</a> in
 <em>README.i18n</em> or try rebuilding without NLS support, which is done with:</p>
 <pre class="code console highlight literal-block"><code><span class="go">./configure LINGUAS=""</span></code></pre>
-</div>
-<div class="section" id="configure-doesn-t-detect-libtiff-or-other-graphic-libraries">
+</section>
+<section id="configure-doesn-t-detect-libtiff-or-other-graphic-libraries">
 <h2>
 <span class="sectnum">4.2</span> configure doesn't detect <em>libtiff</em>, or other graphic libraries</h2>
 <p>Delete <span class="docutils literal">config.cache</span>, then rerun configure adding the following options to
@@ -745,8 +745,8 @@ want to look at the <a class="reference external" href="wmaker_i18n.html#Trouble
 <p>Put the paths where your graphic libs and their corresponding header files are
 located. You can put multiple paths in any of these options, as the example of
 <span class="docutils literal"><span class="pre">--with-incs-from</span></span> shows. Just put a space between them.</p>
-</div>
-<div class="section" id="configure-doesn-t-detect-libxpm">
+</section>
+<section id="configure-doesn-t-detect-libxpm">
 <h2>
 <span class="sectnum">4.3</span> configure doesn't detect <em>libXpm</em>
 </h2>
@@ -758,22 +758,22 @@ located. You can put multiple paths in any of these options, as the example of
 </ul>
 <p>If you're not sure, try renaming <span class="docutils literal">~/GNUstep</span> to <span class="docutils literal">~/GNUtmp</span> and then run
 <span class="docutils literal">wmaker.inst</span></p>
-</div>
-<div class="section" id="your-machine-is-misconfigured-gethostname-returned-none">
+</section>
+<section id="your-machine-is-misconfigured-gethostname-returned-none">
 <h2>
 <span class="sectnum">4.4</span> "...: your machine is misconfigured. gethostname() returned (none)"</h2>
 <p>the host name of your machine is set to something invalid, that starts with a parenthesis.
 Do a <span class="docutils literal">man hostname</span> for info about how to set it.</p>
-</div>
-<div class="section" id="the-root-menu-contains-only-2-entries-xterm-and-exit">
+</section>
+<section id="the-root-menu-contains-only-2-entries-xterm-and-exit">
 <h2>
 <span class="sectnum">4.5</span> The root menu contains only 2 entries. ("XTerm" and "Exit...")</h2>
 <p>WINDOW MAKER could not read your menu definition file. You should check the
 output of <span class="docutils literal">wmaker</span> for an error, it may be visible in the console or in the
 <span class="docutils literal"><span class="pre">.xsession-errors</span></span> file.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</main>
 
       </article>
       <div id="titlebar">
