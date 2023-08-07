@@ -43,8 +43,8 @@ repositories, so it could be installed directly from there. Other sources are
 listed below:
 
 - Latest source of stable version is
-  [0.95.9](https://github.com/window-maker/wmaker/releases/download/wmaker-0.95.9/WindowMaker-0.95.9.tar.gz),
-  released on 04.04.2020. See the [NEWS](news) section for more information.
+  [0.96.0](https://github.com/window-maker/wmaker/releases/download/wmaker-0.96.0/WindowMaker-0.96.0.tar.gz),
+  released on 2023-08-05. See the [NEWS](news) section for more information.
 - Source code is also available through the
   [git repository](http://repo.or.cz/w/wmaker-crm.git)
 
