@@ -11,8 +11,8 @@ Window Maker/GNUStep related
 
 * [Dockapps](https://www.dockapps.net/) -- The home of the currently available
   dockapps for the Window Maker,
-* [WMLive CD](http://www.rumbero.org/wmlive) -- A remastered Ubuntu live CD
-  featuring Window Maker as default window manager,
+* [WMLive CD](https://wmlive.sourceforge.net) -- An installable live DVD based on Debian/Bookworm
+  featuring a pre-configured Window Maker as default graphical user interface,
 * [OneStepBack](http://gnome-look.org/content/show.php/OneStepBack?content=170904)
   -- Gnome 2 and 3 theme with a NextStep look,
 * [Source code](https://github.com/window-maker/window-maker.github.io) of
