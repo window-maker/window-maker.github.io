@@ -36,8 +36,7 @@ by programmers from around the world
 Where can I get Window Maker?
 .............................
 
-Window Maker can be obtained from the official website, http://windowmaker.org/,
-or from various mirror sites listed at http://windowmaker.org/mirrors.html
+Window Maker can be obtained from the official website, https://windowmaker.org/
 
 Where are the mailing lists and archives?
 .........................................
