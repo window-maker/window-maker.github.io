@@ -48,7 +48,7 @@ Where can I find more documentation?
 ....................................
 
 Additional documentation can be found in the Window Maker source distribution,
-or at http://windowmaker.org/documentation.html
+or at https://windowmaker.org/docs/
 
 What is an appicon?
 ...................
