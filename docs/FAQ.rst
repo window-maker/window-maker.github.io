@@ -42,7 +42,7 @@ Where are the mailing lists and archives?
 .........................................
 
 All information regarding the Window Maker
-mailing lists can be found at http://windowmaker.org/lists.html
+mailing lists can be found at https://windowmaker.org/lists/.
 
 Where can I find more documentation?
 ....................................
