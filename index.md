@@ -43,10 +43,11 @@ repositories, so it could be installed directly from there. Other sources are
 listed below:
 
 - Latest source of stable version is
-  [0.96.0](https://github.com/window-maker/wmaker/releases/download/wmaker-0.96.0/WindowMaker-0.96.0.tar.gz),
+  [0.96.0](/pub/source/release/WindowMaker-0.96.0.tar.gz),
   released on 2023-08-05. See the [NEWS](news) section for more information.
 - Source code is also available through the
   [git repository](http://repo.or.cz/w/wmaker-crm.git)
+- Older versions of Window Maker may be obtained from the [GitHub releases page](https://github.com/window-maker/wmaker/releases) or directly from [our website](/pub/source/release/).
 
 Bugs
 ----
