@@ -65,10 +65,10 @@
 Window Maker source distribution. From this point on, we'll assume it has been
 retrieved and is residing on the local hard disk. The next step is to extract
 it, and change into the source directory.</p>
-<pre class="code console highlight literal-block"><code><span class="gp"># </span><span class="nb">cd</span> /path/to/your/download
-<span class="gp"># </span>gunzip WindowMaker-0.xx.xx.tar.gz
-<span class="gp"># </span>tar -xf WindowMaker-0.xx.xx.tar
-<span class="gp"># </span><span class="nb">cd</span> WindowMaker-0.xx.xx</code></pre>
+<pre class="code console highlight literal-block"><code><span class="gp"># </span><span class="nb">cd</span><span class="w"> </span>/path/to/your/download<span class="w">
+</span><span class="gp"># </span>gunzip<span class="w"> </span>WindowMaker-0.xx.xx.tar.gz<span class="w">
+</span><span class="gp"># </span>tar<span class="w"> </span>-xf<span class="w"> </span>WindowMaker-0.xx.xx.tar<span class="w">
+</span><span class="gp"># </span><span class="nb">cd</span><span class="w"> </span>WindowMaker-0.xx.xx</code></pre>
 <p>Now that things are extracted, it's time to look at the relevant pieces of
 documentation. Most UNIX oriented free software packages come with a README
 file, and Window Maker is no exception. The README file contains a summary
@@ -93,7 +93,7 @@ script should be run. It will test to make sure all the necessary libraries,
 compilers and build tools are available on the local system. The configure
 script allows for various arguments to be passed to it which relate to Window
 Maker's installation. For a complete list of all configurable settings, enter:</p>
-<pre class="code console highlight literal-block"><code><span class="gp">$ </span>./configure --help</code></pre>
+<pre class="code console highlight literal-block"><code><span class="gp">$ </span>./configure<span class="w"> </span>--help</code></pre>
 <p>Commonly used configuration options are:</p>
 <pre class="code console highlight literal-block"><code><span class="go">--prefix=DIR --enable-modelock --enable-xinerama --enable-silent-rules</span></code></pre>
 <p>The first configuration option lets Window Maker be installed into a
@@ -105,13 +105,13 @@ defaults were used.</p>
 <p>So if a user johndoe would like to install the wmaker binary into
 /home/johndoe/wmaker/bin instead of the default /usr/local/bin, the following
 argument would be passed to the configure script:</p>
-<pre class="code console highlight literal-block"><code><span class="gp">$ </span>./configure --prefix<span class="o">=</span>/home/johndoe/wmaker</code></pre>
+<pre class="code console highlight literal-block"><code><span class="gp">$ </span>./configure<span class="w"> </span>--prefix<span class="o">=</span>/home/johndoe/wmaker</code></pre>
 <p>After the configure script has been successfully executed, Window Maker can now
 be compiled with the make command; simply enter:</p>
 <pre class="code console highlight literal-block"><code><span class="gp">$ </span>make</code></pre>
 <p>The final step is to install the binaries and other support files. This is
 accomplished by entering:</p>
-<pre class="code console highlight literal-block"><code><span class="gp"># </span>make install</code></pre>
+<pre class="code console highlight literal-block"><code><span class="gp"># </span>make<span class="w"> </span>install</code></pre>
 <p>Note that this is the step that needs to be performed by root if the default
 installation directory was used, or if a directory was specified that the
 running user cannot write to. If the installing user has root access, they
@@ -131,7 +131,7 @@ recommended to create <span class="docutils literal">~/GNUstep</span> before exe
 <p>Edit your ~/.xinitrc to load your newly installed Window Maker using the line
 <span class="docutils literal">exec /usr/local/bin/wmaker</span>.</p>
 <p>Generate a new root menu (accessible with F12) with <span class="docutils literal">wmgenmenu</span>, for example</p>
-<pre class="code console highlight literal-block"><code><span class="gp">$ </span>wmgenmenu &gt; <span class="nv">$HOME</span>/GNUstep/Defaults/WMRootMenu</code></pre>
+<pre class="code console highlight literal-block"><code><span class="gp">$ </span>wmgenmenu<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/GNUstep/Defaults/WMRootMenu</code></pre>
 <p>Another recommended step is to install a few dockapps like wmvolman, wmmixer
 and wmsystemtray which allow one to easily mount external media on /media among
 other things. Visit <a class="reference external" href="http://www.dockapps.net">dockapps</a> for many more

@@ -61,36 +61,36 @@
 
 <p>A guide to enable support for language translations in WINDOW MAKER and to the
 contributors who want to help translating.</p>
-<div class="contents topic" id="table-of-contents">
+<nav class="contents" id="table-of-contents" role="doc-toc">
 <p class="topic-title">Table of Contents</p>
 <ul class="auto-toc simple">
 <li>
-<p><a class="reference internal" href="#enabling-languages-support" id="id5"><span class="sectnum">1</span> Enabling Languages support</a></p>
+<p><a class="reference internal" href="#enabling-languages-support" id="toc-entry-1"><span class="sectnum">1 </span>Enabling Languages support</a></p>
 <ul class="auto-toc">
-<li><p><a class="reference internal" href="#getting-the-list-of-supported-languages" id="id6"><span class="sectnum">1.1</span> Getting the list of supported languages</a></p></li>
-<li><p><a class="reference internal" href="#translations-for-menus" id="id7"><span class="sectnum">1.2</span> Translations for Menus</a></p></li>
-<li><p><a class="reference internal" href="#setting-linguas-at-system-level" id="id8"><span class="sectnum">1.3</span> Setting <span class="docutils literal">LINGUAS</span> at system level</a></p></li>
+<li><p><a class="reference internal" href="#getting-the-list-of-supported-languages" id="toc-entry-2"><span class="sectnum">1.1 </span>Getting the list of supported languages</a></p></li>
+<li><p><a class="reference internal" href="#translations-for-menus" id="toc-entry-3"><span class="sectnum">1.2 </span>Translations for Menus</a></p></li>
+<li><p><a class="reference internal" href="#setting-linguas-at-system-level" id="toc-entry-4"><span class="sectnum">1.3 </span>Setting <span class="docutils literal">LINGUAS</span> at system level</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#choosing-the-language" id="id9"><span class="sectnum">2</span> Choosing the Language</a></p></li>
-<li><p><a class="reference internal" href="#troubleshooting" id="id10"><span class="sectnum">3</span> Troubleshooting</a></p></li>
+<li><p><a class="reference internal" href="#choosing-the-language" id="toc-entry-5"><span class="sectnum">2 </span>Choosing the Language</a></p></li>
+<li><p><a class="reference internal" href="#troubleshooting" id="toc-entry-6"><span class="sectnum">3 </span>Troubleshooting</a></p></li>
 <li>
-<p><a class="reference internal" href="#contribute-to-translations" id="id11"><span class="sectnum">4</span> Contribute to Translations</a></p>
+<p><a class="reference internal" href="#contribute-to-translations" id="toc-entry-7"><span class="sectnum">4 </span>Contribute to Translations</a></p>
 <ul class="auto-toc">
-<li><p><a class="reference internal" href="#install-the-latest-sources" id="id12"><span class="sectnum">4.1</span> Install the latest sources</a></p></li>
-<li><p><a class="reference internal" href="#updating-the-translations" id="id13"><span class="sectnum">4.2</span> Updating the Translations</a></p></li>
-<li><p><a class="reference internal" href="#translate-the-man-pages" id="id14"><span class="sectnum">4.3</span> Translate the Man Pages</a></p></li>
-<li><p><a class="reference internal" href="#checking-the-result" id="id15"><span class="sectnum">4.4</span> Checking the Result</a></p></li>
-<li><p><a class="reference internal" href="#submitting-your-contribution" id="id16"><span class="sectnum">4.5</span> Submitting your Contribution</a></p></li>
+<li><p><a class="reference internal" href="#install-the-latest-sources" id="toc-entry-8"><span class="sectnum">4.1 </span>Install the latest sources</a></p></li>
+<li><p><a class="reference internal" href="#updating-the-translations" id="toc-entry-9"><span class="sectnum">4.2 </span>Updating the Translations</a></p></li>
+<li><p><a class="reference internal" href="#translate-the-man-pages" id="toc-entry-10"><span class="sectnum">4.3 </span>Translate the Man Pages</a></p></li>
+<li><p><a class="reference internal" href="#checking-the-result" id="toc-entry-11"><span class="sectnum">4.4 </span>Checking the Result</a></p></li>
+<li><p><a class="reference internal" href="#submitting-your-contribution" id="toc-entry-12"><span class="sectnum">4.5 </span>Submitting your Contribution</a></p></li>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <p>This manual is for Window Maker, version git#next.</p>
 <hr class="docutils">
 <section id="enabling-languages-support">
 <h1>
-<span class="sectnum">1</span> Enabling Languages support</h1>
+<span class="sectnum">1 </span>Enabling Languages support</h1>
 <p>WINDOW MAKER has the possibility to be translated in many languages, but by
 default none of them will be installed, and the support for translation will
 not be compiled.</p>
@@ -100,7 +100,7 @@ running the <span class="docutils literal">configure</span> script. This variabl
 space-separated list of languages you want to install.</p>
 <p>You could for instance enable both French (<span class="docutils literal">fr</span>) and Dutch (<span class="docutils literal">nl</span>) with
 this:</p>
-<pre class="code console highlight literal-block"><code><span class="gp">$ </span>./configure <span class="nv">LINGUAS</span><span class="o">=</span><span class="s2">"fr nl"</span></code></pre>
+<pre class="code console highlight literal-block"><code><span class="gp">$ </span>./configure<span class="w"> </span><span class="nv">LINGUAS</span><span class="o">=</span><span class="s2">"fr nl"</span></code></pre>
 <p>You can of course add any other option that you want to the <span class="docutils literal">configure</span>
 command. From the moment you specify the variable, the <span class="docutils literal">configure</span> script
 will check that you have the appropriate dependencies for this (basically the
@@ -112,7 +112,7 @@ the language(s) you asked (if available, of course), and during <span class="doc
 <span class="docutils literal"><span class="pre">PREFIX/share/locale/&lt;lang&gt;/LC_MESSAGES</span></span>).</p>
 <section id="getting-the-list-of-supported-languages">
 <h2>
-<span class="sectnum">1.1</span> Getting the list of supported languages</h2>
+<span class="sectnum">1.1 </span>Getting the list of supported languages</h2>
 <p>The naming convention for the languages follows the <span class="docutils literal">ISO <span class="pre">639-1</span></span> standard, for
 which you can find a summary list in the <a class="reference external" href="https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html">GNU gettext manual</a>.</p>
 <p>But as WINDOW MAKER does not support all of them, the <span class="docutils literal">configure</span> script will
@@ -129,7 +129,7 @@ trick implemented so the development team can have the command <span class="docu
 </section>
 <section id="translations-for-menus">
 <h2>
-<span class="sectnum">1.2</span> Translations for Menus</h2>
+<span class="sectnum">1.2 </span>Translations for Menus</h2>
 <p>In order to propose an <em>Application Menu</em> (also called <em>Root Menu</em>) that is
 also translated in the language of the interface, WINDOW MAKER implements two
 complementary mechanisms:</p>
@@ -158,7 +158,7 @@ the strings, even using its own domain file (<span class="docutils literal">Wind
 </section>
 <section id="setting-linguas-at-system-level">
 <h2>
-<span class="sectnum">1.3</span> Setting <span class="docutils literal">LINGUAS</span> at system level</h2>
+<span class="sectnum">1.3 </span>Setting <span class="docutils literal">LINGUAS</span> at system level</h2>
 <p>As the variable <span class="docutils literal">LINGUAS</span> is quite standard, you also have the possibility to
 set its value in the <span class="docutils literal">config.site</span> file for AUTOCONF. This file can be placed
 in one of these paths:</p>
@@ -174,7 +174,7 @@ on the command line, it will have precedence over the value in that file.</p>
 <hr class="docutils">
 <section id="choosing-the-language">
 <h1>
-<span class="sectnum">2</span> Choosing the Language</h1>
+<span class="sectnum">2 </span>Choosing the Language</h1>
 <p>If you have compiled and installed WINDOW MAKER with support for your language,
 the effective translation is done is the very same way as any other application
 on an UNIX system, you just have to set the shell variable <span class="docutils literal">LANG</span> to your
@@ -207,7 +207,7 @@ example from <a class="reference external" href="http://tldp.org/HOWTO/HOWTO-IND
 <hr class="docutils">
 <section id="troubleshooting">
 <h1>
-<span class="sectnum">3</span> Troubleshooting</h1>
+<span class="sectnum">3 </span>Troubleshooting</h1>
 <p>If I18N support does not work for you, check these:</p>
 <ul>
 <li><p>the <span class="docutils literal">LANG</span> environment variable is set to your locale, and
@@ -224,8 +224,8 @@ the <span class="docutils literal">LANG</span> variable, like <span class="docut
 <li>
 <p>the fonts you're using support your locale. if your font setting on
 <span class="docutils literal">$HOME/GNUstep/Defaults/WindowMaker</span> is like...</p>
-<pre class="code ini highlight literal-block"><code><span class="na">WindowTitleFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><s>"Trebuchet MS:bold:pixelsize=12";</s><span class="w">
-</span><span class="na">MenuTitleFont</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><s>"Trebuchet MS:bold:pixelsize=12";</s></code></pre>
+<pre class="code ini highlight literal-block"><code><span class="na">WindowTitleFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><s>"Trebuchet MS:bold:pixelsize=12"</s><span class="c1">;</span><span class="w">
+</span><span class="na">MenuTitleFont</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><s>"Trebuchet MS:bold:pixelsize=12"</s><span class="c1">;</span></code></pre>
 <p>then you can't display Asian languages (<span class="docutils literal">ja</span>, <span class="docutils literal">ko</span>, <span class="docutils literal">ch</span>, ...)
 characters using <span class="docutils literal">Trebuchet MS</span>. A font that is guaranteed to work for any
 language is <span class="docutils literal">sans</span> (or <span class="docutils literal"><span class="pre">sans-serif</span></span>). <span class="docutils literal">sans</span> is not a font itself, but
@@ -233,9 +233,9 @@ an alias which points to multiple fonts and will load the first in that list
 that has the ability to show glyphs in your language. If you don't know a
 font that is suited for your language you can always set all your fonts to
 something like:</p>
-<pre class="code ini highlight literal-block"><code><span class="na">"sans:pixelsize</span><span class="o">=</span><s>12"</s></code></pre>
+<pre class="code ini highlight literal-block"><code><span class="na">"sans</span><span class="o">:</span><s>pixelsize=12"</s></code></pre>
 <p>However, please note that if your font is something like:</p>
-<pre class="code ini highlight literal-block"><code><span class="na">"Trebuchet MS,sans serif:pixelsize</span><span class="o">=</span><s>12"</s></code></pre>
+<pre class="code ini highlight literal-block"><code><span class="na">"Trebuchet MS,sans serif</span><span class="o">:</span><s>pixelsize=12"</s></code></pre>
 <p>this will not be able to display Asian languages if any of the previous fonts
 before sans are installed. This is because unlike the proper font pickup that
 <span class="docutils literal">sans</span> guarantees for your language, this construct only allows a font
@@ -251,7 +251,7 @@ If you don't know what is the correct value, unset it.</p></li>
 <hr class="docutils">
 <section id="contribute-to-translations">
 <h1>
-<span class="sectnum">4</span> Contribute to Translations</h1>
+<span class="sectnum">4 </span>Contribute to Translations</h1>
 <p>You may have noticed that many translations are not up to date, because the
 code has evolved but the persons who initially contributed may not have had the
 time to continue, so any help is welcome.</p>
@@ -259,35 +259,35 @@ time to continue, so any help is welcome.</p>
 in that task.</p>
 <section id="install-the-latest-sources">
 <h2>
-<span class="sectnum">4.1</span> Install the latest sources</h2>
+<span class="sectnum">4.1 </span>Install the latest sources</h2>
 <p>If you want to contribute, the first step is get the development branch of the code;
 this is done using <span class="docutils literal">git</span>. If you do not feel confident at all with using
 <span class="docutils literal">git</span>, you may also try to ask for a <em>snapshot</em> on the developer's mailing
 list <a class="reference external" href="mailto:wmaker-dev@lists.windowmaker.org">wmaker-dev@lists.windowmaker.org</a>. With <span class="docutils literal">git</span> the procedure is:</p>
 <pre class="code bash highlight literal-block"><code><span class="c1"># Get your working copy of the sources
-</span>git clone git://repo.or.cz/wmaker-crm.git
+</span>git<span class="w"> </span>clone<span class="w"> </span>git://repo.or.cz/wmaker-crm.git<span class="w">
 
-<span class="c1"># Go into that newly created directory
-</span><span class="nb">cd</span> wmaker-crm
+</span><span class="c1"># Go into that newly created directory
+</span><span class="nb">cd</span><span class="w"> </span>wmaker-crm<span class="w">
 
-<span class="c1"># Switch to the branch where everything happens
-</span>git checkout next
+</span><span class="c1"># Switch to the branch where everything happens
+</span>git<span class="w"> </span>checkout<span class="w"> </span>next<span class="w">
 
-<span class="c1"># Generate the configuration script
+</span><span class="c1"># Generate the configuration script
 </span>./autogen.sh</code></pre>
 <p>Now you should have an up-to-date working copy ready to be compiled; you will
 not need to go the full way but you should run the <span class="docutils literal">configure</span> script, so it
 will create the <span class="docutils literal">Makefile`s</span>, and you may want to compile the code once so it
 will not do it again automatically later while you are doing something else:</p>
-<pre class="code console highlight literal-block"><code><span class="gp"># </span>Setup the build, enabling at least the language you want to work on
-<span class="go">./configure LINGUAS="&lt;list of iso 639 country code&gt;"
+<pre class="code console highlight literal-block"><code><span class="gp"># </span>Setup<span class="w"> </span>the<span class="w"> </span>build,<span class="w"> </span>enabling<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>the<span class="w"> </span>language<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>work<span class="w"> </span>on<span class="w">
+</span><span class="go">./configure LINGUAS="&lt;list of iso 639 country code&gt;"
 
-</span><span class="gp"># </span>Compile the code once
-<span class="go">make</span></code></pre>
+</span><span class="gp"># </span>Compile<span class="w"> </span>the<span class="w"> </span>code<span class="w"> </span>once<span class="w">
+</span><span class="go">make</span></code></pre>
 </section>
 <section id="updating-the-translations">
 <h2>
-<span class="sectnum">4.2</span> Updating the Translations</h2>
+<span class="sectnum">4.2 </span>Updating the Translations</h2>
 <p>The typical process for translating one program is:</p>
 <ul class="simple">
 <li><p>generate a POT file (PO Template): this is done with <span class="docutils literal">xgettext</span> which
@@ -323,7 +323,7 @@ documentation</a>.</p>
 </section>
 <section id="translate-the-man-pages">
 <h2>
-<span class="sectnum">4.3</span> Translate the Man Pages</h2>
+<span class="sectnum">4.3 </span>Translate the Man Pages</h2>
 <p>You may want to extend the translation to the documentation that is provided to
 users in the form of Unix <em>man pages</em>. The sources of the man pages are located
 in the <span class="docutils literal">doc/</span> directory; the translation should be placed in the directory
@@ -348,7 +348,7 @@ project's mailing list (<a class="reference external" href="mailto:wmaker-dev@li
 </section>
 <section id="checking-the-result">
 <h2>
-<span class="sectnum">4.4</span> Checking the Result</h2>
+<span class="sectnum">4.4 </span>Checking the Result</h2>
 <p>In the WINDOW MAKER build tree you also have another target that can help you,
 it is <span class="docutils literal">make check</span>.</p>
 <p>At current time, it does not check much, but if during the <span class="docutils literal">make <span class="pre">update-lang</span></span>
@@ -362,7 +362,7 @@ like when someone helps making WINDOW MAKER better).</p>
 </section>
 <section id="submitting-your-contribution">
 <h2>
-<span class="sectnum">4.5</span> Submitting your Contribution</h2>
+<span class="sectnum">4.5 </span>Submitting your Contribution</h2>
 <p><em>Preliminary Remark</em>: if the update process made changes in a <span class="docutils literal">po</span> file but
 you did not change any <span class="docutils literal">msgstr</span> content, it is probably a good idea to not
 submit the changes to that <span class="docutils literal">po</span> file because it would just add noise.</p>

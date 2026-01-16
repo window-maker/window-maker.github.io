@@ -60,64 +60,64 @@
 <h1 class="title">Window Maker Compilation and Installation</h1>
 
 <p>A guide to configure, compile and install WINDOW MAKER from sources.</p>
-<div class="contents topic" id="table-of-contents">
+<nav class="contents" id="table-of-contents" role="doc-toc">
 <p class="topic-title">Table of Contents</p>
 <ul class="auto-toc simple">
 <li>
-<p><a class="reference internal" href="#prerequisites" id="id1"><span class="sectnum">1</span> Prerequisites</a></p>
+<p><a class="reference internal" href="#prerequisites" id="toc-entry-1"><span class="sectnum">1 </span>Prerequisites</a></p>
 <ul class="auto-toc">
-<li><p><a class="reference internal" href="#supported-platforms" id="id2"><span class="sectnum">1.1</span> Supported Platforms</a></p></li>
-<li><p><a class="reference internal" href="#software-dependencies" id="id3"><span class="sectnum">1.2</span> Software Dependencies</a></p></li>
-<li><p><a class="reference internal" href="#special-dependencies" id="id4"><span class="sectnum">1.3</span> Special Dependencies</a></p></li>
-<li><p><a class="reference internal" href="#optional-dependencies" id="id5"><span class="sectnum">1.4</span> Optional Dependencies</a></p></li>
+<li><p><a class="reference internal" href="#supported-platforms" id="toc-entry-2"><span class="sectnum">1.1 </span>Supported Platforms</a></p></li>
+<li><p><a class="reference internal" href="#software-dependencies" id="toc-entry-3"><span class="sectnum">1.2 </span>Software Dependencies</a></p></li>
+<li><p><a class="reference internal" href="#special-dependencies" id="toc-entry-4"><span class="sectnum">1.3 </span>Special Dependencies</a></p></li>
+<li><p><a class="reference internal" href="#optional-dependencies" id="toc-entry-5"><span class="sectnum">1.4 </span>Optional Dependencies</a></p></li>
 </ul>
 </li>
 <li>
-<p><a class="reference internal" href="#building-window-maker" id="id6"><span class="sectnum">2</span> Building WINDOW MAKER</a></p>
+<p><a class="reference internal" href="#building-window-maker" id="toc-entry-6"><span class="sectnum">2 </span>Building WINDOW MAKER</a></p>
 <ul class="auto-toc">
-<li><p><a class="reference internal" href="#getting-the-sources" id="id7"><span class="sectnum">2.1</span> Getting the Sources</a></p></li>
-<li><p><a class="reference internal" href="#user-specific-configuration" id="id8"><span class="sectnum">2.2</span> User specific configuration</a></p></li>
-<li><p><a class="reference internal" href="#locales-internationalisation" id="id9"><span class="sectnum">2.3</span> Locales/Internationalisation</a></p></li>
+<li><p><a class="reference internal" href="#getting-the-sources" id="toc-entry-7"><span class="sectnum">2.1 </span>Getting the Sources</a></p></li>
+<li><p><a class="reference internal" href="#user-specific-configuration" id="toc-entry-8"><span class="sectnum">2.2 </span>User specific configuration</a></p></li>
+<li><p><a class="reference internal" href="#locales-internationalisation" id="toc-entry-9"><span class="sectnum">2.3 </span>Locales/Internationalisation</a></p></li>
 <li>
-<p><a class="reference internal" href="#configure-options" id="id10"><span class="sectnum">2.4</span> Configure Options</a></p>
+<p><a class="reference internal" href="#configure-options" id="toc-entry-10"><span class="sectnum">2.4 </span>Configure Options</a></p>
 <ul class="auto-toc">
-<li><p><a class="reference internal" href="#installation-directory" id="id11"><span class="sectnum">2.4.1</span> Installation Directory</a></p></li>
-<li><p><a class="reference internal" href="#external-libraries" id="id12"><span class="sectnum">2.4.2</span> External Libraries</a></p></li>
-<li><p><a class="reference internal" href="#x11-and-extensions" id="id13"><span class="sectnum">2.4.3</span> X11 and Extensions</a></p></li>
-<li><p><a class="reference internal" href="#feature-selection" id="id14"><span class="sectnum">2.4.4</span> Feature Selection</a></p></li>
-<li><p><a class="reference internal" href="#developer-stuff" id="id15"><span class="sectnum">2.4.5</span> Developer Stuff</a></p></li>
+<li><p><a class="reference internal" href="#installation-directory" id="toc-entry-11"><span class="sectnum">2.4.1 </span>Installation Directory</a></p></li>
+<li><p><a class="reference internal" href="#external-libraries" id="toc-entry-12"><span class="sectnum">2.4.2 </span>External Libraries</a></p></li>
+<li><p><a class="reference internal" href="#x11-and-extensions" id="toc-entry-13"><span class="sectnum">2.4.3 </span>X11 and Extensions</a></p></li>
+<li><p><a class="reference internal" href="#feature-selection" id="toc-entry-14"><span class="sectnum">2.4.4 </span>Feature Selection</a></p></li>
+<li><p><a class="reference internal" href="#developer-stuff" id="toc-entry-15"><span class="sectnum">2.4.5 </span>Developer Stuff</a></p></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<p><a class="reference internal" href="#miscellaneous" id="id16"><span class="sectnum">3</span> Miscellaneous</a></p>
-<ul class="auto-toc">
-<li><p><a class="reference internal" href="#platform-specific-notes" id="id17"><span class="sectnum">3.1</span> Platform Specific Notes</a></p></li>
-<li><p><a class="reference internal" href="#i-don-t-have-the-root-password" id="id18"><span class="sectnum">3.2</span> I don't have the <em>root</em> password :(</a></p></li>
-<li><p><a class="reference internal" href="#upgrading" id="id19"><span class="sectnum">3.3</span> Upgrading</a></p></li>
 </ul>
 </li>
 <li>
-<p><a class="reference internal" href="#troubleshooting" id="id20"><span class="sectnum">4</span> Troubleshooting</a></p>
+<p><a class="reference internal" href="#miscellaneous" id="toc-entry-16"><span class="sectnum">3 </span>Miscellaneous</a></p>
 <ul class="auto-toc">
-<li><p><a class="reference internal" href="#error-with-loading-fonts-even-if-they-exist" id="id21"><span class="sectnum">4.1</span> Error with loading fonts, even if they exist</a></p></li>
-<li><p><a class="reference internal" href="#configure-doesn-t-detect-libtiff-or-other-graphic-libraries" id="id22"><span class="sectnum">4.2</span> configure doesn't detect <em>libtiff</em>, or other graphic libraries</a></p></li>
-<li><p><a class="reference internal" href="#configure-doesn-t-detect-libxpm" id="id23"><span class="sectnum">4.3</span> configure doesn't detect <em>libXpm</em></a></p></li>
-<li><p><a class="reference internal" href="#your-machine-is-misconfigured-gethostname-returned-none" id="id24"><span class="sectnum">4.4</span> "...: your machine is misconfigured. gethostname() returned (none)"</a></p></li>
-<li><p><a class="reference internal" href="#the-root-menu-contains-only-2-entries-xterm-and-exit" id="id25"><span class="sectnum">4.5</span> The root menu contains only 2 entries. ("XTerm" and "Exit...")</a></p></li>
+<li><p><a class="reference internal" href="#platform-specific-notes" id="toc-entry-17"><span class="sectnum">3.1 </span>Platform Specific Notes</a></p></li>
+<li><p><a class="reference internal" href="#i-don-t-have-the-root-password" id="toc-entry-18"><span class="sectnum">3.2 </span>I don't have the <em>root</em> password :(</a></p></li>
+<li><p><a class="reference internal" href="#upgrading" id="toc-entry-19"><span class="sectnum">3.3 </span>Upgrading</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#troubleshooting" id="toc-entry-20"><span class="sectnum">4 </span>Troubleshooting</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#error-with-loading-fonts-even-if-they-exist" id="toc-entry-21"><span class="sectnum">4.1 </span>Error with loading fonts, even if they exist</a></p></li>
+<li><p><a class="reference internal" href="#configure-doesn-t-detect-libtiff-or-other-graphic-libraries" id="toc-entry-22"><span class="sectnum">4.2 </span>configure doesn't detect <em>libtiff</em>, or other graphic libraries</a></p></li>
+<li><p><a class="reference internal" href="#configure-doesn-t-detect-libxpm" id="toc-entry-23"><span class="sectnum">4.3 </span>configure doesn't detect <em>libXpm</em></a></p></li>
+<li><p><a class="reference internal" href="#your-machine-is-misconfigured-gethostname-returned-none" id="toc-entry-24"><span class="sectnum">4.4 </span>"...: your machine is misconfigured. gethostname() returned (none)"</a></p></li>
+<li><p><a class="reference internal" href="#the-root-menu-contains-only-2-entries-xterm-and-exit" id="toc-entry-25"><span class="sectnum">4.5 </span>The root menu contains only 2 entries. ("XTerm" and "Exit...")</a></p></li>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <p>This manual is for Window Maker, version git#next.</p>
 <hr class="docutils">
 <section id="prerequisites">
 <h1>
-<span class="sectnum">1</span> Prerequisites</h1>
+<span class="sectnum">1 </span>Prerequisites</h1>
 <section id="supported-platforms">
 <h2>
-<span class="sectnum">1.1</span> Supported Platforms</h2>
+<span class="sectnum">1.1 </span>Supported Platforms</h2>
 <ul class="simple">
 <li><p>Intel GNU/Linux Systems in general, <cite>ix86</cite> and <cite>x86_64</cite> but other
 architectures should work</p></li>
@@ -128,7 +128,7 @@ architectures should work</p></li>
 </section>
 <section id="software-dependencies">
 <h2>
-<span class="sectnum">1.2</span> Software Dependencies</h2>
+<span class="sectnum">1.2 </span>Software Dependencies</h2>
 <p>The following software is required to use WINDOW MAKER:</p>
 <ul>
 <li>
@@ -161,7 +161,7 @@ those are detected automatically, so most compilers should work.</p>
 </section>
 <section id="special-dependencies">
 <h2>
-<span class="sectnum">1.3</span> Special Dependencies</h2>
+<span class="sectnum">1.3 </span>Special Dependencies</h2>
 <p>If you want to compile using the sources from the git repository instead of the
 distribution package, you will also need:</p>
 <ul class="simple">
@@ -173,7 +173,7 @@ distribution package, you will also need:</p>
 </section>
 <section id="optional-dependencies">
 <h2>
-<span class="sectnum">1.4</span> Optional Dependencies</h2>
+<span class="sectnum">1.4 </span>Optional Dependencies</h2>
 <p>These libraries are not required to make &lt;small&gt;WINDOW MAKER&lt;/small&gt; work, but
 they are supported in case you want to use them. Version numbers are indicative,
 but other versions might work too.</p>
@@ -263,10 +263,10 @@ get it from <a class="reference external" href="http://www.hboehm.info/gc/">http
 <hr class="docutils">
 <section id="building-window-maker">
 <h1>
-<span class="sectnum">2</span> Building WINDOW MAKER</h1>
+<span class="sectnum">2 </span>Building WINDOW MAKER</h1>
 <section id="getting-the-sources">
 <h2>
-<span class="sectnum">2.1</span> Getting the Sources</h2>
+<span class="sectnum">2.1 </span>Getting the Sources</h2>
 <p>The latest version of WINDOW MAKER (<span class="docutils literal"><span class="pre">-crm</span></span>) can be downloaded from
 <a class="reference external" href="http://www.windowmaker.org/">http://www.windowmaker.org/</a></p>
 <p>Alternatively, the development branch, called <span class="docutils literal">#next</span> is in the <em>git</em>
@@ -325,7 +325,7 @@ make install</span></code></pre>
 </section>
 <section id="user-specific-configuration">
 <h2>
-<span class="sectnum">2.2</span> User specific configuration</h2>
+<span class="sectnum">2.2 </span>User specific configuration</h2>
 <p>These instructions do not need to be followed when upgrading WINDOW MAKER
 from an older version, unless stated differently in the <em>NEWS</em> file.</p>
 <p>Every user on your system that wishes to run WINDOW MAKER must do the
@@ -346,7 +346,7 @@ other stuff.</p>
 </section>
 <section id="locales-internationalisation">
 <h2>
-<span class="sectnum">2.3</span> Locales/Internationalisation</h2>
+<span class="sectnum">2.3 </span>Locales/Internationalisation</h2>
 <p>WINDOW MAKER has national language support. The procedure to enable national
 language support is described in the dedicated
 <a class="reference external" href="wmaker_i18n.html#enabling-languages-support">Enabling Languages support</a>
@@ -354,7 +354,7 @@ in <span class="docutils literal">README.i18n</span>.</p>
 </section>
 <section id="configure-options">
 <h2>
-<span class="sectnum">2.4</span> Configure Options</h2>
+<span class="sectnum">2.4 </span>Configure Options</h2>
 <p>These options can be passed to the configure script to enable/disable some
 WINDOW MAKER features. Example:</p>
 <pre class="code console highlight literal-block"><code><span class="go">./configure --enable-modelock --disable-gif</span></code></pre>
@@ -363,7 +363,7 @@ Normally, you won't need any of them.</p>
 <p>To get the list of all options, run <span class="docutils literal">./configure <span class="pre">--help</span></span></p>
 <section id="installation-directory">
 <h3>
-<span class="sectnum">2.4.1</span> Installation Directory</h3>
+<span class="sectnum">2.4.1 </span>Installation Directory</h3>
 <p>The default installation path will be in the <span class="docutils literal">/usr/local</span> hierarchy; a number of
 option can customise this:</p>
 <ul class="simple">
@@ -439,7 +439,7 @@ path defined from <span class="docutils literal"><span class="pre">--sysconfdir<
 </section>
 <section id="external-libraries">
 <h3>
-<span class="sectnum">2.4.2</span> External Libraries</h3>
+<span class="sectnum">2.4.2 </span>External Libraries</h3>
 <p>Unless specifically written, <span class="docutils literal">configure</span> will try to detect automatically for
 the libraries; if you explicitly provide <span class="docutils literal"><span class="pre">--enable-FEATURE</span></span> then it will
 break with an error message if the library cannot be linked; if you specify
@@ -507,7 +507,7 @@ must precede each paths, like:</p>
 </section>
 <section id="x11-and-extensions">
 <h3>
-<span class="sectnum">2.4.3</span> X11 and Extensions</h3>
+<span class="sectnum">2.4.3 </span>X11 and Extensions</h3>
 <p><span class="docutils literal">configure</span> will try to detect automatically the compilation paths for X11
 headers and libraries, and which X Extensions support can be enabled.  if you
 explicitly provide <span class="docutils literal"><span class="pre">--enable-FEATURE</span></span> then it will break with an error
@@ -562,7 +562,7 @@ take into account the new screen size.</p>
 </section>
 <section id="feature-selection">
 <h3>
-<span class="sectnum">2.4.4</span> Feature Selection</h3>
+<span class="sectnum">2.4.4 </span>Feature Selection</h3>
 <p><span class="docutils literal"><span class="pre">--disable-animations</span></span></p>
 <blockquote>
 <p>Disable animations permanently, by not compiling the corresponding code into
@@ -618,7 +618,7 @@ for Menus</a> in <em>README.i18n</em>.</p>
 </section>
 <section id="developer-stuff">
 <h3>
-<span class="sectnum">2.4.5</span> Developer Stuff</h3>
+<span class="sectnum">2.4.5 </span>Developer Stuff</h3>
 <p>These options are disabled by default:</p>
 <p><span class="docutils literal"><span class="pre">--config-cache</span></span></p>
 <blockquote>
@@ -648,10 +648,10 @@ and feel in the mood to help, do not hesitate to discuss on the mailing list
 </section>
 <section id="miscellaneous">
 <h1>
-<span class="sectnum">3</span> Miscellaneous</h1>
+<span class="sectnum">3 </span>Miscellaneous</h1>
 <section id="platform-specific-notes">
 <h2>
-<span class="sectnum">3.1</span> Platform Specific Notes</h2>
+<span class="sectnum">3.1 </span>Platform Specific Notes</h2>
 <ul>
 <li>
 <p><em>GNU/Linux</em> in general</p>
@@ -695,7 +695,7 @@ textures in title bars. Or use a different X server.</p>
 </section>
 <section id="i-don-t-have-the-root-password">
 <h2>
-<span class="sectnum">3.2</span> I don't have the <em>root</em> password :(</h2>
+<span class="sectnum">3.2 </span>I don't have the <em>root</em> password :(</h2>
 <p>If you can't get superuser privileges (can't be <em>root</em>) you can install <em>Window
 Maker</em> in your own home directory. For that, supply the <span class="docutils literal"><span class="pre">--prefix</span></span> option
 when running configure in step 2 of building WINDOW MAKER.  You will also need
@@ -711,7 +711,7 @@ directory path.</p>
 </section>
 <section id="upgrading">
 <h2>
-<span class="sectnum">3.3</span> Upgrading</h2>
+<span class="sectnum">3.3 </span>Upgrading</h2>
 <p>If you are upgrading from an older version of WINDOW MAKER:</p>
 <ol class="arabic simple">
 <li><p>Configure and build WINDOW MAKER as always</p></li>
@@ -723,13 +723,13 @@ directory path.</p>
 <hr class="docutils">
 <section id="troubleshooting">
 <h1>
-<span class="sectnum">4</span> Troubleshooting</h1>
+<span class="sectnum">4 </span>Troubleshooting</h1>
 <p>When you have some trouble during configuration (while running configure), like
 not being able to use a graphic format library you think you have installed,
 look at the <span class="docutils literal">config.log</span> file for clues of the problem.</p>
 <section id="error-with-loading-fonts-even-if-they-exist">
 <h2>
-<span class="sectnum">4.1</span> Error with loading fonts, even if they exist</h2>
+<span class="sectnum">4.1 </span>Error with loading fonts, even if they exist</h2>
 <p>This is probably a problem with NLS (Native Language Support), you probably
 want to look at the <a class="reference external" href="wmaker_i18n.html#Troubleshooting">Troubleshooting</a> in
 <em>README.i18n</em> or try rebuilding without NLS support, which is done with:</p>
@@ -737,7 +737,7 @@ want to look at the <a class="reference external" href="wmaker_i18n.html#Trouble
 </section>
 <section id="configure-doesn-t-detect-libtiff-or-other-graphic-libraries">
 <h2>
-<span class="sectnum">4.2</span> configure doesn't detect <em>libtiff</em>, or other graphic libraries</h2>
+<span class="sectnum">4.2 </span>configure doesn't detect <em>libtiff</em>, or other graphic libraries</h2>
 <p>Delete <span class="docutils literal">config.cache</span>, then rerun configure adding the following options to
 <span class="docutils literal">configure</span> (among the other options you use):</p>
 <pre class="code console highlight literal-block"><code><span class="go">--with-libs-from="-L/usr/local/lib"
@@ -748,7 +748,7 @@ located. You can put multiple paths in any of these options, as the example of
 </section>
 <section id="configure-doesn-t-detect-libxpm">
 <h2>
-<span class="sectnum">4.3</span> configure doesn't detect <em>libXpm</em>
+<span class="sectnum">4.3 </span>configure doesn't detect <em>libXpm</em>
 </h2>
 <p>Check if you have a symbolic link from <span class="docutils literal">libXpm.so.4.9</span> to <span class="docutils literal">libXpm.so</span></p>
 <p>Segmentation fault on startup</p>
@@ -761,13 +761,13 @@ located. You can put multiple paths in any of these options, as the example of
 </section>
 <section id="your-machine-is-misconfigured-gethostname-returned-none">
 <h2>
-<span class="sectnum">4.4</span> "...: your machine is misconfigured. gethostname() returned (none)"</h2>
+<span class="sectnum">4.4 </span>"...: your machine is misconfigured. gethostname() returned (none)"</h2>
 <p>the host name of your machine is set to something invalid, that starts with a parenthesis.
 Do a <span class="docutils literal">man hostname</span> for info about how to set it.</p>
 </section>
 <section id="the-root-menu-contains-only-2-entries-xterm-and-exit">
 <h2>
-<span class="sectnum">4.5</span> The root menu contains only 2 entries. ("XTerm" and "Exit...")</h2>
+<span class="sectnum">4.5 </span>The root menu contains only 2 entries. ("XTerm" and "Exit...")</h2>
 <p>WINDOW MAKER could not read your menu definition file. You should check the
 output of <span class="docutils literal">wmaker</span> for an error, it may be visible in the console or in the
 <span class="docutils literal"><span class="pre">.xsession-errors</span></span> file.</p>
