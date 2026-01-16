@@ -24,12 +24,12 @@ Window Maker to autosave your session upon logout) any icons you docked will
 automatically reappear at your next - and each subsequent - session.
 
 The dock can be configured to remain on top of maximized windows. To do this,
-right-click on a dock or any docked icon then select appropriate option form
+right-click on a dock or any docked icon then select appropriate option from
 *Dock position* submenu. Consult `Application icon menu
 <menu.html#application-icon-menu>`_ for details.
 
 The WMDock icon (by default, with the GNUstep logo) can be dragged sideways to
-switch the the entire dock from one side of the display to the other.
+switch the entire dock from one side of the display to the other.
 
 Dragging the WMDock icon downward will move the dock off the display with the
 exception of the WMDock icon itself, which will remain visible. To restore dock
@@ -40,7 +40,7 @@ Starting an application
 
 Double-clicking the icon of a docked application starts the application.
 
-An application that has not been launched normally has an elipsis (three dots)
+An application that has not been launched normally has an ellipsis (three dots)
 in the bottom-left-corner of the icon and appears in full color as shown below.
 
 .. figure:: images/unlaunched_app.png
@@ -49,8 +49,8 @@ in the bottom-left-corner of the icon and appears in full color as shown below.
 
    Unlaunched application icon
 
-When the application is running, the elipsis disappears from the
-bottom-left-corner of the icon and the icon becomes highlited.
+When the application is running, the ellipsis disappears from the
+bottom-left-corner of the icon and the icon becomes highlighted.
 
 .. figure:: images/launched_app.png
    :alt: Launched application icon
@@ -58,7 +58,7 @@ bottom-left-corner of the icon and the icon becomes highlited.
 
    Launched application icon
 
-Sometimes, when the application is running, instead of highlited icon, the icon
+Sometimes, when the application is running, instead of highlighted icon, the icon
 becomes "greyed out", giving a visual cue that the application is already open,
 and cannot be launched again.
 
