@@ -16,7 +16,7 @@ jobs:
         run: |
           sudo apt-get install -y ruby-bundler python3-docutils
           git submodule update --init
-          bundle install
+          sudo bundle install
           bundle exec jekyll build
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
