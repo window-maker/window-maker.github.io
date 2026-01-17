@@ -21,7 +21,7 @@ Window Maker on first run
 
 The key features of Window Maker are:
 
-- Stacking window manager with ability for semi-automatic tiling management
+- Stacking window manager with the ability for semi-automatic tiling management
 - Lightweight and blazing fast
 - Easy to use
 - Highly configurable
@@ -30,16 +30,16 @@ The key features of Window Maker are:
 - Small, dockable apps ([dockapps](https://www.dockapps.net))
 - Human readable config files and GUI prefs application
 - Free and open source
-- Active community from all of the world
+- Active community from all over the world
 
-See [features](features.html) section for more. In [screenshots](screenshots/)
+See the [features](features.html) section for more. In [screenshots](screenshots/)
 section you can see examples of how users set up their desktops.
 
 Download
 --------
 
 Many distributions already have Window Maker included in their software
-repositories, so it could be installed directly from there. Other sources are
+repositories, so it can be installed directly from there. Other sources are
 listed below:
 
 - Latest source of stable version is
