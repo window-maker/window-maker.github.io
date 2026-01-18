@@ -43,7 +43,7 @@ Very frequently asked question
   Window Maker?**
 
   Yes, you can. Mounting external media is not the problem of a window manager
-  to solve, but a tipical Window Maker user can mount external media just as
+  to solve, but a typical Window Maker user can mount external media just as
   easily as any other desktop user.  If you use a dockapp like
   `wmvolman <https://github.com/raorn/wmvolman>`_ or
   `wmudmount <http://sourceforge.net/projects/wmudmount>`_ you are just a
