@@ -18,7 +18,7 @@ full-fledged copy of the repository do this:
     git clone git://repo.or.cz/wmaker-crm.git
 
 There are two main branches in the repository, called 'master' and 'next'. The
-purpose of the 'next' branch is to add and extra layer of testing before the
+purpose of the 'next' branch is to add an extra layer of testing before the
 patches hit the 'master' branch. It is rebased when needed. The 'master' branch
 should ideally never be rebased -- if it is, run to the nearest
 anti-nuclear bunker.
