@@ -26,7 +26,7 @@ NEXTStep related
 * [OPENSTEP 4.0 Demo](https://youtu.be/WyxByfhT1F0) -- Youtube video,
 * [OPENSTEP installation guide](http://openstep.bfx.re) -- Resources and guide
   to install OPENSTEP,
-* [NEXTSTep and OPENSTEP resource
+* [NEXTSTEP and OPENSTEP resource
   page](http://www.shawcomputing.net/resources/next/index.html) -- Another
   resource page on OPENSTEP.
 
